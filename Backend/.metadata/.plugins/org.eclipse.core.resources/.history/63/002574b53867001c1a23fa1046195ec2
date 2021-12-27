@@ -1,0 +1,15 @@
+package com.coforge.training.airline.service;
+
+import java.util.List;
+
+import com.coforge.training.airline.model.AdminContent;
+
+public interface AdminContentService {
+
+	public AdminContent newAdmin(AdminContent admin);
+
+	public AdminContent getOneAdmin(String adminemail);
+
+	public List<AdminContent> getAllAdmins();
+
+}

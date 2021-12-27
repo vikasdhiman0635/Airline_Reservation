@@ -1,0 +1,9 @@
+package com.coforge.training.airline.service;
+
+import com.coforge.training.airline.model.AdminContent;
+
+public interface AdminContentService {
+
+	AdminContent newAdmin(AdminContent admin);
+
+}

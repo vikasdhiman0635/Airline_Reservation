@@ -1,0 +1,19 @@
+package com.coforge.training.airline.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "alladmin")
+public class AdminContent {
+
+	@Id	
+	private String adminemail;
+	
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+//	private long adminid;
+	
+}
