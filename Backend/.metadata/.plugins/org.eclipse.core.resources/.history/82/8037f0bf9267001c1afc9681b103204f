@@ -1,0 +1,7 @@
+package com.coforge.training.airline.serviceImpl;
+
+import com.coforge.training.airline.service.AdminContentService;
+
+public class AdminContentServiceImpl implements AdminContentService{
+
+}
