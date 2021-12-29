@@ -1,0 +1,10 @@
+package com.coforge.training.airline.service;
+
+import com.coforge.training.airline.model.User;
+import com.coforge.training.airline.response.RegisterNewUser;
+
+public interface LoginService {
+
+	RegisterNewUser registerNewUser(User user);
+
+}

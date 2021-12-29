@@ -1,0 +1,55 @@
+package com.coforge.training.airline.serviceImpl;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.coforge.training.airline.model.User;
+import com.coforge.training.airline.repository.UserRepo;
+import com.coforge.training.airline.request.RegisterUserRequest;
+import com.coforge.training.airline.response.RegisterNewUser;
+import com.coforge.training.airline.service.LoginService;
+
+@Service
+public class LoginServiceImpl implements LoginService{
+
+	@Autowired
+	private UserRepo repo;
+
+	@Override
+	public RegisterNewUser registerNewUser(RegisterUserRequest user) {
+		RegisterNewUser res=new RegisterNewUser();
+		User newUser=new User();
+		String message=null;
+//		System.out.println(repo.existsByEmail(register.getEmail()));
+		if(!repo.existsByEmail(user.getEmail()))
+		{
+
+			newUser.setFirstname(user.getFirstname());
+			newUser.setLastname(user.getLastname());
+			newUser.setEmail(user.getEmail());
+			newUser.setPassword(user.getNewpassword());
+			newUser.setCompleteprofile(false);
+			newUser.setAvatar("https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png");
+			
+			newUser.setJoindate(new Date());
+
+			User newusr=repo.save(newUser);
+			res.setMessage("User id Register");
+			res.setEmail(user.getEmail());
+			res.setUser(newusr);
+			res.setUserid(register.getEmail()+"-"+getid);
+		}
+		else
+		{
+			message="User is Already exist";
+			res.setMessasge(message);
+			res.setEmail(register.getEmail());
+			res.setUser(user);
+		}
+		
+		return ResponseEntity.ok(res);
+	}
+	
+}
