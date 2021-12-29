@@ -1,0 +1,7 @@
+package com.coforge.training.airline.serviceImpl;
+
+import com.coforge.training.airline.service.LoginService;
+
+public class LoginServiceImpl implements LoginService{
+
+}

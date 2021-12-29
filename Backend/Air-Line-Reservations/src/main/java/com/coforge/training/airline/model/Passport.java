@@ -24,9 +24,4 @@ public class Passport
 	
 	private String expiredate;
 	
-	@OneToOne()
-	@JoinColumn(name = "passport_id")
-	private User user;
-	
-	
 }

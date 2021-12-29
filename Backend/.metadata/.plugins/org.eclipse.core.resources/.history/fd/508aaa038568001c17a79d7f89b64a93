@@ -1,0 +1,5 @@
+package com.coforge.training.airline.service;
+
+public interface LoginService {
+
+}
