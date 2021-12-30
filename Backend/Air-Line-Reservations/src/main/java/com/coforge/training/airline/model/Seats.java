@@ -6,8 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "seats")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Seats {
 
 	@Id
@@ -17,5 +24,9 @@ public class Seats {
 	private String seatType;
 	
 	private String totalseats;
+	
+	private double seatprize;
+	
+	private long flightid;
 	
 }
