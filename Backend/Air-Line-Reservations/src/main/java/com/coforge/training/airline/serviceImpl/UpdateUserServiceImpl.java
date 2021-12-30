@@ -19,12 +19,14 @@ public class UpdateUserServiceImpl implements UpdateUserService{
 	{
 		UpdateUserResponse res=new UpdateUserResponse();
 		
-		if(repo.existsById(userid))
+		if(repo.existsById(userid) && repo.existsByEmail(user.getEmail()))
 		{
 			if(user.getPassport().getPassportno()!=null)
 			{
 				user.setCompleteprofile(true);
+				
 				User updateuser=repo.save(user);
+				
 				res.setMessage("User is updated");
 				res.setEmail(user.getEmail());
 				res.setCheck(true);
