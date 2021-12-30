@@ -2339,3 +2339,57 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:06:13.486
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.LyEcVNFK => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:12.776
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:12.777
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@38427474[org.springframework.tooling.boot.ls:1.28.0.202109130547(id=941)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:12.777
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.653
+!MESSAGE Boot LS startup time from start to initialized: 1873ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.729
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.UtiPzeGcisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.730
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.731
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.731
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.732
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.733
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.UtiPzeGc => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.738
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.742
+!MESSAGE buffering callback sts4.classpath.UtiPzeGc Air-Line-Reservations false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:14.743
+!MESSAGE executing callback sts4.classpath.UtiPzeGc 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:15.032
+!MESSAGE executing callback sts4.classpath.UtiPzeGc SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:15.085
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.UtiPzeGc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:15.086
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.UtiPzeGc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:15.086
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-31 00:13:15.087
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.UtiPzeGc => OK
