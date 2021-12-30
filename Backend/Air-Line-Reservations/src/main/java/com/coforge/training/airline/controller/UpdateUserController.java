@@ -21,6 +21,35 @@ public class UpdateUserController {
 	@Autowired
 	private UpdateUserService service;
 	
+	
+//	Update User After user can login and signup
+//	URL -> http://localhost:8090/user/update/39
+//	{
+//	    "userid": 39,
+//	    "firstname": "Vikas",
+//	    "lastname": "Dhiman",
+//	    "mobileno": "0000000000",
+//	    "email": "vikasdhiman835@gmail.com",
+//	    "gender": "Male",
+//	    "role": "Admin",
+//	    "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png",
+//	    "joindate": "2021-12-29T12:50:14.000+00:00",
+//	    "password": "dmlrYXM=",
+//	    "address": {
+//	        "userhouseno": 90,
+//	        "userStreet": "Near Main Market",
+//	        "userhometype": "home",
+//	        "usercity": "Karnal",
+//	        "userstate": "Haryana",
+//	        "usercountry": "india",
+//	        "userpincode": 898989
+//	    },
+//	    "passport": {
+//	        "passportno": "APDJ739A",
+//	        "issuedate": "12-DEC-2020",
+//	        "expiredate": "31-DEV-2031"
+//	    }
+//	}
 	@PutMapping("/{userid}")
 	public ResponseEntity<UpdateUserResponse> updateUser(@PathVariable("userid") long userid, @RequestBody User user)
 	{
