@@ -1,0 +1,5 @@
+package com.coforge.training.airline.model;
+
+public class AirPort {
+
+}
