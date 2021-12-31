@@ -26,7 +26,24 @@ public class SeatTypeController {
 	@Autowired
 	private SeatTypeService service;
 	
-	
+//	Save Seat
+//	URL -> http://localhost:8090/seattype
+//	{
+//	    "seattypename": "Echonimic",
+//	    "seattypecode": "EC"
+//	}
+//	{
+//	    "seattypename": "Premium Economy Class",
+//	    "seattypecode": "PC"
+//	}
+//	{
+//	    "seattypename": "Business Class",
+//	    "seattypecode": "EC"
+//	}
+//	{
+//	    "seattypename": "First-Class",
+//	    "seattypecode": "FC"
+//	}
 	@PostMapping()
 	public ResponseEntity<seatType> saveNewSeat(@RequestBody seatType seat)
 	{
@@ -35,6 +52,8 @@ public class SeatTypeController {
 	}
 	
 	
+//	Get all Seats list
+//	URL -> http://localhost:8090/seattype/getall
 	@GetMapping("/getall")
 	public ResponseEntity<List<seatType>> getAll()
 	{
@@ -43,6 +62,8 @@ public class SeatTypeController {
 	}
 	
 	
+//	Get seat by id
+//	URL -> http://localhost:8090/seattype/getbyone/80
 	@GetMapping("/getbyone/{seattypeid}")
 	public ResponseEntity<seatType> getByOne(@PathVariable("seattypeid") long seattypeid)
 	{
@@ -51,6 +72,13 @@ public class SeatTypeController {
 	}
 	
 	
+//	Update your Seats
+//	URL -> http://localhost:8090/seattype/80
+//	{
+//	    "seattypeid": 81,
+//	    "seattypename": "First Class",
+//	    "seattypecode": "FC"
+//	}
 	@PutMapping("/{seattypeid}")
 	public ResponseEntity<SeatTypeUpdateResponse> update(@PathVariable("seattypeid") long seattypeid, @RequestBody seatType seat)
 	{
@@ -59,6 +87,8 @@ public class SeatTypeController {
 	}
 	
 	
+//	Delete Seats
+//	URL -> http://localhost:8090/seattype/81
 	@DeleteMapping("/{seattypeid}")
 	public ResponseEntity<String> deleteMap(@PathVariable("seattypeid") long seattypeid)
 	{

@@ -31,6 +31,7 @@ public class UpdateUserController {
 //	    "mobileno": "0000000000",
 //	    "email": "vikasdhiman835@gmail.com",
 //	    "gender": "Male",
+//		"dob": "12-02-2021",
 //	    "role": "Admin",
 //	    "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png",
 //	    "joindate": "2021-12-29T12:50:14.000+00:00",

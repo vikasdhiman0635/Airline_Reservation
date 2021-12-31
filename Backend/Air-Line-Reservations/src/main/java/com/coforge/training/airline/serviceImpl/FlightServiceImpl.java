@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 import com.coforge.training.airline.model.Flight;
 import com.coforge.training.airline.model.Seats;
 import com.coforge.training.airline.repository.AdminContentRepo;
+import com.coforge.training.airline.repository.AirPortRepo;
 import com.coforge.training.airline.repository.FlightRepo;
 import com.coforge.training.airline.repository.SeatsRepo;
 import com.coforge.training.airline.repository.UserRepo;
 import com.coforge.training.airline.response.FlightSaveResponse;
+import com.coforge.training.airline.response.GetAllFlightsByAirportCode;
 import com.coforge.training.airline.service.FlightService;
 import com.coforge.training.airline.random.RandomNoGenerator;
 
@@ -33,13 +35,16 @@ public class FlightServiceImpl implements FlightService
 	
 	@Autowired
 	private SeatsRepo seatRepo;
+	
+	@Autowired
+	private AirPortRepo airRepo;
 
 	@Override
 	public FlightSaveResponse saveFlight(Flight flight) {
 		// TODO Auto-generated method stub
 		FlightSaveResponse res=new FlightSaveResponse();
 		
-		if(adminRepo.existsById(flight.getAdminemail()) && userRepo.existsByEmail(flight.getAdminemail()))
+		if(adminRepo.existsById(flight.getAdminemail()) && userRepo.existsByEmail(flight.getAdminemail()) && airRepo.existsById(flight.getAirportid()))
 		{
 			RandomNoGenerator rand=new RandomNoGenerator();
 			
@@ -57,7 +62,7 @@ public class FlightServiceImpl implements FlightService
 			}
 			
 			flight.setFlightseats(listSeats);
-						
+			
 			res.setFligth(repo.save(flight));
 			res.setEmail(flight.getAdminemail());
 			res.setMessage("Flight Save");
@@ -66,7 +71,7 @@ public class FlightServiceImpl implements FlightService
 		}
 		else
 		{
-			res.setMessage("Admin is not exist");
+			res.setMessage("Admin crenditials invalid");
 		}
 	
 		return res;
@@ -150,6 +155,25 @@ public class FlightServiceImpl implements FlightService
 		}
 		
 		return listfly;
+	}
+
+	@Override
+	public GetAllFlightsByAirportCode getAllFlightsByAirport(long airportcode) {
+		// TODO Auto-generated method stub\
+		
+		GetAllFlightsByAirportCode res=new GetAllFlightsByAirportCode();
+		
+		if(airRepo.existsById(airportcode))
+		{
+			res.setAirport(airRepo.findById(airportcode).get());
+			res.setFlight(repo.findAllByAirportid(airportcode));
+			res.setMessage("All data available");
+		}
+		else
+		{
+			res.setMessage("This airport is not exist");
+		}
+		return res;
 	}
 
 }

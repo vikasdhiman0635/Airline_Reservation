@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.coforge.training.airline.model.Flight;
 import com.coforge.training.airline.response.FlightSaveResponse;
+import com.coforge.training.airline.response.GetAllFlightsByAirportCode;
 
 public interface FlightService {
 
@@ -18,5 +19,7 @@ public interface FlightService {
 	String deleteFlight(long flightid);
 
 	List<Flight> getFlightByUser(String adminemail);
+
+	GetAllFlightsByAirportCode getAllFlightsByAirport(long airportcode);
 
 }
