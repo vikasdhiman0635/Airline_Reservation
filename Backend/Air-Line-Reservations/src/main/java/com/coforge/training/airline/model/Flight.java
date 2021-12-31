@@ -45,6 +45,8 @@ public class Flight {
 	
 	private String adminemail;
 	
+	private long airportid;
+	
 	@OneToMany(targetEntity = Seats.class, cascade = CascadeType.MERGE)
 	@JoinColumn(name="FK_FS")
 	private List<Seats> flightseats;

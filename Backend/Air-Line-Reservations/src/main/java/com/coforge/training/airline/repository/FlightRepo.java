@@ -17,4 +17,6 @@ public interface FlightRepo extends JpaRepository<Flight, Long>{
 
 	public List<Seats> findByFlightid(long flightid);
 
+	public List<Flight> findAllByAirportid(long airportcode);
+
 }

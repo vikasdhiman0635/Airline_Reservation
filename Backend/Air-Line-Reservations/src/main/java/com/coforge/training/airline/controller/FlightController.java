@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.coforge.training.airline.model.Flight;
 import com.coforge.training.airline.response.FlightSaveResponse;
+import com.coforge.training.airline.response.GetAllFlightsByAirportCode;
 import com.coforge.training.airline.service.FlightService;
 
 @RestController
@@ -41,6 +42,7 @@ public class FlightController {
 //	    "flightfromdate": "31-12-2021",
 //	    "flighttodate": "01-01-2022",
 //	    "flightcompanyname": "IndiGo",
+//	    "airportid": "726189078",
 //	    "adminemail": "vikasdhiman835@gmail.com",
 //	    "flightseats": [
 //	        {
@@ -103,6 +105,7 @@ public class FlightController {
 //	    "flightfromdate": "31-12-2021",
 //	    "flighttodate": "01-01-2022",
 //	    "flightcompanyname": "IndiGo",
+//		"airportid": "923993932",
 //	    "adminemail": "vikasdhiman835@gmail.com",
 //	    "flightseats": [
 //	        {
@@ -144,6 +147,15 @@ public class FlightController {
 	public ResponseEntity<List<Flight>> getFlightByAllUsers(@PathVariable("adminemail") String adminemail)
 	{
 		List<Flight> res=service.getFlightByUser(adminemail);
+		return ResponseEntity.ok().body(res);
+	}
+	
+//	Get All flights by airport id
+//	URL -> http://localhost:8090/flight/getallflightsbyairportcode/726189078
+	@GetMapping("/getallflightsbyairportcode/{airportid}")
+	public ResponseEntity<GetAllFlightsByAirportCode> getAllFlightByAirPortCode(@PathVariable("airportid") long airportcode)
+	{
+		GetAllFlightsByAirportCode res=service.getAllFlightsByAirport(airportcode);
 		return ResponseEntity.ok().body(res);
 	}
 	

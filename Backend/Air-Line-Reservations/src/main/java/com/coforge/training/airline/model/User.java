@@ -40,6 +40,8 @@ public class User
 	
 	private String mobileno;
 	
+	private String dob;
+	
 	private String email;
 	
 	@Enumerated(value = EnumType.STRING)

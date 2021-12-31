@@ -44,7 +44,7 @@ public class SeatTypeServiceImpl implements SeatTypeService{
 		SeatTypeUpdateResponse res=new SeatTypeUpdateResponse();
 		if(repo.existsById(seattypeid))
 		{
-			repo.save(seat);
+			res.setSeat(repo.save(seat));
 			res.setMessage("Seat Type is updated");
 		}
 		else {
