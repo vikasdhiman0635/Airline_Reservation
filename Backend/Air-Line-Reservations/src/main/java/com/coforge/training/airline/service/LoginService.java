@@ -22,4 +22,8 @@ public interface LoginService {
 
 	UpdateUserPasswordResponse updatePassword(String email, User updateduser);
 
+	User getUserById(long userid);
+
+	User getUserByEmail(String email);
+
 }

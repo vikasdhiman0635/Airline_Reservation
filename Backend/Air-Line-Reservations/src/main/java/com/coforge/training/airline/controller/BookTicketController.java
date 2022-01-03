@@ -67,6 +67,7 @@ public class BookTicketController {
 		return ResponseEntity.ok().body(res);
 	}
 	
+	
 //	Get All tickets
 //	URL -> http://localhost:8090/bookticket/alltickets
 	@GetMapping("/alltickets")
@@ -75,6 +76,7 @@ public class BookTicketController {
 		List<BookTickets> res=service.getAllTickets();
 		return ResponseEntity.ok().body(res);
 	}
+	
 	
 //	Get Ticket By id
 //	URL -> http://localhost:8090/bookticket/getticketbyid/654247535
@@ -106,6 +108,8 @@ public class BookTicketController {
 		return ResponseEntity.ok().body(res);
 	}
 
+	
+	
 //	Get All Tickets By Email
 //	URL -> http://localhost:8090/bookticket/getticketbyemail/vikasdhiman835@gmail.com
 	@GetMapping("/getticketbyemail/{email}")
