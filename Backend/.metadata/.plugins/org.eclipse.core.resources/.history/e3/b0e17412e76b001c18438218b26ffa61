@@ -1,0 +1,24 @@
+package com.coforge.training.airline.serviceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.coforge.training.airline.model.BookTickets;
+import com.coforge.training.airline.repository.BookTicketsRepo;
+import com.coforge.training.airline.response.BookTicketSaveResponse;
+import com.coforge.training.airline.service.BookTicketService;
+
+@Service
+public class BookTicketServiceImpl implements BookTicketService
+{
+
+	@Autowired
+	private BookTicketsRepo repo;
+
+	@Override
+	public BookTicketSaveResponse saveBookTicket(BookTickets ticket) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

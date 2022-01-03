@@ -24,4 +24,6 @@ public class Passport
 	
 	private String expiredate;
 	
+	private long userid;
+	
 }

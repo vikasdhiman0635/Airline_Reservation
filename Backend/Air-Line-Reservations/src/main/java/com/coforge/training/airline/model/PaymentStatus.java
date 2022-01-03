@@ -27,15 +27,14 @@ public class PaymentStatus {
 	
 	private long flightid;
 	
+	private String upiid;
+	
 	private double totalamount;
 	
 	private double paidamount;
 	
 	private String paymentstatus;
 	
-	private String paymentmethod;
+	private long bookid;
 	
-	@OneToOne()
-	@JoinColumn(name = "FR_BTS")
-	private BookTickets booktickets;
 }
