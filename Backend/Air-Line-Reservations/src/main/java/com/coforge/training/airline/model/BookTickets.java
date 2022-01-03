@@ -41,7 +41,7 @@ public class BookTickets
 	
 	private String bookingtime;
 	
-	@OneToOne(targetEntity = BookTickets.class,cascade = CascadeType.ALL)
+	@OneToOne(targetEntity = PaymentStatus.class,cascade = CascadeType.ALL)
 	private PaymentStatus paymentstatus;
 	
 	@OneToMany(targetEntity = BookFlightSeatData.class, cascade = CascadeType.ALL)
