@@ -14,4 +14,8 @@ public interface SeatsRepo extends JpaRepository<Seats, Long>{
 
 	public boolean deleteByFlightid(long flightid);
 
+	public List<Seats> findAllByFlightid(long flightid);
+
+	public Seats findByFlightidAndSeattype(long flightid, String seatType);
+
 }

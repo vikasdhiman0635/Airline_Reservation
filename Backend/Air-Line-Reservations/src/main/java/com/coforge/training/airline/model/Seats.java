@@ -21,9 +21,9 @@ public class Seats {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long seatid;
 	
-	private String seatType;
+	private String seattype;
 	
-	private String totalseats;
+	private int totalseats;
 	
 	private double seatprize;
 	
