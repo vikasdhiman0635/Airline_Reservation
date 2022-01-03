@@ -26,7 +26,6 @@ public class BookFlightSeatData
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long bookflightseatid;
 	
-	
 	private long userid;
 	
 	private String name;
@@ -38,6 +37,8 @@ public class BookFlightSeatData
 	private String passportno;
 	
 	private String country;
+	
+	private long bookid;
 	
 	@Enumerated(value = EnumType.STRING)
 	private GenderEnums gender;

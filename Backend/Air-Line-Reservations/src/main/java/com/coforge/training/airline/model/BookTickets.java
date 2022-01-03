@@ -25,12 +25,13 @@ public class BookTickets
 {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long bookid;
 	
 	private long flightid;
 	
 	private long userid;
+	
+	private String email;
 	
 	private String ticketpaymentmethod;
 	
@@ -41,12 +42,10 @@ public class BookTickets
 	private String bookingtime;
 	
 	@OneToOne(targetEntity = BookTickets.class,cascade = CascadeType.ALL)
-	@JoinColumn(name = "FR_PS")
 	private PaymentStatus paymentstatus;
 	
-	
 	@OneToMany(targetEntity = BookFlightSeatData.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "FR_BS")
+	@JoinColumn(name = "FK_BS")
 	private List<BookFlightSeatData> bookseats;
 	
 }

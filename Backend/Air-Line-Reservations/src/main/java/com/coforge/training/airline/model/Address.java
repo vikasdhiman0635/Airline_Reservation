@@ -27,8 +27,6 @@ public class Address
 	
 	private String userStreet;
 	
-	private String userhometype;
-	
 	private String usercity;
 	
 	private String userstate;
@@ -37,6 +35,6 @@ public class Address
 	
 	private int userpincode;
 	
-	
+	private long userid;
 	
 }
