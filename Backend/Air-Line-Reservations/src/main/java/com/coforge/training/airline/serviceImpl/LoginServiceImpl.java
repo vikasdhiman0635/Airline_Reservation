@@ -186,5 +186,18 @@ public class LoginServiceImpl implements LoginService{
 	}
 
 
+	@Override
+	public User getUserById(long userid) {
+		return repo.findById(userid).get();
+	}
+
+
+	@Override
+	public User getUserByEmail(String email) {
+		// TODO Auto-generated method stub
+		return repo.findByEmail(email);
+	}
+
+
 
 }

@@ -141,6 +141,7 @@ public class FlightController {
 		return ResponseEntity.ok().body(res);
 	}
 	
+	
 //	Get all flights by Admin
 //	URL -> http://localhost:8090/flight/flightbyadmin/vikasdhiman835@gmail.com
 	@GetMapping("/flightbyadmin/{adminemail}")
@@ -149,6 +150,8 @@ public class FlightController {
 		List<Flight> res=service.getFlightByUser(adminemail);
 		return ResponseEntity.ok().body(res);
 	}
+	
+	
 	
 //	Get All flights by airport id
 //	URL -> http://localhost:8090/flight/getallflightsbyairportcode/726189078

@@ -55,4 +55,11 @@ public class UpdateUserController {
 		return ResponseEntity.ok().body(res);
 	}
 	
+	
+	@PutMapping("/updatepassword/{userid}")
+	public ResponseEntity<UpdateUserResponse> updatePassword(@PathVariable("userid") long userid, @RequestBody User user)
+	{
+		UpdateUserResponse res=service.updatePassword(userid, user);
+		return ResponseEntity.ok().body(res);
+	}
 }

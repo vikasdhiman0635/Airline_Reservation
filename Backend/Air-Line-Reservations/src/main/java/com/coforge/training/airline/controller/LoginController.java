@@ -63,6 +63,24 @@ public class LoginController
 		return ResponseEntity.ok().body(res);
 	}
 	
+//	Get By User Id
+//	URL -> http://localhost:8090/user/getbyid/100
+	@GetMapping("/getbyid/{userid}")
+	public ResponseEntity<User> getByUserID(@PathVariable("userid") long userid)
+	{
+		User res=service.getUserById(userid);
+		return ResponseEntity.ok().body(res);
+	}
+	
+//	Get By User Email
+//	URL -> http://localhost:8090/user/getbyemail/vikasdhiman835@gmail.com
+	@GetMapping("/getbyemail/{email}")
+	public ResponseEntity<User> getByEmail(@PathVariable("email") String email)
+	{
+		User res=service.getUserByEmail(email);
+		return ResponseEntity.ok().body(res);
+	}
+	
 	
 	/*
 	 * Get All Users 
@@ -89,6 +107,7 @@ public class LoginController
 		boolean res=service.verifyEmail(email);
 		return ResponseEntity.ok().body(res);
 	}
+	
 	
 //	2. Verify Phone no and User Email.
 //	URL -> http://localhost:8090/user/verifyforcrenditicals

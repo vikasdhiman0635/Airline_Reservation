@@ -7,4 +7,6 @@ public interface UpdateUserService {
 
 	UpdateUserResponse updateUser(long userid, User user);
 
+	UpdateUserResponse updatePassword(long userid, User user);
+
 }

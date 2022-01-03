@@ -1,5 +1,8 @@
 package com.coforge.training.airline.serviceImpl;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,6 +85,54 @@ public class UpdateUserServiceImpl implements UpdateUserService{
 		}
 		
 		return res;
+	}
+
+	@Override
+	public UpdateUserResponse updatePassword(long userid, User user) {
+		// TODO Auto-generated method stub
+		
+		UpdateUserResponse res=new UpdateUserResponse();
+		User newUser=repo.findById(userid).get();
+		if(repo.existsById(userid) && repo.existsByEmail(user.getEmail()))
+		{
+			String password=user.getPassword();
+			String encpass=encryptedPassword(password);
+//			registerUser.setPassword(encpass);
+			if(newUser.getPassword()==encpass)
+			{
+				res.setMessage("Do not enter your last ");
+				res.setCheck(false);
+				res.setEmail(user.getEmail());
+				res.setUser(user);
+				return res;
+			}
+			else
+			{
+				newUser.setPassword(encpass);
+				User saveUser=repo.save(newUser);
+				
+				res.setMessage("Password is Change");
+				res.setCheck(true);
+				res.setEmail(user.getEmail());
+				res.setUser(saveUser);
+			}
+		}
+		else
+		{
+			res.setMessage("User id is not exist");
+			res.setCheck(false);
+			res.setEmail(user.getEmail());
+		}
+		return res;
+	}
+	
+	public String encryptedPassword(String password)
+	{
+		Base64.Encoder encoder = Base64.getEncoder();
+		String normalString = password;
+		String encodedString = encoder.encodeToString(
+		normalString.getBytes(StandardCharsets.UTF_8) );
+		return encodedString;
 	}
 
 }
