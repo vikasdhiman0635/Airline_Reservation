@@ -49,5 +49,7 @@ public class BookFlightSeatData
 	
 	private long flightid;
 	
+	private double price;
+	
 	
 }

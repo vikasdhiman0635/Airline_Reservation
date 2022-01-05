@@ -26,7 +26,7 @@ export class SelectSeatComponentComponent implements OnInit {
     "firstname":"vikas",
     "lastname": "dhiman",
     "phoneno":5678,
-    "email":"vikasdhiman@gmail.com",
+    "email":"vikasdhiman835@gmail.com",
     "gender": "Male"
   }
 

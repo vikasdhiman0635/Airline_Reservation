@@ -15,12 +15,23 @@ export class ShowAllFlightsComponent implements OnInit {
 
   allFlights:any;
 
+  flightDetails:any;
+  flightdetails:any;
+
   constructor(private service:FlightService,
       private router:Router
     ) { }
 
   ngOnInit()
   {
+    // this.flightDetails=localStorage.getItem("flight");
+    // this.flightdetails=JSON.parse(this.flightDetails);
+    // this.from=this.flightdetails.from;
+    // this.to=this.flightdetails.to;
+    // this.date=this.flightdetails.fromtime;
+
+    // localStorage.removeItem("flight");
+
     this.getAllFlights();
   }
 

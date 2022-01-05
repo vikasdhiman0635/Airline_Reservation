@@ -47,7 +47,8 @@ public class BookTicketController {
 //	            "passportno": "ASPOD0912",
 //	            "country": "India",
 //	            "gender": "Male",
-//	            "seattype": "First Class"
+//	            "seattype": "First Class",
+//				"price": 7000
 //	        },
 //	        {
 //	            "name": "ABC",
@@ -56,7 +57,8 @@ public class BookTicketController {
 //	            "passportno": "ASPOD09101",
 //	            "country": "India",
 //	            "gender": "Male",
-//	            "seattype": "First Class"
+//	            "seattype": "First Class",
+//				"price": 7000
 //	        }
 //	    ]
 //	}
