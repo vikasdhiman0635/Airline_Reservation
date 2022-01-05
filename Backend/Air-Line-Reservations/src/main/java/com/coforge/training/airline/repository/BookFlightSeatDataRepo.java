@@ -14,4 +14,6 @@ public interface BookFlightSeatDataRepo extends JpaRepository<BookFlightSeatData
 
 	List<BookFlightSeatData> findAllByFlightid(long flightid);
 
+	List<BookFlightSeatData> findByFlightidAndSeattype(long flightid, String seattype);
+
 }

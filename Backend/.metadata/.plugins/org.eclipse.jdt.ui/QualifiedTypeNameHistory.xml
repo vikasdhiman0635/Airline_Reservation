@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.mockito.junit.jupiter.MockitoSettings"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.model.AdminContent"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.controller.AirPortController"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.service.AirportService"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.repository.AirPortRepo"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.model.AirPort"/>
@@ -25,26 +21,18 @@
     <fullyQualifiedTypeName name="com.coforge.training.airline.model.Passport"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.model.PaymentStatus"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.controller.BookFlightSeatDataController"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.service.BookFlightSeatDataService"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.repository.BookFlightSeatDataRepo"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.serviceImpl.BookFlightSeatDateServiceImpl"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.response.BookFlightSeatDataAllListResponse"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.repository.SeatsRepo"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.response.SeatAvailabilityListResponse"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.model.Seats"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.model.BookFlightSeatData"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.response.checkSeatsReponse"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.model.BookTickets"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.response.UpdateUserResponse"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.model.User"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.response.UpdateFlightCompanyResponse"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.controller.FlightCompanyController"/>
@@ -53,11 +41,23 @@
     <fullyQualifiedTypeName name="com.coforge.training.airline.repository.FlightCompanyRepo"/>
     <fullyQualifiedTypeName name="org.mockito.Spy"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.model.FlightCompany"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
     <fullyQualifiedTypeName name="org.mockito.MockitoAnnotations"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.repository.SeatsRepo"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.service.SeatService"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.model.Seats"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.model.BookFlightSeatData"/>
 </qualifiedTypeNameHistroy>

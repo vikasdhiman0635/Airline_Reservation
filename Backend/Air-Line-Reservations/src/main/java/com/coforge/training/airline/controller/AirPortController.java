@@ -55,6 +55,7 @@ public class AirPortController {
 		return ResponseEntity.ok().body(res);
 	}
 	
+	
 //	Get All Airport
 //	URL -> http://localhost:8090/airport/
 	@GetMapping()
@@ -63,6 +64,7 @@ public class AirPortController {
 		List<AirPort> res=service.getAllAirport();
 		return ResponseEntity.ok().body(res);
 	}
+	
 	
 //	Get Airport By Admin Email
 //	URL -> http://localhost:8090/airport/getbyadmin/vikasdhiman@gmail.com

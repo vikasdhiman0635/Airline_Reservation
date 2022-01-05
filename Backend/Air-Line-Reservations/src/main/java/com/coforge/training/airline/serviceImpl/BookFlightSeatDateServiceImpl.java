@@ -96,6 +96,11 @@ public class BookFlightSeatDateServiceImpl implements BookFlightSeatDataService{
 		
 		return res;
 	}
-	
+
+	@Override
+	public List<BookFlightSeatData> getBookFlightSeatData(long flightid, String seattype) {
+		// TODO Auto-generated method stub
+		return repo.findByFlightidAndSeattype(flightid,seattype);
+	}
 
 }
