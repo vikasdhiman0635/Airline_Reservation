@@ -37,4 +37,12 @@ public class PaymentStatus {
 	
 	private long bookid;
 	
+	private long cardno;
+	
+	private long recardno;
+	
+	private long cvv;
+	
+	private String cardhldername;
+	
 }

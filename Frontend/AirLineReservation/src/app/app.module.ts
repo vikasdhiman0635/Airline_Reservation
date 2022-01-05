@@ -15,6 +15,10 @@ import { SelectSeatComponentComponent } from './Component/select-seat-component/
 import { AddPassengerComponent } from './Component/add-passenger/add-passenger.component';
 import { VerifyComponent } from './Component/verify/verify.component';
 import { PaymentComponent } from './Component/payment/payment.component';
+import { UpicodeComponent } from './Component/upicode/upicode.component';
+import { CardCodeComponent } from './Component/card-code/card-code.component';
+import { BookTocketComponent } from './Component/book-tocket/book-tocket.component';
+import { LoginComponent } from './Component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { PaymentComponent } from './Component/payment/payment.component';
     AddPassengerComponent,
     VerifyComponent,
     PaymentComponent,
+    UpicodeComponent,
+    CardCodeComponent,
+    BookTocketComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -71,7 +71,11 @@ export class VerifyComponent implements OnInit {
 
   payment()
   {
+    let bill={
+      totalamount:this.totalBill
+    };
     this.bookForm.bookseats=this.tickets;
+    localStorage.setItem("bill",JSON.stringify(bill));
     localStorage.setItem("bookForm",JSON.stringify(this.bookForm));
     console.log(this.bookForm);
     this.router.navigate(['/payment']);

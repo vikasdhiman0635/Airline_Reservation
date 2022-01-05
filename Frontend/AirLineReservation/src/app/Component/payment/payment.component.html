@@ -3,7 +3,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Payment Method</h1>
+            <div class="row">
+                <div class="col-md-9">
+                    <h1 class="text-center">Payment</h1>
+                </div>
+                <div class="col-md-3 text-success">
+                    <p style="font-size: 20px;">
+                        <strong>Total Price: </strong><i>{{billForm.totalamount | currency:'INR'}}</i>
+                    </p>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6 text-center">
                     <br>
@@ -31,7 +40,7 @@
                     <br>
                     <h3 class="text-center">Payment By Card</h3>
                     <br>
-                    <form [formGroup]="cardForm">
+                    <form [formGroup]="cardForm" (ngSubmit)="cardSubmit()">
                         <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
