@@ -14,4 +14,7 @@ public interface BookFlightSeatDataService {
 
 	SeatAvailabilityListResponse checkAllAvailability(long flightid);
 
+	List<BookFlightSeatData> getBookFlightSeatData(long flightid, String seattype);
+
+
 }

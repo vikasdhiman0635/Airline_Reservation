@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coforge.training.airline.model.BookFlightSeatData;
+import com.coforge.training.airline.model.Seats;
 import com.coforge.training.airline.response.BookFlightSeatDataAllListResponse;
 import com.coforge.training.airline.response.SeatAvailabilityListResponse;
 import com.coforge.training.airline.service.BookFlightSeatDataService;
@@ -53,5 +54,11 @@ public class BookFlightSeatDataController {
 		return ResponseEntity.ok().body(res);
 	}
 	
-	
+	@GetMapping("/getflightbyseats/{flightid}/{seattype}")
+	public ResponseEntity<List<BookFlightSeatData>> getBookFlightByFlightIdAndSeattype(@PathVariable("flightid") long flightid, @PathVariable("seattype") String seattype)
+	{
+		List<BookFlightSeatData> res=service.getBookFlightSeatData(flightid,seattype);
+		return ResponseEntity.ok().body(res);
+	}
+
 }

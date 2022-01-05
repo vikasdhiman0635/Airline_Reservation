@@ -1,0 +1,180 @@
+<app-nav></app-nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Flight Details</h2>
+            <br>
+            <h4>Flight Name: {{flightDetails.flightname | uppercase}}</h4>
+            <h6>Flight No. : <i>{{flightDetails.flightid}}</i></h6>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>From: <i>{{flightDetails.flightfrom}}</i></h4>
+                    <h6>Arrival Date: <i>{{flightDetails.flightfromdate}}</i></h6>
+                    <h6>Arrival Time: <i>{{flightDetails.flightfromtime}}</i></h6>
+                </div>
+                <div class="col-md-6">
+                    <h4>To: <i>{{flightDetails.flightto}}</i></h4>
+                    <h6>Departure Date: <i>{{flightDetails.flighttodate}}</i></h6>
+                    <h6>Departure Time: <i>{{flightDetails.flighttotime}}</i></h6>
+                </div>
+                <br>
+                <h4>
+                    Gate No. {{flightDetails.flightgateno}}
+                </h4>
+
+            </div>
+            <hr>
+           
+
+        </div>
+        <div class="col-md-6 text-center">
+            <h2 class="text-center">Airport Details</h2>
+            <br>
+            <h4>Airport Name: {{airPortDetails.airportname}}</h4>
+            <h6>
+                Address: {{airPortDetails.airportcity}}, {{airPortDetails.airportcountry}} -
+                {{airPortDetails.airportpincode}}
+            </h6>
+            <h6>
+                Phone No. : {{airPortDetails.airportphoneno}}
+            </h6>
+            <br>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Flight Seats</h2>
+
+            <div class="row">
+                <div class="col-md-6 boxx" *ngFor="let seat of flightDetails.flightseats">
+                    <h6>Seat Type: <i>{{seat.seattype | uppercase}}</i></h6>
+                    <h6>Total Seats: <i>{{seat.totalseats}}</i></h6>
+                    <h6>Seat Price: <i>{{seat.seatprize | currency:'INR'}}</i></h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <br>
+            <br>
+            <br>
+            <input type="button" (click)="addpassenger()" value="Add Passenger" class="btn btn-success">
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span *ngFor="let seat of bookSeats">{{seat}},</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center">Select Seats</h2>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <br>
+                    <p style="font-size: 18px;">First Class</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p style="font-size: 18px;">Bussiness Class</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p style="font-size: 18px;">Premium Economy Class</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p style="font-size: 18px;">Economy Class</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row" *ngFor="let i of firstclass">
+                                        <div class="col-md-1 firstclassseat" *ngFor="let j of i">
+                                            <input type="button" (click)="getSeat('F',j)"
+                                                class="firstclassseatbtn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row" for="check" *ngFor="let i of bussinessclass">
+                                        <div class="col-md-1 businessclassseat" *ngFor="let j of i">
+                                            <input type="button" id="check" (click)="getSeat('B',j)"
+                                                class="businessclassbtn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row" for="check" *ngFor="let i of preminumecnomiyclass">
+                                        <div class="col-md-1 preminumecnomiyclassseat" *ngFor="let j of i">
+                                            <input type="button" id="check" (click)="getSeat('P',j)"
+                                                class="preminumecnomiyclassbtn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row" for="check" *ngFor="let i of economicclass">
+                                        <div class="col-md-1 economicclassseat" *ngFor="let j of i">
+                                            <input type="button" id="check" (click)="getSeat('E',j)"
+                                                class="economicclassbtn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+        </div>
+    </div>
+</div> -->

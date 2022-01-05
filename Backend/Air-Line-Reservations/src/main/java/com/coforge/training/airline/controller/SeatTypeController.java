@@ -29,7 +29,7 @@ public class SeatTypeController {
 //	Save Seat
 //	URL -> http://localhost:8090/seattype
 //	{
-//	    "seattypename": "Echonimic",
+//	    "seattypename": "Economic",
 //	    "seattypecode": "EC"
 //	}
 //	{

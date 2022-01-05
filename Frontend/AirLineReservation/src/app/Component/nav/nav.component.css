@@ -1,23 +1,34 @@
-.logo {
-  width: 60px;
-  cursor: pointer;
+nav button {
+  color: white;
+  background-color: white;
+  margin-right: 2%;
 }
 
-.navbar ul li {
-  list-style: none;
-  display: inline-block;
-  margin: 0 1px;
+nav ul li {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 150px;
+  height: auto;
+  background-color: transparent;
+  color: transparent;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  margin-left: 2%;
+  text-align: center;
+  align-items: center;
 }
 
-.navbar ul li a {
-  text-decoration: none;
-  color: #123C69;
-  text-transform: uppercase;
+nav ul li a {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
 
 }
 
-.navbar ul li ::after {
+nav ul li ::after {
   content: '';
   height: 3px;
   width: 0;
@@ -28,7 +39,7 @@
   transition: 0.5s;
 }
 
-.navbar ul li:hover ::after {
+nav ul li:hover ::after {
   width: 100%;
 
 }
