@@ -121,4 +121,12 @@ public class BookTicketController {
 		return ResponseEntity.ok().body(res);
 	}
 	
+//	Get Flight By id
+	@GetMapping("/getbyid/{bookid}")
+	public ResponseEntity<BookTickets> getByid(@PathVariable("bookid") long bookid)
+	{
+		BookTickets res=service.getBookById(bookid);
+		return ResponseEntity.ok().body(res);
+	}
+	
 }

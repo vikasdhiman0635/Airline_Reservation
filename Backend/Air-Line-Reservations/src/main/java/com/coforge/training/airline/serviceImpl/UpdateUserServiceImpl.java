@@ -35,7 +35,6 @@ public class UpdateUserServiceImpl implements UpdateUserService{
 				newuser.setMobileno(user.getMobileno());
 				newuser.setDob(user.getDob());
 				newuser.setGender(user.getGender());
-				newuser.setAvatar(user.getAvatar());
 				newuser.setCompleteprofile(true);
 				
 //				set address

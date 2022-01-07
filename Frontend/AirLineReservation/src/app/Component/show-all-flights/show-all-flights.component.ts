@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlightService } from 'src/app/Service/flight.service';
+import { SeatTypeService } from 'src/app/Service/seat-type.service';
 
 @Component({
   selector: 'app-show-all-flights',
@@ -9,55 +10,70 @@ import { FlightService } from 'src/app/Service/flight.service';
 })
 export class ShowAllFlightsComponent implements OnInit {
 
-  from:any;
-  to:any;
-  date:any;
+  from: any;
+  to: any;
+  date: any;
 
-  allFlights:any;
+  allFlights: any;
 
-  flightDetails:any;
-  flightdetails:any;
+  flightDetails: any;
+  flightdetails: any;
 
-  constructor(private service:FlightService,
-      private router:Router
-    ) { }
+  email: any;
+  checkuser: boolean = false;
 
-  ngOnInit()
-  {
-    // this.flightDetails=localStorage.getItem("flight");
-    // this.flightdetails=JSON.parse(this.flightDetails);
-    // this.from=this.flightdetails.from;
-    // this.to=this.flightdetails.to;
-    // this.date=this.flightdetails.fromtime;
+  showcheck: boolean = false;
 
-    // localStorage.removeItem("flight");
+  id: number = 0;
+
+  seatdata: any;
+
+  constructor(private service: FlightService,
+    private router: Router,
+    private seatService: SeatTypeService
+  ) { }
+
+  ngOnInit() {
+    localStorage.removeItem("flight");
+
+    this.email = localStorage.getItem("email");
+    if (this.email != null) {
+      this.checkuser = true;
+    }
 
     this.getAllFlights();
   }
 
-  getAllFlights()
-  {
+  getAllFlights() {
     this.service.getAllFlights().subscribe((response) => {
-      console.log(response);
-      this.allFlights=response;
+      // console.log(response);
+      this.allFlights = response;
     });
   }
 
-  raset()
-  {
-    this.from=null;
-    this.to=null;
-    this.date=null;
+  raset() {
+    this.from = null;
+    this.to = null;
+    this.date = null;
   }
 
-  getSeatType(flightid:any,seatType:any)
-  {
-    console.log(flightid,seatType);
+  getSeatType(flightid: any, seatType: any, i: number) {
+    // console.log(flightid, seatType);
+    this.id = i
+    this.showcheck = true;
+    this.seatService.getDataByFlightAndSeatType(flightid, seatType).subscribe((Response) => {
+      // console.log(Response);
+      this.seatdata = Response;
+    });
+
   }
 
-  book(flightid:any)
-  {
-    this.router.navigate(['/selectseat',flightid])
+  book(flightid: any) {
+    this.router.navigate(['/selectseat', flightid])
   }
+
+  
+
+
 
 }

@@ -97,7 +97,6 @@ public class LoginServiceImpl implements LoginService{
 				res.setLogin(true);
 				res.setEmail(user.getEmail());
 				res.setUser(repo.findByEmail(user.getEmail()));
-				res.setRole(res.getUser().getRole().toString());
 			}
 			else
 			{

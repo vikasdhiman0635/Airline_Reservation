@@ -25,7 +25,7 @@ public class UpdateUserController {
 //	Update User After user can login and signup
 //	URL -> http://localhost:8090/user/update/39
 //	{
-//	    "userid": 100,
+//	    "userid": 267,
 //	    "firstname": "Vikas",
 //	    "lastname": "Dhiman",
 //	    "mobileno": "101010101010",
@@ -36,7 +36,6 @@ public class UpdateUserController {
 //	    "address": {    
 //	        "userhouseno": 90,
 //	        "userStreet": "Near Main Market",
-//	        "userhometype": "home",
 //	        "usercity": "Karnal",
 //	        "userstate": "Haryana",
 //	        "usercountry": "india",
@@ -56,6 +55,13 @@ public class UpdateUserController {
 	}
 	
 	
+//	Update User Password
+//	URL -> http://localhost:8090/user/update/updatepassword/267
+//	{
+//	    "userid": 267,
+//	    "email": "vikasdhiman835@gmail.com",
+//	    "password": "vikas@123"
+//	}
 	@PutMapping("/updatepassword/{userid}")
 	public ResponseEntity<UpdateUserResponse> updatePassword(@PathVariable("userid") long userid, @RequestBody User user)
 	{

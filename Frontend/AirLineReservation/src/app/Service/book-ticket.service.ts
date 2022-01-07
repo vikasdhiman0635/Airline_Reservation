@@ -16,4 +16,9 @@ export class BookTicketService {
     return this.http.post(`${this.baseURL}`,book);
   }
 
+  getTicketById(bookid:any):Observable<any>
+  {
+    return this.http.get(`${this.baseURL}/getbyid/${bookid}`);
+  }
+
 }

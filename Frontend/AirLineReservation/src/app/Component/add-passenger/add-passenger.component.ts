@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FlightService } from 'src/app/Service/flight.service';
+import { SeatTypeService } from 'src/app/Service/seat-type.service';
 import { SeatService } from 'src/app/Service/seat.service';
 
 @Component({
@@ -24,7 +25,8 @@ export class AddPassengerComponent implements OnInit {
     private service: FlightService,
     private fb: FormBuilder,
     private seatService: SeatService,
-    private router:Router
+    private router: Router,
+    private seattypeService: SeatTypeService
   ) { }
 
   ngOnInit(): void {
@@ -88,9 +90,21 @@ export class AddPassengerComponent implements OnInit {
   submitform() {
     let bookdetail = this.bookForm.value;
     bookdetail.flightid = this.flightid;
-    localStorage.setItem("bookForm", JSON.stringify(bookdetail));
-    this.router.navigate(['/verifyTicket'])
+    let seat = [];
+    for (let i = 0; i < this.bookForm.value.bookseats.length; i++) {
+      seat.push(this.bookForm.value.bookseats[i]);
+    }
+    this.seattypeService.verifySeat(this.flightid, seat).subscribe((Response) => {
+      if (Response.check == true) {
+        localStorage.setItem("bookForm", JSON.stringify(bookdetail));
+        this.router.navigate(['/verifyTicket'])
+      }
+      else {
+        alert(Response.message);
+      }
+    });
   }
+
 
 
 }
