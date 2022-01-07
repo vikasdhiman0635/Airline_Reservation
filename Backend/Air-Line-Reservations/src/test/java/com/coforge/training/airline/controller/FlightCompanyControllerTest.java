@@ -1,4 +1,5 @@
 package com.coforge.training.airline.controller;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -10,8 +11,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -20,10 +22,11 @@ import org.springframework.ui.Model;
 
 import com.coforge.training.airline.model.FlightCompany;
 import com.coforge.training.airline.repository.FlightCompanyRepo;
+import com.coforge.training.airline.response.UpdateFlightCompanyResponse;
 import com.coforge.training.airline.service.FlightCompanyService;
 
 class FlightCompanyControllerTest {
-	//FlightCompany Test
+
 	FlightCompanyController c1= new FlightCompanyController();
 
 	@Mock
@@ -62,8 +65,6 @@ class FlightCompanyControllerTest {
 		return res;
 	}
 
-
-
 	@Test
 	void testSave() {
 		FlightCompany add=new FlightCompany();
@@ -88,7 +89,6 @@ class FlightCompanyControllerTest {
 
 	@Test
 	void testGetAllCompany() {
-
 		List<FlightCompany> res=fCompany;
 
 		when(service.getAllCompany()).thenReturn(res);
@@ -98,7 +98,6 @@ class FlightCompanyControllerTest {
 		assertNotNull(res);
 
 		verify(service,times(1)).getAllCompany();
-
 	}
 
 	@Test
@@ -110,16 +109,14 @@ class FlightCompanyControllerTest {
 		res.setCode(fCompany.get(0).getCode());
 
 		when(service.getCompanyById(fCompany.get(0).getCompanyid())).thenReturn(res);
-		//		when(service.getCompanyById(fCompany.get(0).getCompanyname())).thenReturn(res);
-		//		when(service.getCompanyById(fCompany.get(0).getCountry())).thenReturn(res);
-		//		when(service.getCompanyById(fCompany.get(0).getCountry())).thenReturn(res);
 
 		FlightCompany addc=service.getCompanyById(fCompany.get(0).getCompanyid());
 		//FlightCompany addc=service.getCompanyById(fCompany.get(0).get);
 
 		assertNotNull(addc.getCompanyid());
+		assertEquals(res, addc);
 
-		verify(service,times(1)).getCompanyById(fCompany.get(0).getCompanyid());	
+		verify(service,times(1)).getCompanyById(fCompany.get(0).getCompanyid());
 	}
 
 	@Test
@@ -139,13 +136,13 @@ class FlightCompanyControllerTest {
 		//FlightCompany addc=service.getCompanyById(fCompany.get(0).get);
 
 		assertNotNull(addc.getCompanyname());
-
+		assertEquals(res, addc);
 		verify(service,times(1)).getCompanyByCompany(fCompany.get(0).getCompanyname());
 	}
 
 	@Test
 	void testGetCompanyByCountry() {
-		String country="Japan";
+		//		String country="Japan";
 		FlightCompany f1= new FlightCompany();
 		f1.setCompanyid(1);
 		f1.setCompanyname("Airline");
@@ -154,16 +151,16 @@ class FlightCompanyControllerTest {
 		List<FlightCompany> res=new ArrayList<FlightCompany>();
 		res.add(f1);
 
-		when(service.getCompanyByCountry(country)).thenReturn(res);
+		when(service.getCompanyByCountry(fCompany.get(0).getCountry())).thenReturn(res); //When- When want to return specific vealue
 
-		List<FlightCompany> x=   service.getCompanyByCountry(country);
-		assertEquals(x.get(0).getCountry(), country);
-		verify(service,times(1)).getCompanyByCountry(fCompany.get(0).getCompanyname());
+		List<FlightCompany> x=   service.getCompanyByCountry(fCompany.get(0).getCountry());
+		assertNotNull(x.get(0).getCountry());//a passed parameter must not be null if it is null then test will be 
+		verify(service,times(1)).getCompanyByCountry(fCompany.get(0).getCountry());
 	}
 
 	@Test
 	void testGetFlightByCountryCode() {
-		String code="qwerty";
+		//String code="qwerty";
 		FlightCompany f1= new FlightCompany();
 		f1.setCompanyid(5);
 		f1.setCompanyname("Airline");
@@ -172,10 +169,10 @@ class FlightCompanyControllerTest {
 		List<FlightCompany> res=new ArrayList<FlightCompany>();
 		res.add(f1);
 
-		when(service.getFlightByCountryCode(code)).thenReturn(res);
-		List<FlightCompany> x=   service.getFlightByCountryCode(code);
-		assertEquals(x.get(0).getCode(), code);
-
+		when(service.getFlightByCountryCode(fCompany.get(0).getCode())).thenReturn(res);
+		List<FlightCompany> x=   service.getFlightByCountryCode(fCompany.get(0).getCode());
+		assertEquals(x.get(0).getCode(), f1.getCode());
+		verify(service,times(1)).getFlightByCountryCode(fCompany.get(0).getCode());
 	}
 
 	@Test
@@ -187,29 +184,33 @@ class FlightCompanyControllerTest {
 		String str=service.deleteCompany(fCompany.get(0).getCompanyid());
 
 		assertNotNull(str);
-
 		verify(service,times(1)).deleteCompany(fCompany.get(0).getCompanyid());
 	}
 
 	@Test
-	@Disabled
 	void testUpdatecompany() {
-		//		String comp="IndiaWay";
-		//		FlightCompany f1= new FlightCompany();
-		//		f1.setCompanyid(5);
-		//		f1.setCompanyname("Airline");
-		//		//	f1.setCountry("Japan");
-		//		//f1.setCode("qwerty");
-		//
-		//		when(service.updatecompany(fCompany.get(0).getCompanyid(), comp)).thenReturn(f1);
-		//
-		//
-		//		FlightCompany addc=service.updatecompany(fCompany.get(0).getCompanyid(), comp));
-		//		//FlightCompany addc=service.getCompanyById(fCompany.get(0).get);
-		//
-		//		assertNotNull(addc.getCompanyname());
-		//
-		//		verify(service,times(1)).updatecompany(fCompany.get(0).getCompanyname(),comp);
+		long id=fCompany.get(0).getCompanyid();
+		FlightCompany f =fCompany.get(0);
+		//SeatTypeUpdateResponse response=new SeatTypeUpdateResponse();
+		UpdateFlightCompanyResponse resp = new UpdateFlightCompanyResponse();
+		resp.setMessage("FlightCompany Type is updated");
+		resp.setCompanyname("Airway");
+		//	resp.setCheck(false);;
+		resp.setFCompany(f);
+		//response.setSeat(seat);
+		when(service.updatecompany(id, f)).thenReturn(resp);
+
+		UpdateFlightCompanyResponse res=service.updatecompany(id, f);
+
+		assertNotNull(res);
+		assertEquals(res.getMessage(), "FlightCompany Type is updated");
+		assertEquals(res.getCompanyname(),"Airway");
+		assertNotNull(res.getFCompany());
+		assertEquals(res.getFCompany(), f);
+		//assertNotNull(res.get);
+		//assertEquals(res.getSeat(), seat);
+
+		verify(service,times(1)).updatecompany(id, f);
 	}
 
 }
