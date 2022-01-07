@@ -19,7 +19,6 @@ import { UpicodeComponent } from './Component/upicode/upicode.component';
 import { CardCodeComponent } from './Component/card-code/card-code.component';
 import { BookTocketComponent } from './Component/book-tocket/book-tocket.component';
 import { LoginComponent } from './Component/login/login.component';
-import { ProfileComponent } from './Component/profile/profile.component';
 import { DashbordComponent } from './Component/dashbord/dashbord.component';
 import { UserTransitionComponent } from './Component/user-transition/user-transition.component';
 import { BookingDetailsComponent } from './Component/booking-details/booking-details.component';
@@ -38,6 +37,7 @@ import { UpdateairportComponent } from './Component/updateairport/updateairport.
 import { UpdateflightComponent } from './Component/updateflight/updateflight.component';
 import { UpdatepasswordComponent } from './Component/updatepassword/updatepassword.component';
 import { VerifyphonenoComponent } from './Component/verifyphoneno/verifyphoneno.component';
+import { UserProfileComponent } from './Component/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,6 @@ import { VerifyphonenoComponent } from './Component/verifyphoneno/verifyphoneno.
     CardCodeComponent,
     BookTocketComponent,
     LoginComponent,
-    ProfileComponent,
     DashbordComponent,
     UserTransitionComponent,
     BookingDetailsComponent,
@@ -75,6 +74,7 @@ import { VerifyphonenoComponent } from './Component/verifyphoneno/verifyphoneno.
     UpdateflightComponent,
     UpdatepasswordComponent,
     VerifyphonenoComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

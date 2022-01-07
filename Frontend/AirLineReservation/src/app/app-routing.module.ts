@@ -15,7 +15,6 @@ import { LoginComponent } from './Component/login/login.component';
 import { NewpasswordComponent } from './Component/newpassword/newpassword.component';
 import { NotfoundComponent } from './Component/notfound/notfound.component';
 import { PaymentComponent } from './Component/payment/payment.component';
-import { ProfileComponent } from './Component/profile/profile.component';
 import { SelectSeatComponentComponent } from './Component/select-seat-component/select-seat-component.component';
 import { ShowAllFlightsComponent } from './Component/show-all-flights/show-all-flights.component';
 import { SignupComponent } from './Component/signup/signup.component';
@@ -24,6 +23,7 @@ import { UpdateairportComponent } from './Component/updateairport/updateairport.
 import { UpdateflightComponent } from './Component/updateflight/updateflight.component';
 import { UpdatepasswordComponent } from './Component/updatepassword/updatepassword.component';
 import { UpicodeComponent } from './Component/upicode/upicode.component';
+import { UserProfileComponent } from './Component/user-profile/user-profile.component';
 import { UserTransitionComponent } from './Component/user-transition/user-transition.component';
 import { VerifyComponent } from './Component/verify/verify.component';
 import { VerifyphonenoComponent } from './Component/verifyphoneno/verifyphoneno.component';
@@ -34,9 +34,6 @@ const routes: Routes = [
   },
   {
     path: "home", component: HomeComponent
-  },
-  {
-    path: 'profile', component: ProfileComponent
   },
   {
     path: 'login', component: LoginComponent
@@ -101,10 +98,10 @@ const routes: Routes = [
     path: 'reset', component: UpdatepasswordComponent
   },
   {
-    path: 'verifyphoneno', component: VerifyphonenoComponent
+    path: 'verifyphoneno/:email', component: VerifyphonenoComponent
   },
   {
-    path: 'newpassword', component: NewpasswordComponent
+    path: 'newpassword/:email', component: NewpasswordComponent
   },
   {
     path: 'allflights', component: AllflightsComponent
@@ -113,7 +110,10 @@ const routes: Routes = [
     path: 'editflight/:flightid', component: UpdateflightComponent
   },
   {
-    path: 'edit', component: EditprofileComponent
+    path: 'edit/:email', component: EditprofileComponent
+  },
+  {
+    path: 'profile', component: UserProfileComponent
   },
   {
     path: 'editairport/:airportid', component: UpdateairportComponent

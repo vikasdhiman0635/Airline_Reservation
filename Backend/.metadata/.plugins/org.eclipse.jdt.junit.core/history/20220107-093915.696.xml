@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="AdminContentControllerTest" project="Air-Line-Reservations" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="com.coforge.training.airline.controller.AdminContentControllerTest" time="0.83" displayname="AdminContentControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.coforge.training.airline.controller.AdminContentControllerTest]">
-    <testcase name="testDeleteMapping" classname="com.coforge.training.airline.controller.AdminContentControllerTest" time="0.814" displayname="testDeleteMapping()" uniqueid="[engine:junit-jupiter]/[class:com.coforge.training.airline.controller.AdminContentControllerTest]/[method:testDeleteMapping()]"/>
-    <testcase name="testSave" classname="com.coforge.training.airline.controller.AdminContentControllerTest" time="0.005" displayname="testSave()" uniqueid="[engine:junit-jupiter]/[class:com.coforge.training.airline.controller.AdminContentControllerTest]/[method:testSave()]"/>
-    <testcase name="testGetAllAdmin" classname="com.coforge.training.airline.controller.AdminContentControllerTest" time="0.004" displayname="testGetAllAdmin()" uniqueid="[engine:junit-jupiter]/[class:com.coforge.training.airline.controller.AdminContentControllerTest]/[method:testGetAllAdmin()]"/>
-    <testcase name="testGetOneAdmin" classname="com.coforge.training.airline.controller.AdminContentControllerTest" time="0.003" displayname="testGetOneAdmin()" uniqueid="[engine:junit-jupiter]/[class:com.coforge.training.airline.controller.AdminContentControllerTest]/[method:testGetOneAdmin()]"/>
-  </testsuite>
-</testrun>

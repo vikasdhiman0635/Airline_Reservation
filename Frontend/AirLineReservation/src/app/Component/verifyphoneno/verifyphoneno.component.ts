@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UpdatepasswordService } from 'src/app/Service/updatepassword.service';
 
@@ -10,34 +11,38 @@ import { UpdatepasswordService } from 'src/app/Service/updatepassword.service';
 export class VerifyphonenoComponent implements OnInit {
 
   submitted = false;
-  email:any;
+  email: any;
   mobileno: string = '';
-  message:string='';
+  message: string = '';
 
-  constructor(private pService: UpdatepasswordService, 
+  emailForm: FormGroup | any;
+
+  constructor(private pService: UpdatepasswordService,
     private router: Router,
-    private route: ActivatedRoute
-    ) { }
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
-    this.email=localStorage.getItem("email");
+    this.email = this.route.snapshot.params['email'];
+    // this.email = localStorage.getItem("email");
+    // localStorage.removeItem("email");
+    this.emailForm = this.formBuilder.group({
+      email: [this.email],
+      phoneno: ['', [Validators.required]]
+    });
   }
 
-  verifyphone()
-  {
-    let data={
-      "email":this.email,
-      "phoneno":this.mobileno 
-    }
-    this.pService.verifyephone(data).subscribe((response) => {
+  verifyphone() {
+    console.log(this.emailForm.value);
+    this.pService.verifyephone(this.emailForm.value).subscribe((response) => {
       console.log(response);
-      if(response==true)
-      {
-        localStorage.setItem("phoneno",this.mobileno);
-        this.router.navigate(['/newpassword']);
+      if (response == true) {
+        localStorage.setItem("phoneno", this.emailForm.value.phoneno);
+        this.router.navigate(['/newpassword',this.email]);
       }
-      else{
-        this.message='Invalid Mobile Number!';
+      else {
+        this.message = 'Invalid Mobile Number!';
       }
     });
   }

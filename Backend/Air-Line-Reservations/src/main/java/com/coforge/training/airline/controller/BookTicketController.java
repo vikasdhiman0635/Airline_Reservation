@@ -70,8 +70,10 @@ public class BookTicketController {
 	}
 	
 	
-//	Get All tickets
-//	URL -> http://localhost:8090/bookticket/alltickets
+	/*
+	 * Get All tickets 
+	 * URL -> http://localhost:8090/bookticket/alltickets
+	 */
 	@GetMapping("/alltickets")
 	public ResponseEntity<List<BookTickets>> getAllTickets()
 	{
@@ -80,8 +82,10 @@ public class BookTicketController {
 	}
 	
 	
-//	Get Ticket By id
-//	URL -> http://localhost:8090/bookticket/getticketbyid/654247535
+	/*
+	 * Get Ticket By id 
+	 * URL -> http://localhost:8090/bookticket/getticketbyid/654247535
+	 */
 	@GetMapping("/getticketbyid/{bookid}")
 	public ResponseEntity<BookTickets> getTicketById(@PathVariable("bookid") long bookid)
 	{
@@ -90,8 +94,10 @@ public class BookTicketController {
 	}
 	
 	
-//	Get Ticket By Flight Id
-//	URL -> http://localhost:8090/bookticket/getticketbyflight/250327208
+	/*
+	 * Get Ticket By Flight Id 
+	 * URL ->http://localhost:8090/bookticket/getticketbyflight/250327208
+	 */
 	@GetMapping("/getticketbyflight/{flightid}")
 	public ResponseEntity<List<BookTickets>> getTicketByFlightId(@PathVariable("flightid") long flightid)
 	{
@@ -101,8 +107,10 @@ public class BookTicketController {
 	
 	
 	
-//	Get Ticket By User Id
-//	URL -> http://localhost:8090/bookticket/getticketbyuserid/100
+	/*
+	 * Get Ticket By User Id 
+	 * URL -> http://localhost:8090/bookticket/getticketbyuserid/100
+	 */
 	@GetMapping("/getticketbyuserid/{userid}")
 	public ResponseEntity<List<BookTickets>> getTicketByUserId(@PathVariable("userid") long userid)
 	{
@@ -112,8 +120,10 @@ public class BookTicketController {
 
 	
 	
-//	Get All Tickets By Email
-//	URL -> http://localhost:8090/bookticket/getticketbyemail/vikasdhiman835@gmail.com
+	/*
+	 * Get All Tickets By Email 
+	 * URL -> http://localhost:8090/bookticket/getticketbyemail/vikasdhiman835@gmail.com
+	 */
 	@GetMapping("/getticketbyemail/{email}")
 	public ResponseEntity<List<BookTickets>> getAllTicketsByEmail(@PathVariable("email") String email)
 	{
@@ -121,7 +131,7 @@ public class BookTicketController {
 		return ResponseEntity.ok().body(res);
 	}
 	
-//	Get Flight By id
+	/* Get Flight By id */
 	@GetMapping("/getbyid/{bookid}")
 	public ResponseEntity<BookTickets> getByid(@PathVariable("bookid") long bookid)
 	{

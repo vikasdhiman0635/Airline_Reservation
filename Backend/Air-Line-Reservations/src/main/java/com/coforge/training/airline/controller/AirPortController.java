@@ -28,16 +28,18 @@ public class AirPortController {
 	private AirportService service;
 	
 	
-//	Save method
-//	URL -> http://localhost:8090/airport
-//	{
-//	    "airportname": "Mumbai",
-//	    "airportcountry": "India",
-//	    "airportcity": "Mumbai",
-//	    "airportpincode": "123341",
-//	    "airportphoneno": "090909090909",
-//	    "adminemail": "vikasdhiman835@gmail.com"
-//	}
+	/*
+	 * Save method 
+	 * URL -> http://localhost:8090/airport 
+	 * { 
+	 * 		"airportname": "Mumbai",
+	 * 		"airportcountry": "India", 
+	 * 		"airportcity": "Mumbai", 
+	 * 		"airportpincode":"123341", 
+	 * 		"airportphoneno": "090909090909", 
+	 * 		"adminemail":"vikasdhiman835@gmail.com" 
+	 * }
+	 */
 	@PostMapping()
 	public ResponseEntity<AirPortSaveResponse> saveAirport(@RequestBody AirPort airport)
 	{
@@ -46,8 +48,10 @@ public class AirPortController {
 	}
 	
 	
-//	Get Method by id
-//	URL -> http://localhost:8090/airport/726189078
+	/*
+	 * Get Method by id 
+	 * URL -> http://localhost:8090/airport/726189078
+	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<AirPort> getAirportById(@PathVariable("id") long id)
 	{
@@ -56,8 +60,10 @@ public class AirPortController {
 	}
 	
 	
-//	Get All Airport
-//	URL -> http://localhost:8090/airport/
+	/*
+	 * Get All Airport 
+	 * URL -> http://localhost:8090/airport/
+	 */
 	@GetMapping()
 	public ResponseEntity<List<AirPort>> getAllAirPort()
 	{
@@ -66,8 +72,10 @@ public class AirPortController {
 	}
 	
 	
-//	Get Airport By Admin Email
-//	URL -> http://localhost:8090/airport/getbyadmin/vikasdhiman@gmail.com
+	/*
+	 * Get Airport By Admin Email 
+	 * URL -> http://localhost:8090/airport/getbyadmin/vikasdhiman@gmail.com
+	 */
 	@GetMapping("/getbyadmin/{adminemail}")
 	public ResponseEntity<List<AirPort>> getAirPortByEmail(@PathVariable("adminemail") String adminemail)
 	{
@@ -76,17 +84,19 @@ public class AirPortController {
 	}
 	
 	
-//	Update Airport
-//	URL -> http://localhost:8090/airport/909792732
-//	{
-//	    "airportid": 909792732,
-//	    "airportname": "Mumbai",
-//	    "airportcountry": "India",
-//	    "airportcity": "Mumbai",
-//	    "airportpincode": "123341",
-//	    "airportphoneno": "090909090909",
-//	    "adminemail": "vikasdhiman835@gmail.com"
-//	}
+	/*
+	 * Update Airport 
+	 * URL -> http://localhost:8090/airport/909792732 
+	 * { 
+	 * 		"airportid":909792732, 
+	 * 		"airportname": "Mumbai", 
+	 * 		"airportcountry": "India", 
+	 * 		"airportcity":"Mumbai", 
+	 * 		"airportpincode": "123341", 
+	 * 		"airportphoneno": "090909090909",
+	 * 		"adminemail": "vikasdhiman835@gmail.com" 
+	 * }
+	 */
 	@PutMapping("/{id}")
 	public ResponseEntity<AirPortSaveResponse> updateAirport(@PathVariable("id") long id, @RequestBody AirPort airport)
 	{
@@ -95,9 +105,11 @@ public class AirPortController {
 	}
 	
 	
-//	Delete Airport
+	/*
+	 * Delete Airport 
+	 * URL -> http://localhost:8090/airport/909792732
+	 */
 	@DeleteMapping("/{id}")
-//	URL -> http://localhost:8090/airport/909792732
 	public ResponseEntity<String> deleteAirport(@PathVariable("id") long id)
 	{
 		String res=service.deleteAirport(id);
