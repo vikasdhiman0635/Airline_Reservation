@@ -39,7 +39,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 box"
-            *ngFor="let flight of allFlights | short : 'flightfrom': from | short : 'flightto' :to | short : 'flightfromdate' : date">
+            *ngFor="let flight of allFlights | short : 'flightfrom': from | short : 'flightto' :to | short : 'flightfromdate' : date; let i=index;">
+            <br>
             <div class="card">
                 <h5 class="card-header"><small><i>{{flight.flightid}}</i></small></h5>
                 <div class="card-body">
@@ -61,29 +62,49 @@
                     </div>
                     <br>
                     <div class="row text-right">
-                        <div class="col-md-12">
+                        <div class="col-md-12" *ngIf="checkuser">
                             <input type="button" (click)="book(flight.flightid)" value="Book" class="btn btn-success">
                         </div>
                     </div>
-
-                    <!-- <div class="row">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link" (click)="getSeatType(flight.flightid,'First Class')">First Class</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" (click)="getSeatType(flight.flightid,'Business Class')">Business Class</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" (click)="getSeatType(flight.flightid,'Premium Economy Class')">Premium Economy Class</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" (click)="getSeatType(flight.flightid,'Economic')">Economic</a>
-                            </li>
-                        </ul>
-                    </div> -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center text-danger">
+                                <strong>Check Seat Availability</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item" *ngFor="let check of flight?.flightseats">
+                                    <a class="nav-link"
+                                        (click)="getSeatType(flight.flightid,check.seattype,i)">{{check.seattype}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="showcheck && id==i && seatdata!=null">
+                        <div class="col-md-12 text-center">
+                            <br>
+                            <h4 class="text-center">{{seatdata.seattype}}</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Total Seat:</strong> {{seatdata.totalseats}}</p>
+                                    <p><strong>Available Seat:</strong> {{seatdata.availableseat}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Price:</strong> {{seatdata.seatprize | currency:'INR'}}</p>
+                                    <input type="button" (click)="getSeatType(flight.flightid,seatdata.seattype,i)" value="Refresh"
+                                        class="btn btn-info">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<br>
+<br>
+<app-footer></app-footer>

@@ -19,5 +19,7 @@ public interface BookTicketService {
 
 	List<BookTickets> getAllTicketsByEmail(String email);
 
+	BookTickets getBookById(long bookid);
+
 
 }

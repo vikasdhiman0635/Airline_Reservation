@@ -17,8 +17,6 @@ public class LoginUserResponse {
 	
 	private boolean login;
 	
-	private String role;
-	
 	private User user;
 	
 }

@@ -36,14 +36,14 @@ export class HomeComponent implements OnInit {
     this.service.getAllAirportLocations().subscribe((response) =>
     {
       this.allAirport=response;
-      console.log(this.allAirport);
+      // console.log(this.allAirport);
     });
   }
 
 
   checkflights()
   {
-    console.log(this.searchForm.value);
+    // console.log(this.searchForm.value);
     localStorage.setItem("flight",JSON.stringify(this.searchForm.value));
     this.router.navigate(['/searchflight']);
   }

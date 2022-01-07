@@ -86,10 +86,20 @@ public class BookFlightSeatDateServiceImpl implements BookFlightSeatDataService{
 		
 		Seats totalSeat=seatsRepo.findByFlightidAndSeattype(flightid,seatType);
 		
+//		List<BookFlightSeatData> bookTickets=repo.findAllByFlightid(flightid);
 		List<BookFlightSeatData> bookTickets=repo.findAllByFlightid(flightid);
 		
+		int s=0;
+		for(BookFlightSeatData seat:bookTickets)
+		{
+			if(seat.getSeattype().equals(seatType))
+			{
+				s++;
+			}
+		}
+		
 		res.setTotalnoofseats(totalSeat.getTotalseats());
-		res.setBookseats(bookTickets.size());
+		res.setBookseats(s);
 		res.setAvailableseats(totalSeat.getTotalseats()-bookTickets.size());
 		
 		System.out.println(res);

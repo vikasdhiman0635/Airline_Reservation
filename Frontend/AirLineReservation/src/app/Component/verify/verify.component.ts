@@ -56,7 +56,7 @@ export class VerifyComponent implements OnInit {
   getBill() {
     let total=0;
     let gst=9;
-    console.log(this.tickets[1].seattype)
+    // console.log(this.tickets[1].seattype)
     for (let i = 0; i < this.tickets.length; i++) {
       for (let j = 0; j < this.allSeatsType.length; j++) {
         if (this.tickets[i].seattype == this.allSeatsType[j].seattype) {

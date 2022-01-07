@@ -1,0 +1,77 @@
+<div class="container">
+    <!-- <div class="mx-auto" style="width:300px">
+        <button type="button" class="btn modal-sm" style="background: #9ea7c6;" data-toggle="modal"
+            data-target="#myModal">Register New Admin email</button>
+    </div> -->
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+                <input type="email" class="form-control" placeholder="Enter Email" id="adminemail" required [(ngModel)]="adminemail"
+                                name="adminemail">
+        </div>
+        <div class="col-md-4">
+            <input type="submit" value="Add Admin" class="btn" style="background: #9ea7c6;" (click)="save()">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <!-- <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+           
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <h1 class="display-4" style="font-size: 20px;">New Admin Registeration</h1>
+                    </div>
+                    <div [hidden]="submitted" style="width: auto;">
+                        
+                        <div class="form-group">
+                            <label for="email">Register Email:</label>
+                            <input type="email" class="form-control" id="adminemail" required [(ngModel)]="adminemail"
+                                name="adminemail">
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button type="submit" (click)="save()" class="btn btn-success">Register Email</button>
+                        </div>
+                        
+                    </div>
+                    <div [hidden]="!submitted">
+                        <h1 class="display-4 " style="font-size: 16px; color: green;" align="center">Registeration
+                            Successful!</h1>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)=" loadAdminsOnStart()" class="btn btn-default"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+    <h1 class="display-4" style="font-size: 40px;">List of Admins:</h1>
+    <table class="table table-hover" style="padding-right: 150px; padding-left: 150px;">
+        <thead class="thead" style="background: #9ea7c6;;">
+            <tr>
+                <th>S.no.</th>
+                <th>Registered Email</th>
+                <th>Status</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of admin; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{a.adminemail}}</td>
+                <td>Active</td>
+                <td> <a (click)="delete(a.adminemail)"><i class="fa fa-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

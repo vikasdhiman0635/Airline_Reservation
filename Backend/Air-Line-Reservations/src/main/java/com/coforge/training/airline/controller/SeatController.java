@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coforge.training.airline.model.Seats;
+import com.coforge.training.airline.response.SeatAvailableResponse;
+import com.coforge.training.airline.response.VerifySeatResponse;
 import com.coforge.training.airline.service.SeatService;
 
 @RestController
@@ -44,5 +49,19 @@ public class SeatController {
 		return ResponseEntity.ok().body(res);
 	}
 	
+	@GetMapping("/getdatabyflightidandseat/{flightid}/{seattype}")
+	public ResponseEntity<SeatAvailableResponse> getBookDataFlightByFlightIdAndSeattype(@PathVariable("flightid") long flightid, @PathVariable("seattype") String seattype)
+	{
+		SeatAvailableResponse res=service.getBookdataByFlightSeatData(flightid,seattype);
+		return ResponseEntity.ok().body(res);
+	}
+	
+	
+	@PutMapping("/verify/{flightid}")
+	public ResponseEntity<VerifySeatResponse> verify(@PathVariable("flightid") long flightid, @RequestBody List<Seats> seat)
+	{
+		VerifySeatResponse res=service.verify(flightid,seat);
+		return ResponseEntity.ok().body(res);
+	}
 	
 }

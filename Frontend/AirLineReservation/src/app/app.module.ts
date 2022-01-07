@@ -19,6 +19,25 @@ import { UpicodeComponent } from './Component/upicode/upicode.component';
 import { CardCodeComponent } from './Component/card-code/card-code.component';
 import { BookTocketComponent } from './Component/book-tocket/book-tocket.component';
 import { LoginComponent } from './Component/login/login.component';
+import { ProfileComponent } from './Component/profile/profile.component';
+import { DashbordComponent } from './Component/dashbord/dashbord.component';
+import { UserTransitionComponent } from './Component/user-transition/user-transition.component';
+import { BookingDetailsComponent } from './Component/booking-details/booking-details.component';
+import { AddairportComponent } from './Component/addairport/addairport.component';
+import { AddflightComponent } from './Component/addflight/addflight.component';
+import { AddflightcompanyComponent } from './Component/addflightcompany/addflightcompany.component';
+import { AdminComponent } from './Component/admin/admin.component';
+import { AllairportsComponent } from './Component/allairports/allairports.component';
+import { AllflightsComponent } from './Component/allflights/allflights.component';
+import { AllusersComponent } from './Component/allusers/allusers.component';
+import { EditprofileComponent } from './Component/editprofile/editprofile.component';
+import { NewpasswordComponent } from './Component/newpassword/newpassword.component';
+import { SignupComponent } from './Component/signup/signup.component';
+import { TeamComponent } from './Component/team/team.component';
+import { UpdateairportComponent } from './Component/updateairport/updateairport.component';
+import { UpdateflightComponent } from './Component/updateflight/updateflight.component';
+import { UpdatepasswordComponent } from './Component/updatepassword/updatepassword.component';
+import { VerifyphonenoComponent } from './Component/verifyphoneno/verifyphoneno.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +56,25 @@ import { LoginComponent } from './Component/login/login.component';
     CardCodeComponent,
     BookTocketComponent,
     LoginComponent,
+    ProfileComponent,
+    DashbordComponent,
+    UserTransitionComponent,
+    BookingDetailsComponent,
+    AddairportComponent,
+    AddflightComponent,
+    AddflightcompanyComponent,
+    AdminComponent,
+    AllairportsComponent,
+    AllflightsComponent,
+    AllusersComponent,
+    EditprofileComponent,
+    NewpasswordComponent,
+    SignupComponent,
+    TeamComponent,
+    UpdateairportComponent,
+    UpdateflightComponent,
+    UpdatepasswordComponent,
+    VerifyphonenoComponent,
   ],
   imports: [
     BrowserModule,

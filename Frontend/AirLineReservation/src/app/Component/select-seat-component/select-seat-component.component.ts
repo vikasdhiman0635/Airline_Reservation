@@ -21,14 +21,6 @@ export class SelectSeatComponentComponent implements OnInit {
   flightDetails:any;
 
   airPortDetails:any;
-  user={
-    "userid":100,
-    "firstname":"vikas",
-    "lastname": "dhiman",
-    "phoneno":5678,
-    "email":"vikasdhiman835@gmail.com",
-    "gender": "Male"
-  }
 
 
   // bookSeats: any = [];
@@ -85,7 +77,7 @@ export class SelectSeatComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    localStorage.setItem("user", JSON.stringify(this.user));
+    // localStorage.setItem("user", JSON.stringify(this.user));
 
     this.flightid = this.aroute.snapshot.params['flightid'];
     this.flightService.getFlightById(this.flightid).subscribe((Response) => 
