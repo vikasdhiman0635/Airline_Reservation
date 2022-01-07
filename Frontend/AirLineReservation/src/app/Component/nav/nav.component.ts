@@ -43,7 +43,9 @@ export class NavComponent implements OnInit {
   logout() {
     localStorage.removeItem("user");
     localStorage.removeItem("email");
+    localStorage.clear();
     window.location.reload();
+    this.router.navigate(['/']);
   }
 
 }

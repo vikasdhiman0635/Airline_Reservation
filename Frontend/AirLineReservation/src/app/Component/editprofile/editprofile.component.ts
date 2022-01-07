@@ -1,6 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { Profile } from 'src/app/Class/profile';
 import { UserService } from 'src/app/Service/user.service';
@@ -22,6 +23,8 @@ export class EditprofileComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
+    private aroute:ActivatedRoute,
+    private loc:Location,
     private uService: UserService) {
     this.editForm = this.formBuilder.group({
       userid: ['', [Validators.required]],
@@ -51,10 +54,9 @@ export class EditprofileComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.email = localStorage.getItem("email");
+    this.email=this.aroute.snapshot.params['email'];
 
     this.uService.getUserByUserId(this.email).pipe(first()).subscribe((response) => {
-      // console.log(response);
       this.editForm.patchValue(response);
     });
   }
@@ -65,18 +67,16 @@ export class EditprofileComponent implements OnInit {
   
   onSubmit() {
     this.submitted = true;
-    // console.log(this.profile);
     this.profile = this.editForm.value;
     if (this.editForm.invalid) {
       return;
     }
-    // console.log(this.editForm.value);
     this.save();
   }
 
   save() {
     this.uService.updateUser(this.profile, this.editForm.value.userid).subscribe((response) => {
-      // console.log(response);
+      this.loc.back();
     });
   }
 }

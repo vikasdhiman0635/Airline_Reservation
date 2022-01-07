@@ -25,8 +25,10 @@ public class BookFlightSeatDataController {
 	private BookFlightSeatDataService service;
 	
 	
-//	Get Data By id
-//	URL -> http://localhost:8090/bookflightseats/244
+	/*
+	 * Get Data By id 
+	 * URL -> http://localhost:8090/bookflightseats/244
+	 */
 	@GetMapping("/{bookflightseatid}")
 	public ResponseEntity<BookFlightSeatData> getDataById(@PathVariable("bookflightseatid") long bookflightseatid)
 	{
@@ -35,8 +37,10 @@ public class BookFlightSeatDataController {
 	}
 	
 	
-//	Get Data By Flight id
-//	URL -> http://localhost:8090/bookflightseats/flightby/250327208
+	/*
+	 * Get Data By Flight id 
+	 * URL -> http://localhost:8090/bookflightseats/flightby/250327208
+	 */
 	@GetMapping("/flightby/{flightid}")
 	public ResponseEntity<BookFlightSeatDataAllListResponse> getDataByFlightId(@PathVariable("flightid") long flightid)
 	{
@@ -45,8 +49,10 @@ public class BookFlightSeatDataController {
 	}
 	
 	
-//	Check Seat Availability
-//	URL -> http://localhost:8090/bookflightseats/seatavailability/250327208
+	/*
+	 * Check Seat Availability 
+	 * URL -> http://localhost:8090/bookflightseats/seatavailability/250327208
+	 */
 	@GetMapping("seatavailability/{flightid}")
 	public ResponseEntity<SeatAvailabilityListResponse> getAllSeatAvailability(@PathVariable("flightid") long flightid)
 	{

@@ -11,7 +11,7 @@ import { UpdatepasswordService } from 'src/app/Service/updatepassword.service';
 })
 export class UpdatepasswordComponent implements OnInit {
 
-  EmailForm: FormGroup | any;
+  emailForm: FormGroup | any;
   email: string = '';
   user: User = new User();
   submitted = false;
@@ -20,35 +20,34 @@ export class UpdatepasswordComponent implements OnInit {
 
   constructor(private pService: UpdatepasswordService,
     private router: Router,
-    private route: ActivatedRoute,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.EmailForm = this.formBuilder.group({
+    this.emailForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
     });
   }
 
-  get f() { return this.EmailForm.controls; }
+  get f() { return this.emailForm.controls; }
 
   onSubmit() {
     this.submitted = true;
-    this.user = this.EmailForm.value;
+    this.user = this.emailForm.value;
     // stop the process here if form is invalid
-    if (this.EmailForm.invalid) {
+    if (this.emailForm.invalid) {
       return;
     }
     this.verifyemail();
   }
 
   verifyemail() {
-    this.pService.verifyemail(this.user.email).subscribe((response) => {
-      // console.log(response);
+    this.pService.verifyemail(this.emailForm.value.email).subscribe((response) => {
+      console.log(response);
       if (response == true) {
         console.log(this.user.email);
-        localStorage.setItem("email", this.user.email);
-        this.router.navigate(['/verifyphoneno']);
+        // localStorage.setItem("email", this.user.email);
+        this.router.navigate(['/verifyphoneno',this.emailForm.value.email]);
       }
       else {
         this.message = 'Invalid-Email';

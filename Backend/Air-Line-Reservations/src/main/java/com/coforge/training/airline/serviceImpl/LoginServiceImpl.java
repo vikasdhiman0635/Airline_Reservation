@@ -27,27 +27,26 @@ public class LoginServiceImpl implements LoginService{
 
 	@Autowired
 	private AdminContentRepo adminrepo;
-	
-	
+
+
 	@Override
 	public RegisterNewUser registerNewUser(User registerUser) {
 		RegisterNewUser res=new RegisterNewUser();
-		
+
 		if(!repo.existsByEmail(registerUser.getEmail()))
 		{
 			if(adminrepo.existsById(registerUser.getEmail()))
 			{
-				System.out.println("admin");
-				
+
 				registerUser.setRole(rolesEnums.Admin);
 				registerUser.setJoindate(new Date());
 				registerUser.setAvatar("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png");
 				registerUser.setCompleteprofile(false);
-				
+
 				String password=registerUser.getPassword();
 				String encpass=encryptedPassword(password);
 				registerUser.setPassword(encpass);
-				
+
 				User saveuser=repo.save(registerUser);
 				res.setMessage("User is Register");
 				res.setEmail(registerUser.getEmail());
@@ -55,17 +54,16 @@ public class LoginServiceImpl implements LoginService{
 			}
 			if(!adminrepo.existsById(registerUser.getEmail()))
 			{
-				System.out.println("normal user");
-				
+
 				registerUser.setRole(rolesEnums.Normal_User);
 				registerUser.setJoindate(new Date());
 				registerUser.setAvatar("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png");
 				registerUser.setCompleteprofile(false);
-				
+
 				String password=registerUser.getPassword();
 				String encpass=encryptedPassword(password);
 				registerUser.setPassword(encpass);
-				
+
 				User saveuser=repo.save(registerUser);
 				res.setMessage("User is Register");
 				res.setEmail(registerUser.getEmail());
@@ -83,9 +81,9 @@ public class LoginServiceImpl implements LoginService{
 
 	@Override
 	public LoginUserResponse loginUser(User user) {
-		
+
 		LoginUserResponse res=new LoginUserResponse();
-		
+
 		if(repo.existsByEmail(user.getEmail()))
 		{
 			String password=user.getPassword();
@@ -111,50 +109,43 @@ public class LoginServiceImpl implements LoginService{
 			res.setEmail(user.getEmail());
 			res.setLogin(false);
 		}
-		
-		
+
+
 		return res;
 	}
-	
-	
-//	Encrypt Password 
+
+
+	//	Encrypt Password 
 	public String encryptedPassword(String password)
 	{
 		Base64.Encoder encoder = Base64.getEncoder();
 		String normalString = password;
 		String encodedString = encoder.encodeToString(
-		normalString.getBytes(StandardCharsets.UTF_8) );
+				normalString.getBytes(StandardCharsets.UTF_8) );
 		return encodedString;
 	}
 
 
 	@Override
 	public List<User> getAllUser() {
-		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 
 	@Override
 	public boolean verifyEmail(String email) {
-		// TODO Auto-generated method stub
 		return repo.existsByEmail(email);
 	}
 
 
 	@Override
 	public boolean verifyUserdata(VerifyUserCrenditials verifydata) {
-		// TODO Auto-generated method stub
-		
+
 		boolean res=false;
 		if(repo.existsByEmailAndMobileno(verifydata.getEmail(),verifydata.getPhoneno()))
 		{
-//			repo.findByMobileno(verifydata.getPhoneno());
-//			if()
-//			{
-				res=true;
-				return res;
-//			}
+			res=true;
+			return res;
 		}
 		return res;
 	}
@@ -162,15 +153,14 @@ public class LoginServiceImpl implements LoginService{
 
 	@Override
 	public UpdateUserPasswordResponse updatePassword(String email, User updateduser) {
-		// TODO Auto-generated method stub
 		UpdateUserPasswordResponse res=new UpdateUserPasswordResponse();
-		
+
 		if(repo.existsByEmail(email))
 		{
 			User user=repo.findByEmail(email);
 
 			user.setPassword(encryptedPassword(updateduser.getPassword()));
-			
+
 			repo.save(user);
 			res.setMessage("User is Updated");
 			res.setEmail(email);
@@ -179,8 +169,8 @@ public class LoginServiceImpl implements LoginService{
 		{
 			res.setMessage("Email is not confirm");
 		}
-		
-		
+
+
 		return res;
 	}
 
@@ -193,7 +183,6 @@ public class LoginServiceImpl implements LoginService{
 
 	@Override
 	public User getUserByEmail(String email) {
-		// TODO Auto-generated method stub
 		return repo.findByEmail(email);
 	}
 

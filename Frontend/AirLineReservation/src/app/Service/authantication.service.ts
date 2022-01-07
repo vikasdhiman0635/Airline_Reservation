@@ -7,17 +7,20 @@ import { Observable } from 'rxjs';
 })
 export class AuthanticationService {
 
-  baseURL=' http://localhost:8090/user';
+  baseURL = ' http://localhost:8090/user';
 
-  constructor(private http:HttpClient) {
-   }
+  constructor(private http: HttpClient) {
+  }
 
-   login(user: any): Observable<any> {
+  login(user: any): Observable<any> {
     return this.http.post(`${this.baseURL}/login`, user)
   }
 
-  getUserById(userid:any):Observable<any>
-  {
+  getUserByEmail(userid: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/getbyemail/${userid}`);
+  }
+
+  getUserById(userid: any): Observable<any> {
     return this.http.get(`${this.baseURL}/getbyid/${userid}`);
   }
 

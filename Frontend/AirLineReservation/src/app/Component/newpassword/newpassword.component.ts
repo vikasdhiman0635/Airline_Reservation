@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UpdatepasswordService } from 'src/app/Service/updatepassword.service';
 
@@ -14,26 +15,29 @@ export class NewpasswordComponent implements OnInit {
   mobileno: any;
   password: string = '';
 
+  emailForm: FormGroup | any;
+
   constructor(private pService: UpdatepasswordService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private formBuilder:FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.email = localStorage.getItem("email");
     this.mobileno = localStorage.getItem("phoneno");
+    this.email=this.route.snapshot.params['email'];
+    this.emailForm = this.formBuilder.group({
+      email: [this.email],
+      phoneno: [this.mobileno],
+      password: ['',[Validators.required]]
+    });
   }
 
   resetpassword() {
-    let data = {
-      "email": this.email,
-      "phoneno": this.mobileno,
-      "password": this.password
-    }
-
-    let email: string = this.email;
-    this.pService.resetpassword(data, email).subscribe((response) => {
+    this.pService.resetpassword(this.emailForm.value, this.email).subscribe((response) => {
       console.log(response);
+      localStorage.removeItem("phoneno");
+      localStorage.removeItem("email");
       this.router.navigate(['/login'])
     });
   }

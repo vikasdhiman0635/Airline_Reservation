@@ -24,11 +24,13 @@ public class AdminContentController {
 	@Autowired
 	private AdminContentService service;
 	
-//	Create a new Admin
-//	URL -> http://localhost:8090/admincontent
-//	{
-//	    "adminemail": "admin@gmail.com"
-//	}
+	/*
+	 * Create a new Admin
+	 * URL -> http://localhost:8090/admincontent
+	 * {
+	 * 		"adminemail": "admin@gmail.com"
+	 * }
+	 * */
 	@PostMapping()
 	public ResponseEntity<AdminContent> save(@RequestBody() AdminContent admin)
 	{
@@ -36,9 +38,10 @@ public class AdminContentController {
 		return ResponseEntity.ok().body(res);
 	}
 	
-	
-//	Get all admin how many admin in database
-//	URL -> http://localhost:8090/admincontent
+	/*
+	 * Get all admin how many admin in database
+	 * URL -> http://localhost:8090/admincontent
+	*/
 	@GetMapping()
 	public ResponseEntity<List<AdminContent>> getAllAdmin()
 	{
@@ -46,9 +49,10 @@ public class AdminContentController {
 		return ResponseEntity.ok().body(res);
 	}
 	
-	
-//	Get data by email using 
-//	URL -> http://localhost:8090/admincontent/admin@gmail.com
+	/*
+	 * Get data by email using 
+	 * URL -> http://localhost:8090/admincontent/admin@gmail.com
+	 * */
 	@GetMapping("/{email}")
 	public ResponseEntity<AdminContent> getOneAdmin(@PathVariable("email") String email)
 	{
@@ -56,9 +60,10 @@ public class AdminContentController {
 		return ResponseEntity.ok().body(res);
 	}
 	
-	
-//	Delete Admin by Admin in Database
-//	URL -> http://localhost:8090/admincontent/admin@gmail.com
+	/*
+	 * Delete Admin by Admin in Database URL ->
+	 * http://localhost:8090/admincontent/admin@gmail.com
+	 */	
 	@DeleteMapping("/{email}")
 	public ResponseEntity<String> deleteMapping(@PathVariable("email") String email)
 	{
