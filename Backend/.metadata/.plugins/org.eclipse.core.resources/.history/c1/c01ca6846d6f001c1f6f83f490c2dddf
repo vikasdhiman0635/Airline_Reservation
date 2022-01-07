@@ -1,0 +1,44 @@
+package com.coforge.training.airline.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+class CardControllerTest {
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	@Test
+	void testSave() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAllCard() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testVerifyCard() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testVerify() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testVerifyByCode() {
+		fail("Not yet implemented");
+	}
+
+}

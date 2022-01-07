@@ -11,6 +11,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -25,7 +27,6 @@ import com.coforge.training.airline.service.SeatTypeService;
 
 class SeatTypeControllerTest {
 
-	
 	SeatTypeController c1= new SeatTypeController();
 
 	@Mock
@@ -64,6 +65,7 @@ class SeatTypeControllerTest {
 		return res;
 	}
 
+
 	@Test
 	void testSaveNewSeat() {
 		seatType add=new seatType();
@@ -71,13 +73,13 @@ class SeatTypeControllerTest {
 		add.setSeattypeid(sType.get(0).getSeattypeid());
 		add.setSeattypename(sType.get(0).getSeattypename());
 		add.setSeattypecode(sType.get(0).getSeattypecode());
-		
 
-		
 		when(service.saveNewSeat(sType.get(0))).thenReturn(add);
 		seatType res=service.saveNewSeat(add);
+
 		assertEquals(add, res);
 		assertNotNull(res);
+
 		verify(service,times(1)).saveNewSeat(add);
 	}
 
@@ -88,7 +90,6 @@ class SeatTypeControllerTest {
 		res=service.getAll();
 		assertNotNull(res); //a passed parameter must not be null  for assertnot null
 		verify(service,times(1)).getAll();
-           
 	}
 
 	@Test
@@ -100,13 +101,13 @@ class SeatTypeControllerTest {
 		//res.setCode(fCompany.get(0).getCode());
 
 		when(service.getByOne(sType.get(0).getSeattypeid())).thenReturn(res);
-		
+
 
 		seatType addc=service.getByOne(sType.get(0).getSeattypeid());
 		//FlightCompany addc=service.getCompanyById(fCompany.get(0).get);
 
 		assertNotNull(addc.getSeattypeid());
-
+		assertEquals(addc, res);
 		verify(service,times(1)).getByOne(sType.get(0).getSeattypeid());	
 	}
 
@@ -118,17 +119,15 @@ class SeatTypeControllerTest {
 		response.setMessage("Seat Type is updated");
 		response.setSeat(seat);
 		when(service.update(id, seat)).thenReturn(response);
-		
+
 		SeatTypeUpdateResponse res=service.update(id, seat);
-		
+
 		assertNotNull(res);
 		assertEquals(res.getMessage(), "Seat Type is updated");
 		assertNotNull(res.getSeat());
 		assertEquals(res.getSeat(), seat);
-		
+
 		verify(service,times(1)).update(id, seat);
-		
-		
 	}
 
 	@Test
