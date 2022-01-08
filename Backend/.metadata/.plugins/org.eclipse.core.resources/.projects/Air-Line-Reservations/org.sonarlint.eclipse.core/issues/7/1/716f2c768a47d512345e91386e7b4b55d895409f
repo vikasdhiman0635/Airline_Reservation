@@ -1,0 +1,17 @@
+
+‚	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìRMINORZ
+CODE_SMELL
+w
+java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ô£¸ÄüÿÿÿÿRMAJORZBUG
+_
+java:S1135["2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+CODE_SMELL
+d	java:S125c"<This block of commented-out lines of code should be removed.(Ýµì§RMAJORZ
+CODE_SMELL
+c
+java:S4973d"<Strings and Boxed types should be compared using "equals()".(âÿí§ûÿÿÿÿRMAJORZBUG
+r
+java:S3655^"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—”¶ØRMAJORZBUG
+”
+java:S1488„"eImmediately return this expression instead of assigning it to the temporary variable "encodedString".(öåŠ¹úÿÿÿÿRMINORZ
+CODE_SMELL

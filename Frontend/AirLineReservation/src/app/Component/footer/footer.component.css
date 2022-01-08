@@ -1,0 +1,13 @@
+.content
+{
+  align-items: center;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  letter-spacing: 1.4px;
+  font-size: 14px;
+}
+.nav-link
+{
+  color: white;
+}

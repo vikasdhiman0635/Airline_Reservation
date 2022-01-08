@@ -1,0 +1,59 @@
+<app-all-nav></app-all-nav>
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Booking History</h1>
+            <div class="row">
+                <div class="col-md-9"></div>
+                <div class="col-md-3">
+                    <p class="text-center text-success">
+                        <strong>
+                            Email: {{email}}
+                        </strong>
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6" *ngFor="let book of bookTickets">
+                    <br>
+                    <div class="card">
+                        <h5 class="card-header"><small><i>Book Id: {{book.bookid}}</i></small></h5>
+                        <div class="card-body">
+                            <p>
+                                <strong>Flight Id:</strong> <i>{{book.flightid}}</i>
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>
+                                        <strong>Booking Date:</strong> {{book.bookingdate}}
+                                    </p>
+                                    <p>
+                                        <strong>Payment Method:</strong> {{book.ticketpaymentmethod}}
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>
+                                        <strong>Booking Time:</strong> {{book.bookingtime}}
+                                    </p>
+                                    <p>
+                                        <strong>Total No of Passenger:</strong> {{book.totalnoofseats}}
+                                    </p>
+                                </div>
+                                <div class="col-md-9"></div>
+                                <div class="col-md-3">
+                                    <input type="button" class="btn btn-primary" value="View Details" (click)="viewdetails(book.bookid)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<app-footer></app-footer>

@@ -1,0 +1,13 @@
+@media print {
+    app-nav {
+    display: none;
+  }
+  img
+  {
+      display: none;
+  }
+  .passenger
+  {
+      margin-top: -20px;
+  }
+}

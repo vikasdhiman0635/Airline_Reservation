@@ -1,0 +1,23 @@
+
+_
+java:S1135'"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+CODE_SMELL
+_
+java:S1135H"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+CODE_SMELL
+_
+java:S1135"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+CODE_SMELL
+_
+java:S11352"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+CODE_SMELL
+_
+java:S1135!"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+CODE_SMELL
+‚	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìRMINORZ
+CODE_SMELL
+z
+java:S1128"RRemove this unused import 'com.coforge.training.airline.model.BookFlightSeatData'.(ù–š8RMINORZ
+CODE_SMELL
+d	java:S125I"<This block of commented-out lines of code should be removed.(Äÿ«¡RMAJORZ
+CODE_SMELL

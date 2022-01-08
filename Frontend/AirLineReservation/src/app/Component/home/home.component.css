@@ -1,0 +1,52 @@
+#div1 {
+  width: cover;
+  height: auto;
+  background-image: url(../../../assets/images/airplane.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+
+.heading{
+  text-align: center;
+}
+
+#ticketdiv {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  width: 100%;
+  height: auto;
+  padding-left: 50px;
+  padding-top: 30px;
+  text-align: center;
+  align-items: center;
+}
+
+button:hover {
+  border: none;
+  background-color: #ebf1f1;
+  transition: 1s;
+}
+.txt
+{
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding-left: 20px;
+  border-bottom: 1px solid white;
+  outline: none;
+  text-align: center;
+  align-items: center;
+}
+::placeholder
+{
+  color: white;
+}
+
+.type
+{
+  background-color: transparent;
+}

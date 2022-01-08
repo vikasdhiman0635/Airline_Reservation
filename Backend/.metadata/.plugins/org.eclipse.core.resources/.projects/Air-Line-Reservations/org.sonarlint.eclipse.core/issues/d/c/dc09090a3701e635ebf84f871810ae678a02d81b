@@ -1,0 +1,25 @@
+
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìHÖ/RMINORZ
+CODE_SMELL
+b
+java:S1135,"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿH×/RINFOZ
+CODE_SMELL
+c
+java:S1135 "2Complete the task associated to this TODO comment.(¾¯‚âüÿÿÿÿHØ/RINFOZ
+CODE_SMELL
+b
+java:S1135}"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHÙ/RINFOZ
+CODE_SMELL
+z
+java:S3655X"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Úòˆ€üÿÿÿÿHÚ/RMAJORZBUG
+Š
+java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(³×°†ÿÿÿÿÿHÛ/RMINORZ
+CODE_SMELL
+{
+java:S3655¦"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(½ßÌõýÿÿÿÿHÝ/RMAJORZBUG
+b
+java:S1135R"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHÞ/RINFOZ
+CODE_SMELL
+c
+java:S1135‘"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHß/RINFOZ
+CODE_SMELL

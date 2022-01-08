@@ -1,0 +1,11 @@
+
+–
+java:S1488{"eImmediately return this expression instead of assigning it to the temporary variable "encodedString".(öåŠ¹úÿÿÿÿH¶/RMINORZ
+CODE_SMELL
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìH¹/RMINORZ
+CODE_SMELL
+s
+java:S1128"GRemove this unused import 'com.coforge.training.airline.model.Address'.(ïØèÝHº/RMINORZ
+CODE_SMELL
+v
+java:S3655´"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ìÎÚðH¼/RMAJORZBUG

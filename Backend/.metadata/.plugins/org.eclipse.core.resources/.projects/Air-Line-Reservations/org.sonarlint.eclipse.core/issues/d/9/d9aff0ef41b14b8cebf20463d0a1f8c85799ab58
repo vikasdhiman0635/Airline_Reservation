@@ -1,0 +1,7 @@
+
+H
+java:S2119	"Save and re-use this "Random".(šŸ«íøÿÿÿÿRCRITICALZBUG
+‰
+java:S1488
+"[Immediately return this expression instead of assigning it to the temporary variable "res".(ì×à™ùÿÿÿÿRMINORZ
+CODE_SMELL
