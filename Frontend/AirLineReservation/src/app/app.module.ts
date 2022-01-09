@@ -40,6 +40,7 @@ import { UpdatepasswordComponent } from './Component/updatepassword/updatepasswo
 import { VerifyphonenoComponent } from './Component/verifyphoneno/verifyphoneno.component';
 import { UserProfileComponent } from './Component/user-profile/user-profile.component';
 import { AllNavComponent } from './Component/all-nav/all-nav.component';
+import { ContactComponent } from './Component/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { AllNavComponent } from './Component/all-nav/all-nav.component';
     VerifyphonenoComponent,
     UserProfileComponent,
     AllNavComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

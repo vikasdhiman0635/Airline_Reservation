@@ -103,20 +103,7 @@ public class BookTicketServiceImpl implements BookTicketService
 							seats.setUserid(ticket.getUserid());
 							seats.setBookid(random);
 							seats.setFlightid(ticket.getFlightid());
-							seats.setSeatno(cnt++);
-							
-//							List<BookFlightSeatData> allSeats=ticket.getBookseats();
-//							for(BookFlightSeatData seats:allSeats)
-//							{
-//								seats.setUserid(ticket.getUserid());
-//								seats.setBookid(random);
-//								seats.setFlightid(ticket.getFlightid());
-//								//							--------
-//								//							assign seats
-//								seats.setSeatno(cnt++);
-//							}
-							
-
+							seats.setSeatno(cnt+1);
 						}
 						else
 						{

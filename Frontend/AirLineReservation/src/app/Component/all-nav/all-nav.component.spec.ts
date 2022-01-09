@@ -37,7 +37,6 @@ describe('AllNavComponent', () => {
   });
 
   it('should check there is 3 nav items without login',() =>{
-    // let navbar=fixture.debugElement.nativeElement.querySelector('.collapse');
     expect(fixture.debugElement.nativeElement.querySelectorAll('li').length).toEqual(3);
   });
 
@@ -53,12 +52,8 @@ describe('AllNavComponent', () => {
     expect(component.user).toBeUndefined();
   });
 
-  it('should call logout function', () => {
-    expect(component.logout()).toBeUndefined();
-  });
-
-  it('should be get by userid', () => {
-    expect(component.getByUserid("abc@gmail.com")).toBeUndefined();
-  })
+  // it('should call logout function', () => {
+  //   expect(component.logout()).toBeUndefined();
+  // });
 
 });

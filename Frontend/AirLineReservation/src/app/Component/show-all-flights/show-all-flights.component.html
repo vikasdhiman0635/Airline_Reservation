@@ -1,4 +1,4 @@
-<app-nav></app-nav>
+<app-all-nav></app-all-nav>
 <br>
 <div class="container">
     <div class="row">
@@ -93,9 +93,9 @@
                                     <p><strong>Available Seat:</strong> {{seatdata.availableseat}}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p><strong>Price:</strong> {{seatdata.seatprize | currency:'INR'}}</p>
-                                    <input type="button" (click)="getSeatType(flight.flightid,seatdata.seattype,i)" value="Refresh"
-                                        class="btn btn-info">
+                                    <p><strong>Price:</strong> &nbsp; <i class="fa fa-inr"></i>&nbsp;{{seatdata.seatprize}}</p>
+                                    <input type="button" (click)="getSeatType(flight.flightid,seatdata.seattype,i)"
+                                        value="Refresh" class="btn btn-info">
                                 </div>
                             </div>
                         </div>

@@ -15,6 +15,7 @@ export class UserProfileComponent implements OnInit {
   
   email:any;
 
+  checkdata:boolean=false;
 
   constructor(private pservice:AuthanticationService,
     private router:Router
@@ -22,7 +23,6 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
    this.email=localStorage.getItem("email");
-    console.log(this.email);
     this.getUserDataFromDB();
 
   }
@@ -30,6 +30,7 @@ export class UserProfileComponent implements OnInit {
   getUserDataFromDB(){
     this.pservice.getUserByEmail(this.email).subscribe((p:{})=>{
     this.profile=p;
+    this.checkdata=true;
     });
   }
 

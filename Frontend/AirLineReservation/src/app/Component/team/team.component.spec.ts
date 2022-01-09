@@ -31,4 +31,18 @@ describe('TeamComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Test input field in DOM', () => {
+    const formElement = fixture.debugElement.nativeElement.querySelector('.container');
+    const inputElement = formElement.querySelectorAll('input');
+    expect(inputElement.length).toEqual(2);
+  });
+
+  it('should check Variable in TS flie', () => {
+    expect(component.submitted).toEqual(false);
+    expect(component.adminemail).toEqual('');
+    expect(component.index).toBeUndefined();
+  });
+
+
 });

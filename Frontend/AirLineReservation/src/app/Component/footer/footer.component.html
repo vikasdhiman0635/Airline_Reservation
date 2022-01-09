@@ -1,7 +1,7 @@
 <footer style="background-color: black; color: white;">
 
     <br>
-<br>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -10,10 +10,12 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-10">
-                                <input type="text" placeholder="Subscribe hear" [(ngModel)]="subscribe" class="form-control" name="" id="">
+                                <input type="text" placeholder="Subscribe hear" [(ngModel)]="subscribe"
+                                    class="form-control" name="" id="">
                             </div>
                             <div class="col-md-2">
-                                <input type="button" [disabled]="subscribe==null"  (click)="check()" value="Subscribe" class="btn btn-info">
+                                <input type="button" [disabled]="subscribe==null" (click)="check()" value="Subscribe"
+                                    class="btn btn-info">
                             </div>
                         </div>
                     </div>
@@ -45,7 +47,7 @@
                         <!-- <br> -->
                         <!-- <br> -->
                         <a class="nav-link" routerLink="/searchflight">Search Flight</a>
-                        <a class="nav-link">Contact us</a>
+                        <a class="nav-link" routerLink="/cantact">Contact us</a>
                     </div>
                     <div class="col-md-5 text-center">
                         <div class="row">
@@ -102,5 +104,3 @@
     <br>
 
 </footer>
-
-

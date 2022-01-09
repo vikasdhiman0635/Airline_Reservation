@@ -34,7 +34,17 @@ export class ShowAllFlightsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    localStorage.removeItem("flight");
+    this.flightDetails=localStorage.getItem("flight");
+    this.flightdetails=JSON.parse(this.flightDetails);
+    if(this.flightdetails!=null)
+    {
+      
+      this.from=this.flightdetails.from;
+      this.date=this.flightdetails.fromtime;
+      this.to=this.flightdetails.to;
+      localStorage.removeItem("flight");
+    }
+    
 
     this.email = localStorage.getItem("email");
     if (this.email != null) {
@@ -62,7 +72,7 @@ export class ShowAllFlightsComponent implements OnInit {
     this.id = i
     this.showcheck = true;
     this.seatService.getDataByFlightAndSeatType(flightid, seatType).subscribe((Response) => {
-      // console.log(Response);
+      console.log(Response);
       this.seatdata = Response;
     });
 
@@ -72,7 +82,7 @@ export class ShowAllFlightsComponent implements OnInit {
     this.router.navigate(['/selectseat', flightid])
   }
 
-  
+
 
 
 

@@ -1,5 +1,5 @@
-<app-nav></app-nav>
-<div class="page-content page-container" id="page-content">
+<app-all-nav></app-all-nav>
+<div class="page-content page-container" id="page-content" *ngIf="checkdata">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
             <div class="col-xl-10 col-md-12">
@@ -7,7 +7,7 @@
                     <div class="row m-30-0 m-r-0">
                         <div class="col bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white" >
-                                <div class="m-b-25"> <img src={{profile.avatar}} class="img-radius" alt="User-Profile-Image"> </div>
+                                <div class="m-b-25"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png" class="img-radius" alt="User-Profile-Image"> </div>
                                 <h6 class="f-w-600">{{profile.firstname}} {{profile.lastname}}</h6>
                                 <p></p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                 <br>

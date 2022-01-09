@@ -17,6 +17,7 @@ export class AdminComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
     this.flights = true;
   }
 

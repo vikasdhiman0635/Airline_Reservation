@@ -1,4 +1,4 @@
-<app-nav></app-nav>
+<app-all-nav></app-all-nav>
 <br>
 <div class="container">
     <div class="row">
@@ -45,7 +45,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <h4>Total Amount: <i>{{bookTicket?.paymentstatus.totalamount | currency:'INR'}}</i></h4>
+                            <h4>Total Amount: &nbsp;<i class="fa fa-inr"></i><i>{{bookTicket?.paymentstatus.totalamount}}</i></h4>
                             <hr>
                             <h6 class="text-center"><u>Payment Method:</u> <i>{{bookTicket?.paymentstatus.ticketpaymentmethod}}</i></h6>
                         </div>
@@ -53,17 +53,18 @@
                             <h4>Payment Status: <i class="text-success">{{bookTicket?.paymentstatus.paymentstatus}}</i></h4>
                             <hr>
                             <br>
-                            <h6 *ngIf="bookTicket?.paymentstatus.cardno!=null">Card No.: <i>{{bookTicket?.paymentstatus.cardno}}</i></h6>
-                            <h6 *ngIf="bookTicket?.paymentstatus.cardno!=null">Card Holder Name: <i>{{bookTicket?.paymentstatus.cardhldername}}</i></h6>
-                            <h6 *ngIf="bookTicket?.paymentstatus.upiid!=null">Departure Time: <i>{{bookTicket?.paymentstatus.upiid}}</i></h6>
+                            <h6 *ngIf="bookTicket?.paymentstatus.cardno!=0">Card No.: <i>{{bookTicket?.paymentstatus.cardno}}</i></h6>
+                            <h6 *ngIf="bookTicket?.paymentstatus.cardno!=0">Card Holder Name: <i>{{bookTicket?.paymentstatus.cardhldername}}</i></h6>
+                            <h6 *ngIf="bookTicket?.paymentstatus.upiid!=null">UPI id: <i>{{bookTicket?.paymentstatus.upiid}}</i></h6>
                         </div>
                     </div>
+                    <br>
                     <br>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row passenger">
         <div class="col-md-12">
             <br>
             <h2 class="text-center">Passenger Details</h2>
@@ -89,7 +90,7 @@
                     <td>{{seat.seatno}}</td>
                     <td>{{seat.seattype}}</td>
                     <td>{{seat.country}}</td>
-                    <td>{{seat.price | currency:'INR'}}</td>
+                    <td><i class="fa fa-inr">&nbsp;{{seat.price}}</i></td>
                 </tr>
             </table>
         </div>

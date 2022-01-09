@@ -1,5 +1,6 @@
 <app-all-nav></app-all-nav>
 <br>
+
 <div class="container" *ngIf="checkdata">
     <div class="row">
         <div class="col-md-10 col-sm-10">
@@ -80,7 +81,7 @@
                         <td>{{seat.seatno}}</td>
                         <td>{{seat.seattype}}</td>
                         <td>{{seat.country}}</td>
-                        <td>{{seat.price | currency:'INR'}}</td>
+                        <td><i class="fa fa-inr"></i>{{seat.price}}</td>
                     </tr>
                 </table>
             </div>
@@ -92,7 +93,7 @@
             <h2 class="text-center">Bill Payment</h2>
             <br>    
             <p>
-                <strong>Total Amount :</strong> {{bookTicket?.paymentstatus.totalamount | currency:'INR'}}</p>
+                <strong>Total Amount :</strong> &nbsp;<i class="fa fa-inr"></i>{{bookTicket?.paymentstatus.totalamount}}</p>
             <p>
                 <strong>Payment Method:</strong> {{bookTicket.ticketpaymentmethod | uppercase}}
             </p>
@@ -101,6 +102,7 @@
             </p>
             <p *ngIf="bookTicket.ticketpaymentmethod=='Card'">
                 <strong>Card No.:</strong> {{bookTicket?.paymentstatus.cardno}}
+                <br>
                 <strong>Card Holder Name:</strong> {{bookTicket?.paymentstatus.cardhldername}}
             </p>
             <p class="text-success" style="font-weight: bold;">

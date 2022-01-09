@@ -11,7 +11,7 @@ describe('UserTransitionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserTransitionComponent ],
+      declarations: [UserTransitionComponent],
       imports: [
         ReactiveFormsModule,
         FormsModule,
@@ -19,7 +19,7 @@ describe('UserTransitionComponent', () => {
         AppRoutingModule
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -31,4 +31,9 @@ describe('UserTransitionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('sholud check all veriables', () => {
+    expect(component.email).toBeNull();
+  });
+
 });

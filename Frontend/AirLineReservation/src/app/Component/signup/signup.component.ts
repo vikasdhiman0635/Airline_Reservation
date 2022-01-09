@@ -48,9 +48,17 @@ export class SignupComponent implements OnInit {
   }
 
   save() {
-    this.uservice.newUser(this.user).subscribe((response) => {
-      console.log(response);
-      this.router.navigate(['/login']);
+    this.uservice.newUser(this.user).subscribe((response:any) => {
+      // console.log(response);
+      alert(response.message);
+      if(response.user!=null)
+      {
+        this.router.navigate(['/login']);
+      }
+      else
+      {
+        return;
+      }
     });
   }
 }

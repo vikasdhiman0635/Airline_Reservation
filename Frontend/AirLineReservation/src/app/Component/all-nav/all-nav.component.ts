@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthanticationService } from 'src/app/Service/authantication.service';
 
 @Component({
@@ -18,7 +17,7 @@ export class AllNavComponent implements OnInit {
   checkadmin:boolean=false;
 
   constructor(private router: Router,
-    private service: AuthanticationService
+  private service: AuthanticationService
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +36,7 @@ export class AllNavComponent implements OnInit {
 
   getByUserid(userid:any)
   {
-    this.service.getUserById(userid).subscribe((Response) => {
+    this.service.getUserById(userid).subscribe((Response:any) => {
       localStorage.setItem("user", JSON.stringify(Response));
     });
   }

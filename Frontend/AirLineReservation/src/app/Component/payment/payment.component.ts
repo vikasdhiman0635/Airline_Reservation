@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PaymentTicket } from 'src/app/Class/payment-ticket';
 import { CardService } from 'src/app/Service/card.service';
 import { UPIService } from 'src/app/Service/upi.service';
 import { CardNumberValidator } from 'src/app/shared/CardNumberValidator';

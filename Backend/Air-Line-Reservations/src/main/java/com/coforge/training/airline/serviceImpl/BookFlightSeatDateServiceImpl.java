@@ -83,7 +83,7 @@ public class BookFlightSeatDateServiceImpl implements BookFlightSeatDataService{
 		
 		List<BookFlightSeatData> bookTickets=repo.findAllByFlightid(flightid);
 		
-		int s=0;
+		int s=1;
 		for(BookFlightSeatData seat:bookTickets)
 		{
 			if(seat.getSeattype().equals(seatType))

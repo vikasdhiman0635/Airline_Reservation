@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -21,7 +22,8 @@ export class AddairportComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private aService: AdminService,
-    private router: Router
+    private router: Router,
+    private loc:Location
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +31,7 @@ export class AddairportComponent implements OnInit {
     this.adminemail=localStorage.getItem("email");
 
     this.addAirportForm = this.formBuilder.group({
-      airportname: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
+      airportname: ['', [Validators.required]],
       airportcountry: ['', [Validators.required]],
       airportcity: ['', [Validators.required]],
       airportpincode: ['', [Validators.required, Validators.minLength(6)]],
@@ -60,7 +62,8 @@ export class AddairportComponent implements OnInit {
   save() {
     this.aService.addAirport(this.airport).subscribe((response) => {
       console.log(response);
-      this.router.navigate(['/admin']);
+      // this.router.navigate(['/admin']);
+      this.loc.back();
     })
   }
 }

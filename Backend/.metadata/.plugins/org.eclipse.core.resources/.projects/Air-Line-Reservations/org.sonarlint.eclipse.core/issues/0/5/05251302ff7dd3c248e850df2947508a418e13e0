@@ -1,7 +1,7 @@
 
-f
-java:S1128"=Remove this unused import 'javax.persistence.GeneratedValue'.(¤®À‚RMINORZ
+i
+java:S1128"=Remove this unused import 'javax.persistence.GenerationType'.(ý÷õ¡Hù0RMINORZ
 CODE_SMELL
-f
-java:S1128"=Remove this unused import 'javax.persistence.GenerationType'.(ý÷õ¡RMINORZ
+i
+java:S1128"=Remove this unused import 'javax.persistence.GeneratedValue'.(¤®À‚Hû0RMINORZ
 CODE_SMELL

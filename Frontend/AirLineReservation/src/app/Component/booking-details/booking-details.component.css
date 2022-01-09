@@ -1,5 +1,5 @@
 @media print {
-    app-nav {
+    app-all-nav {
     display: none;
   }
   .print
@@ -9,5 +9,9 @@
   app-footer
   {
       display: none;
+  }
+  .passenger
+  {
+      margin-top: 230px;
   }
 }

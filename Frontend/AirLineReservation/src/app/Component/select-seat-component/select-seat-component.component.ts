@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BookSeats } from 'src/app/Class/book-seats';
 import { AirportService } from 'src/app/Service/airport.service';
 import { FlightService } from 'src/app/Service/flight.service';
 import { SeatService } from 'src/app/Service/seat.service';

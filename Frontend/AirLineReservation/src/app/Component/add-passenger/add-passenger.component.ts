@@ -42,17 +42,18 @@ export class AddPassengerComponent implements OnInit {
       bookseats: this.fb.array([this.getpassenger()])
     });
 
+    
 
     this.flightid = this.aroute.snapshot.params['flightid'];
     
-    this.service.getFlightById(this.flightid).subscribe((Response) => {
+    this.service.getFlightById(this.flightid).subscribe((Response:any) => {
       this.flightDetails = Response;
       this.getAllSeat();
     });
   }
 
   getAllSeat() {
-    this.seatService.getAllSeatsByFlightId(this.flightid).subscribe((Response) => {
+    this.seatService.getAllSeatsByFlightId(this.flightid).subscribe((Response:any) => {
       this.allSeatsType = Response;
       this.checkgetdata=true;
     })
@@ -81,7 +82,7 @@ export class AddPassengerComponent implements OnInit {
     return this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      phoneno: ['', [Validators.required, Validators.minLength(10)]],
+      phoneno: ['', [Validators.required, Validators.minLength(6)]],
       passportno: ['', [Validators.required]],
       country: ['', [Validators.required]],
       gender: ['', [Validators.required]],

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,7 +9,6 @@ import { Flightcompany } from 'src/app/Class/flightcompany';
 import { Seattype } from 'src/app/Class/seattype';
 import { AdminService } from 'src/app/Service/admin.service';
 import { SeatTypeService } from 'src/app/Service/seat-type.service';
-import { SeatService } from 'src/app/Service/seat.service';
 
 @Component({
   selector: 'app-addflight',
@@ -39,7 +39,9 @@ export class AddflightComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private router:Router,
     private aService:AdminService,
-    private seatService:SeatTypeService) { }
+    private seatService:SeatTypeService,
+    private loc:Location
+    ) { }
 
   ngOnInit(): void {
 
@@ -114,7 +116,7 @@ export class AddflightComponent implements OnInit {
     if (this.addFlightForm.invalid) {
       return;
     }
-    console.log(this.addFlightForm);
+    // console.log(this.addFlightForm);
 
     this.save();
   }
@@ -123,8 +125,9 @@ export class AddflightComponent implements OnInit {
   save() {
     //console.log(this.flight);
     this.aService.addFlight(this.flight).subscribe((response) => {
-      console.log(response);
-      this.router.navigate(['/admin']);
+      // console.log(response);
+      // this.router.navigate(['/admin']);
+      this.loc.back();
     })
   }
 

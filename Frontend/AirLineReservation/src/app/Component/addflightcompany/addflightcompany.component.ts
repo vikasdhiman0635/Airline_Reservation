@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,7 +19,8 @@ export class AddflightcompanyComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private aService: AdminService,
-    private router: Router
+    private router: Router,
+    private loc:Location
   ) { }
 
   ngOnInit(): void {
@@ -46,8 +48,9 @@ export class AddflightcompanyComponent implements OnInit {
 
   save() {
     this.aService.addFlightCompany(this.flightCompany).subscribe((response) => {
-      console.log(response);
-      this.router.navigate(['/admin']);
+      // console.log(response);
+      this.loc.back();
+      // this.router.navigate(['/admin']);
     })
   }
 

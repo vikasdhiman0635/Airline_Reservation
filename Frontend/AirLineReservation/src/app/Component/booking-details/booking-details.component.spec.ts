@@ -31,4 +31,33 @@ describe('BookingDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('sholud check all veriables is undefine', () => {
+    expect(component.bookid).toBeUndefined();
+    expect(component.bookTicket).toBeUndefined();
+    expect(component.flightDetails).toBeUndefined();
+    expect(component.check).toEqual(false);
+  })
+
+  it('should check app-nav component in html', () => {
+    expect(fixture.debugElement.nativeElement.querySelector('app-all-nav')).toBeTruthy();
+  });
+
+  it('should check app-footer component in html', () => {
+    expect(fixture.debugElement.nativeElement.querySelector('app-footer')).toBeTruthy();
+  });
+
+  it('sholud check container is exist', () =>{
+    expect(fixture.debugElement.nativeElement.querySelectorAll('.container')).toBeTruthy();
+  });
+
+  it('cholud check heading in html', () => {
+    expect(fixture.debugElement.nativeElement.querySelector('h1').textContent).toContain('Ticket Details');
+  });
+
+  it('sholud check getFlightDetails function', () => {
+    expect(component.print()).toBeUndefined();
+  });
+
 });

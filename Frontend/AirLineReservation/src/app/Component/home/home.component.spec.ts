@@ -35,12 +35,12 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
   it('Test input field in form', () => {
     const formElement = fixture.debugElement.nativeElement.querySelector('form');
     const inputElement = formElement.querySelectorAll('input');
     expect(inputElement.length).toEqual(3);
   });
+
 
   it('Test input field in form', () => {
     const formElement = fixture.debugElement.nativeElement.querySelector('#div1');
@@ -48,6 +48,7 @@ describe('HomeComponent', () => {
     expect(inputElement.length).toEqual(3);
   });
 
+  
   it('it sholud check input field values', () => {
     const searchForm = component.searchForm;
     const searchFormValues = {
@@ -58,7 +59,7 @@ describe('HomeComponent', () => {
     expect(searchForm.value).toEqual(searchFormValues);
   });
 
-
+  
   it('it sholud create a form with three controls', () => {
     expect(component.searchForm.contains('from')).toBe(true);
     expect(component.searchForm.contains('to')).toBe(true);

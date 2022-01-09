@@ -5,7 +5,6 @@ import { first } from 'rxjs/operators';
 import { Flight } from 'src/app/Class/flight';
 import { AdminService } from 'src/app/Service/admin.service';
 import { SeatTypeService } from 'src/app/Service/seat-type.service';
-import { SeatService } from 'src/app/Service/seat.service';
 
 @Component({
   selector: 'app-updateflight',

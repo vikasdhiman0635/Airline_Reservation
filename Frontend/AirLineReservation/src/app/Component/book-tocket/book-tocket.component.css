@@ -1,13 +1,17 @@
 @media print {
-    app-nav {
+  app-all-nav {
     display: none;
   }
-  img
-  {
-      display: none;
+
+  img {
+    display: none;
   }
-  .passenger
-  {
-      margin-top: -20px;
+
+  .passenger {
+    /* margin-top: -20px; */
+  }
+
+  app-footer {
+    display: none;
   }
 }

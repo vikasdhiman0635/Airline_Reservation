@@ -24,19 +24,16 @@ public class SeatServiceImpl implements SeatService{
 
 	@Override
 	public List<Seats> getBookFlightSeatData(long flightid, String seattype) {
-		// TODO Auto-generated method stub
 		return repo.findAllByFlightidAndSeattype(flightid, seattype);
 	}
 
 	@Override
 	public List<Seats> getFlightBySeats(long flightid) {
-		// TODO Auto-generated method stub
 		return repo.findByFlightid(flightid);
 	}
 
 	@Override
 	public String deleteById(long seatid) {
-		// TODO Auto-generated method stub
 		if(repo.existsById(seatid))
 		{
 			repo.deleteById(seatid);
@@ -47,7 +44,6 @@ public class SeatServiceImpl implements SeatService{
 
 	@Override
 	public SeatAvailableResponse getBookdataByFlightSeatData(long flightid, String seattype) {
-		// TODO Auto-generated method stub
 		SeatAvailableResponse res=new SeatAvailableResponse();
 		Seats seat=repo.findByFlightidAndSeattype(flightid, seattype);
 
@@ -69,8 +65,6 @@ public class SeatServiceImpl implements SeatService{
 
 	@Override
 	public VerifySeatResponse verify(long flightid, List<Seats> seat) {
-		// TODO Auto-generated method stub
-//		boolean res=true;
 		VerifySeatResponse res=new VerifySeatResponse();
 		res.setCheck(true);
 		for(Seats s:seat)

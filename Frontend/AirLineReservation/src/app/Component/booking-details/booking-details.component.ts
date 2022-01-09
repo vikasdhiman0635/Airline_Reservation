@@ -35,10 +35,10 @@ export class BookingDetailsComponent implements OnInit {
 
   getFlightdetails()
   {
-    console.log(this.bookTicket.flightid);
+    // console.log(this.bookTicket.flightid);
     this.flightService.getFlightById(this.bookTicket.flightid).subscribe((Response) => 
     {
-      console.log(Response);
+      // console.log(Response);
       this.flightDetails=Response;
       this.check=true;
     });

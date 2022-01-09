@@ -11,7 +11,9 @@ describe('AddPassengerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddPassengerComponent ],
+      declarations: [
+        AddPassengerComponent
+      ],
       imports: [
         ReactiveFormsModule,
         FormsModule,
@@ -19,7 +21,7 @@ describe('AddPassengerComponent', () => {
         AppRoutingModule
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -28,7 +30,18 @@ describe('AddPassengerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
+
+
+  // it('sholid check Variables is undefine',() => {
+  //   expect(component.addPassenger).toBeUndefined();
+  //   expect(component.user).toBeUndefined();
+  // });
+
+  // it('sholud check all nav bar', () => {
+  //   expect(fixture.debugElement.nativeElement.querySelector('app-all-nav')).toBeTruthy();
+  // })
+
 });

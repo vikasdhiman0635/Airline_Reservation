@@ -1,5 +1,5 @@
-<app-nav></app-nav>
-
+<app-all-nav></app-all-nav>
+<br>
 <div class="container" *ngIf="checkdata">
     <div class="row">
         <div class="col-md-6">
@@ -52,7 +52,7 @@
                 <div class="col-md-6 boxx" *ngFor="let seat of flightDetails.flightseats">
                     <h6>Seat Type: <i>{{seat.seattype | uppercase}}</i></h6>
                     <h6>Total Seats: <i>{{seat.totalseats}}</i></h6>
-                    <h6>Seat Price: <i>{{seat.seatprize | currency:'INR'}}</i></h6>
+                    <h6>Seat Price: &nbsp; <i class="fa fa-inr"></i>&nbsp;<i>{{seat.seatprize}}</i></h6>
                 </div>
             </div>
         </div>

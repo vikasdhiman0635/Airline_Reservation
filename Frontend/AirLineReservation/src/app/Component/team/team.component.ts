@@ -17,7 +17,7 @@ export class TeamComponent implements OnInit {
   adminemail: string = '';
   index:any;
 
-  constructor(private aService: AdminService, 
+  constructor(private aService: AdminService,
     private router: Router
     ) { }
 

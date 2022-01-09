@@ -1,4 +1,4 @@
-<app-nav></app-nav>
+<app-all-nav></app-all-nav>
 <br>
 <div class="container" *ngIf="checkdata">
     <div class="row">
@@ -86,7 +86,7 @@
                                     {{seats.seattype}}
                                 </th>
                                 <td>
-                                    {{seats.price | currency:'INR'}}
+                                    <i class="fa fa-inr"></i>&nbsp;{{seats.price}}
                                 </td>
                             </tr>
                             <tr>
@@ -95,7 +95,7 @@
                             </tr>
                             <tr class="table table-bordered">
                                 <th>Total Price</th>
-                                <td class="text-success">{{totalBill | currency:'INR'}}</td>
+                                <td class="text-success"><i class="fa fa-inr"></i>&nbsp;{{totalBill}}</td>
                             </tr>
                         </table>
                     </div>

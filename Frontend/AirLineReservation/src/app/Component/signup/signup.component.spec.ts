@@ -31,4 +31,28 @@ describe('SignupComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Test input field in form', () => {
+    const formElement = fixture.debugElement.nativeElement.querySelector('form');
+    const inputElement = formElement.querySelectorAll('input');
+    expect(inputElement.length).toEqual(5);
+  });
+
+  
+  it('it sholud check input field values', () => {
+    const signupForm = component.signupForm;
+    const signupFormValues = {
+      firstname: '',
+      lastname: '',
+      email: '',
+      mobileno:'',
+      password:''
+    };
+    expect(signupForm.value).toEqual(signupFormValues);
+  });
+
+  it('should check save method', () => {
+    expect(component.save()).toBeUndefined();
+  });
+
 });
