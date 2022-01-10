@@ -1,20 +1,15 @@
 
+l	java:S125T"<This block of commented-out lines of code should be removed.(™àí°şÿÿÿÿHÇ2RMAJORZ
+CODE_SMELL
 
-java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(—³ÒHî(RCRITICALZ
+java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(—³ÒH´2RCRITICALZ
 CODE_SMELL
 {
-java:S3655¸"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(å˜³ÿÿÿÿÿHŒ)RMAJORZBUG
-l	java:S125T"<This block of commented-out lines of code should be removed.(™àí°şÿÿÿÿHé(RMAJORZ
+java:S3655«"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(å˜³ÿÿÿÿÿH³2RMAJORZBUG
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ğ°ìHÉ2RMINORZ
 CODE_SMELL
+{
+java:S3655—"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(å˜³ÿÿÿÿÿHÊ2RMAJORZBUG
 \
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒH…)RMINORZ
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒHË2RMINORZ
 CODE_SMELL
-h
-java:S1854j"7Remove this useless assignment to local variable "cnt".(š‚‚£úÿÿÿÿHë(RMAJORZ
-CODE_SMELL
-l	java:S125l"<This block of commented-out lines of code should be removed.(—¼á´ÿÿÿÿÿHı(RMAJORZ
-CODE_SMELL
-…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ğ°ìHç(RMINORZ
-CODE_SMELL
-{
-java:S3655¤"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(å˜³ÿÿÿÿÿHê(RMAJORZBUG

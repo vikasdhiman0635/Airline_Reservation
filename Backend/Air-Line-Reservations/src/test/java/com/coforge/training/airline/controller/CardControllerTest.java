@@ -11,8 +11,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -50,7 +48,7 @@ class CardControllerTest {
 		MockitoAnnotations.openMocks(this);
 		card=getCardList();
 	}
-	
+
 	private List<Card> getCardList() {
 		Card c1 = new Card();
 		c1.setCardno(0);
@@ -62,7 +60,7 @@ class CardControllerTest {
 		l1.add(c1);
 		return l1;
 	}
-	
+
 	@Test
 	void testSave() {
 		Card add=new Card();
@@ -72,12 +70,12 @@ class CardControllerTest {
 		add.setCvv(card.get(0).getCvv());
 		add.setName(card.get(0).getName());
 		add.setRecardno(card.get(0).getRecardno());
-		
+
 		when(service.saveCard(card.get(0))).thenReturn(add);
 		Card res=service.saveCard(add);
 		assertEquals(add, res);
 		assertNotNull(res);
-		
+
 		verify(service,times(1)).saveCard(add);
 	}
 
@@ -93,36 +91,50 @@ class CardControllerTest {
 	@Test
 	void testVerifyCard() {
 		boolean a= true;
-//		Card c=card.get(0);
+		//		Card c=card.get(0);
 		Card c =new Card();
 		c.setCardno(card.get(0).getCardno());
-//		VerifyUserCrenditials resp=new VerifyUserCrenditials();
-//		resp.setEmail("r@gmail.com");
-//		resp.setPhoneno("12222133456");
-		
-		when(service.verifycard(card.get(0).getCardno())).thenReturn(a);
-		
-		
-		boolean res=service.verifycard(c.getCardno());
-		
-		assertNotNull(c);
-		
-     	
-     	assertEquals(c.getCardno(), card.get(0).getCardno());
-    
+		//		VerifyUserCrenditials resp=new VerifyUserCrenditials();
+		//		resp.setEmail("r@gmail.com");
+		//		resp.setPhoneno("12222133456");
 
-	
-      	verify(service,times(1)).verifycard(c.getCardno());
+		when(service.verifycard(card.get(0).getCardno())).thenReturn(a);
+
+		boolean res=service.verifycard(c.getCardno());
+
+		assertNotNull(c);
+
+		assertEquals(c.getCardno(), card.get(0).getCardno());
+
+		verify(service,times(1)).verifycard(c.getCardno());
 	}
 
 	@Test
 	void testVerify() {
-		fail("Not yet implemented");
+		final boolean check=true;
+
+		when(service.verifyCardDetails(card.get(0))).thenReturn(check);
+
+		boolean res=service.verifyCardDetails(card.get(0));
+
+		assertEquals(check, res);
+		assertTrue(res);
+
+		verify(service,times(1)).verifyCardDetails(card.get(0));
 	}
 
 	@Test
 	void testVerifyByCode() {
-		fail("Not yet implemented");
+		final boolean check=true;
+
+		when(service.verifyByCode(card.get(0))).thenReturn(check);
+
+		boolean res=service.verifyByCode(card.get(0));
+
+		assertEquals(check, res);
+		assertTrue(res);
+
+		verify(service,times(1)).verifyByCode(card.get(0));
 	}
 
 }

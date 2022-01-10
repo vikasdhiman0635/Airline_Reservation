@@ -1,5 +1,5 @@
 
-w
-java:S4684#"@Replace this persistent entity with a simple POJO or DTO object.(¡„ì„üÿÿÿÿHþ#RCRITICALZVULNERABILITY
-g	java:S125"<This block of commented-out lines of code should be removed.(ßÓ˜‡Hü#RMAJORZ
+g	java:S125"<This block of commented-out lines of code should be removed.(ßÓ˜‡Hƒ5RMAJORZ
 CODE_SMELL
+w
+java:S4684#"@Replace this persistent entity with a simple POJO or DTO object.(¡„ì„üÿÿÿÿH…5RCRITICALZVULNERABILITY

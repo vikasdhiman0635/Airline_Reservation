@@ -8,6 +8,7 @@ import { Airport } from '../Class/airport';
   providedIn: 'root'
 })
 export class AdminService {
+  
   alladmins='http://localhost:8090/admincontent';
 
   addadmin='http://localhost:8090/admincontent';
@@ -25,7 +26,6 @@ export class AdminService {
 
   //to fetch all admins
   getAdmins(): Observable<Admin>{
-
     return this.http.get<Admin>(`${this.alladmins}`);
   }
 

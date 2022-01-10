@@ -1,12 +1,9 @@
 
-
-java:S3415f"VSwap these 2 arguments so they are in the correct order: expected value, actual value.(ÊéÒ©RMAJORZ
+r
+java:S5845x"JChange the assertion arguments to not compare a primitive value with null.(÷Í¼¶HÈ5RCRITICALZBUG
+‡
+java:S3415P"VSwap these 2 arguments so they are in the correct order: expected value, actual value.(¾õöüýÿÿÿÿHÍ5RMAJORZ
 CODE_SMELL
-„
-java:S3415R"VSwap these 2 arguments so they are in the correct order: expected value, actual value.(¾õöüýÿÿÿÿRMAJORZ
-CODE_SMELL
-o
-java:S5845z"JChange the assertion arguments to not compare a primitive value with null.(÷Í¼¶RCRITICALZBUG
-C
-java:S5785§"Use assertEquals instead.(ïŒ‹ŸRMAJORZ
+‚
+java:S3415d"VSwap these 2 arguments so they are in the correct order: expected value, actual value.(ÊéÒ©HÉ5RMAJORZ
 CODE_SMELL

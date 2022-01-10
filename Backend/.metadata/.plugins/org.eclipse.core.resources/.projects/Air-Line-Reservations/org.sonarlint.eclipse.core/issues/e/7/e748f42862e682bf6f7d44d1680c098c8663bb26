@@ -1,10 +1,10 @@
 
+
+java:S1128"WRemove this unused import 'net.bytebuddy.pool.TypePool.Resolution.NoSuchTypeException'.(—ÌÎşÿÿÿÿ8û¨ä¡ã/HÛ.RMINORZ
+CODE_SMELL
 z
 java:S3655+"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ö€¢ŒşÿÿÿÿHü,RMAJORZBUG
 …	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ğ°ìHø,RMINORZ
-CODE_SMELL
-
-java:S1128"WRemove this unused import 'net.bytebuddy.pool.TypePool.Resolution.NoSuchTypeException'.(—ÌÎşÿÿÿÿ8û¨ä¡ã/HÛ.RMINORZ
 CODE_SMELL
 z
 java:S3655="PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ö€¢ŒşÿÿÿÿHö,RMAJORZBUG

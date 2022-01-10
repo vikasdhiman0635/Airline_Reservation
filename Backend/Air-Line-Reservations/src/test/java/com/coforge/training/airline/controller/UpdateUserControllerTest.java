@@ -92,7 +92,21 @@ class UpdateUserControllerTest {
 
 	@Test
 	void testUpdatePassword() {
-		fail("Not yet implemented");
+		long userid =100;
+		UpdateUserResponse res=new UpdateUserResponse();
+		res.setCheck(true);
+		res.setEmail("a@gmail.com");
+		res.setMessage("Password is Change");
+		res.setUser(user.get(0));
+		
+		when(service.updatePassword(userid, user.get(0))).thenReturn(res);
+		
+		UpdateUserResponse check=service.updatePassword(userid, user.get(0));
+		
+		assertEquals(res, check);
+		
+		verify(service,times(1)).updatePassword(userid, user.get(0));
+		
 	}
 
 }

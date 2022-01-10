@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.response.SeatAvailableResponse"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
@@ -30,7 +25,6 @@
     <fullyQualifiedTypeName name="com.coforge.training.airline.model.BookTickets"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.service.CardService"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.repository.CardRepo"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.model.Card"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.controller.FlightCompanyController"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.service.FlightCompanyService"/>
     <fullyQualifiedTypeName name="com.coforge.training.airline.repository.FlightCompanyRepo"/>
@@ -50,14 +44,20 @@
     <fullyQualifiedTypeName name="com.coforge.training.airline.repository.UserRepo"/>
     <fullyQualifiedTypeName name="org.mockito.Spy"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.model.User"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
     <fullyQualifiedTypeName name="org.mockito.MockitoAnnotations"/>
-    <fullyQualifiedTypeName name="com.coforge.training.airline.response.UpdateUserResponse"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="net.bytebuddy.pool.TypePool.Resolution.NoSuchTypeException"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.controller.UPIController"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.service.UPIService"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.repository.UPIRepository"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.model.UPI"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.model.User"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.response.UpdateUserResponse"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="com.coforge.training.airline.model.Card"/>
 </qualifiedTypeNameHistroy>

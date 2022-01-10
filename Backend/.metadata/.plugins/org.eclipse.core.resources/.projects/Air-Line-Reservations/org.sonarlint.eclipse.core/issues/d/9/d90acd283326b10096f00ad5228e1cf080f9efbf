@@ -1,20 +1,20 @@
 
-w
-java:S3655%"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¸â™¬þÿÿÿÿRMAJORZBUG
-‚	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìRMINORZ
+z
+java:S3655%"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¸â™¬þÿÿÿÿHÎ7RMAJORZBUG
+b
+java:S1135"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHÉ7RINFOZ
 CODE_SMELL
-_
-java:S1135<"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìHÊ7RMINORZ
 CODE_SMELL
-_
-java:S1135"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+b
+java:S1135$"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHÍ7RINFOZ
 CODE_SMELL
-_
-java:S1135"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+b
+java:S1135<"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHÌ7RINFOZ
 CODE_SMELL
-_
-java:S1135+"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+b
+java:S1135"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHË7RINFOZ
 CODE_SMELL
-_
-java:S1135$"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿRINFOZ
+b
+java:S1135+"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHÏ7RINFOZ
 CODE_SMELL

@@ -5,11 +5,12 @@ import { AuthanticationService } from './authantication.service';
 
 describe('AuthanticationService', () => {
   let service: AuthanticationService;
+  let obj:Object='';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
 
-      imports: [HttpClientTestingModule]
+      imports:[HttpClientTestingModule]
     });
     service = TestBed.inject(AuthanticationService);
   });
@@ -17,4 +18,12 @@ describe('AuthanticationService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should create Method :login,getUserByEmail & ById',()=>{
+    expect(service.login(obj)).toBeTruthy();
+    expect(service.getUserByEmail(obj)).toBeTruthy();
+    expect(service.getUserById(obj)).toBeTruthy();
+
+  });
+
 });

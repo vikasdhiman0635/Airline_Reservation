@@ -52,7 +52,7 @@ public class FlightServiceImpl implements FlightService
 			
 			flight.setFlightid(rendom);
 			
-			List<Seats> listSeats=new ArrayList<Seats>();
+			List<Seats> listSeats=new ArrayList<>();
 			
 			listSeats.addAll(flight.getFlightseats());
 			

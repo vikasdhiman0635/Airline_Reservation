@@ -1,7 +1,7 @@
 
 ˆ	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ז÷בH½/RCRITICALZ
 CODE_SMELL
-	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(תק¿תÿÿÿÿH¾/RCRITICALZ
-CODE_SMELL
 	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ק›‡חרÿÿÿÿH¿/RCRITICALZ
+CODE_SMELL
+	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(תק¿תÿÿÿÿH¾/RCRITICALZ
 CODE_SMELL

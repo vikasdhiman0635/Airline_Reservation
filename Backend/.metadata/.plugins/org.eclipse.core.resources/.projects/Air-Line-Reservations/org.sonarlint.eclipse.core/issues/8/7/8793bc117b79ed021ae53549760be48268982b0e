@@ -1,5 +1,5 @@
 
 z
-java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(›–ÍşÿÿÿÿHà(RMAJORZBUG
-…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ğ°ìHŞ(RMINORZ
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(›–ÍşÿÿÿÿHÎ2RMAJORZBUG
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ğ°ìHÍ2RMINORZ
 CODE_SMELL

@@ -11,8 +11,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -164,8 +162,8 @@ class LoginControllerTest {
 		boolean addc=service.verifyEmail(res.getEmail());
 
 
-		assertTrue(b==addc);
-		//assertTrue(addc);
+		assertTrue(addc);
+
 		verify(service,times(1)).verifyEmail(res.getEmail());
 	}
 
