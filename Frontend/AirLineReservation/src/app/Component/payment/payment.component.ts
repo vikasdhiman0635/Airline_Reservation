@@ -41,8 +41,8 @@ export class PaymentComponent implements OnInit {
     });
 
     this.cardForm = this.fb.group({
-      cardno: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(12)]],
-      recardno: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(12)]],
+      cardno: ['', [Validators.required, Validators.minLength(10)]],
+      recardno: ['', [Validators.required]],
       cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]],
       cardhldername: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]]
     }, { validator: CardNumberValidator });

@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
+
+#logofont{
+  font-family: 'Licorice', cursive;
+  font-weight: bold;
+}
 .logo{
   width: 60px;
   cursor: pointer;

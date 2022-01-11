@@ -49,7 +49,7 @@
                                     <input type="number" formControlName="cardno" class="form-control" placeholder="Enter Card No.">
                                     <div *ngIf="cardForm.get('cardno').invalid && cardForm.get('cardno').touched">
                                         <small class="text-danger" *ngIf="cardForm.get('cardno').errors?.required">Card no. is required</small>
-                                        <small class="text-danger" *ngIf="cardForm.get('cardno').errors?.minlength">Card no. must be 12 digits</small>
+                                        <small class="text-danger" *ngIf="cardForm.get('cardno').errors?.minlength">Card no. must be 10 digits</small>
                                         <small class="text-danger" *ngIf="cardForm.get('cardno').errors?.maxlength">Card no. maximum 12 digits</small>
                                     </div>
                                     <br>
