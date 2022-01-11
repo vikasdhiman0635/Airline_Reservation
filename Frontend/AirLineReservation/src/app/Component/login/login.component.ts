@@ -19,6 +19,10 @@ export class LoginComponent implements OnInit {
   loginSuccess = false;
   submitted = false;
   isLoggedin = false;
+  
+  checkmessage:boolean=false;
+
+  message:any='';
 
   user: any;
 
@@ -48,12 +52,23 @@ export class LoginComponent implements OnInit {
     this.lservice.login(this.user).subscribe((response) => {
       // console.log(response);
       if (response.login == true) {
-        localStorage.setItem('user', JSON.stringify(response.user));
-        localStorage.setItem('email', response.user?.email);
-        this.router.navigate(['/']);
+
+        // console.log(response.user.role);
+        if (response.user.role == "Admin") {
+          localStorage.setItem('user', JSON.stringify(response.user));
+          localStorage.setItem('email', response.user?.email);
+          this.router.navigate(['/admin']);
+        }
+        else {
+          localStorage.setItem('user', JSON.stringify(response.user));
+          localStorage.setItem('email', response.user?.email);
+          this.router.navigate(['/']);
+        }
       }
       else {
-        alert(response.message);
+        // alert(response.message);
+        this.checkmessage=true;
+        this.message=response.message;
       }
     });
     this.loginSuccess = false;

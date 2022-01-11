@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -14,7 +15,7 @@ export class AdminComponent implements OnInit {
   team: boolean = false;
   airports: boolean = false;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   
@@ -52,5 +53,13 @@ export class AdminComponent implements OnInit {
     this.profile = false;
     this.flights = false;
     this.airports = true;
+  }
+
+  logout()
+  {
+    localStorage.removeItem("user");
+    localStorage.removeItem("email");
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

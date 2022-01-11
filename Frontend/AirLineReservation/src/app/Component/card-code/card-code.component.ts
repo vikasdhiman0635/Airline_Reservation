@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/Class/book';
 import { BookTicketService } from 'src/app/Service/book-ticket.service';
@@ -23,10 +24,12 @@ export class CardCodeComponent implements OnInit {
   cardForm: any;
 
   book = new Book();
+  upicode: FormGroup | any;
 
   constructor(private servive: CardService,
     private bookService: BookTicketService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -40,46 +43,39 @@ export class CardCodeComponent implements OnInit {
     this.billdetails = localStorage.getItem("bill");
     this.billForm = JSON.parse(this.billdetails);
 
+    this.upicode = this.fb.group({
+      // upi: [this.upiid],
+      code: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]]
+    });
+
   }
 
   verify() {
-    // console.log(this.code);
-    let jsoncode = {
+
+    this.book.flightid = this.bookForm.flightid;
+    this.book.email = this.bookForm.email;
+    this.book.userid = this.bookForm.userid;
+    this.book.ticketpaymentmethod = "Card";
+
+    this.book.bookseats = this.bookForm.bookseats;
+
+    const card = {
       cardno: this.cardForm.cardno,
-      code: this.code
+      recardno: this.cardForm.recardno,
+      cvv: this.cardForm.cvv,
+      cardhldername: this.cardForm.cardhldername,
+      totalamount: this.billForm.totalamount,
+      paidamount: this.billForm.totalamount,
+      paymentstatus: "Success",
     }
 
-    this.servive.verifyByCode(jsoncode).subscribe((Response) => {
-      if (Response == true) {
-        this.book.flightid = this.bookForm.flightid;
-        this.book.email = this.bookForm.email;
-        this.book.userid = this.bookForm.userid;
-        this.book.ticketpaymentmethod = "Card";
+    this.book.paymentstatus = card;
 
-        this.book.bookseats = this.bookForm.bookseats;
+    localStorage.removeItem("bookForm");
+    localStorage.removeItem("bill");
+    localStorage.removeItem("card");
 
-        const card = {
-          cardno: this.cardForm.cardno,
-          recardno: this.cardForm.recardno,
-          cvv: this.cardForm.cvv,
-          cardhldername: this.cardForm.cardhldername,
-          totalamount: this.billForm.totalamount,
-          paidamount: this.billForm.totalamount,
-          paymentstatus: "Success",
-        }
-
-        this.book.paymentstatus = card;
-
-        localStorage.removeItem("bookForm");
-        localStorage.removeItem("bill");
-        localStorage.removeItem("card");
-
-        this.booknow();
-      }
-      else {
-        alert("Enter Valid Code");
-      }
-    });
+    this.booknow();
   }
 
   booknow() {
