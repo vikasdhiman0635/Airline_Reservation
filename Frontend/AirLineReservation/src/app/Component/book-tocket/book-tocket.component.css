@@ -1,4 +1,5 @@
 @media print {
+
   app-all-nav {
     display: none;
   }
@@ -7,8 +8,10 @@
     display: none;
   }
 
-  .passenger {
-    /* margin-top: -20px; */
+  .setup
+  {
+    margin-left: 300px;
+    margin-top: -95px;
   }
 
   app-footer {

@@ -10,8 +10,9 @@
   {
       display: none;
   }
-  .passenger
+  .setup
   {
-      margin-top: 230px;
+      margin-left: 250px;
+      margin-top: -95px;
   }
 }

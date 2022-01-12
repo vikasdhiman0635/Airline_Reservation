@@ -9,6 +9,8 @@ export class UserService {
 
   save = 'http://localhost:8090/user/save';
 
+  baseURL = 'http://localhost:8090/user/update';
+
   constructor(private http: HttpClient) { }
 
   newUser(user: Object): Observable<Object> {
@@ -22,6 +24,11 @@ export class UserService {
   getUserByUserId(email:any):Observable<any>
   {
     return this.http.get(`http://localhost:8090/user/getbyemail/${email}`);
+  }
+
+  updatepassword(userid:any,user:any):Observable<any>
+  {
+    return this.http.put(`${this.baseURL}/updatepassword/${userid}`,user);
   }
 
 }

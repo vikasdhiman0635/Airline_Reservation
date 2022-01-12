@@ -39,5 +39,10 @@ export class UserProfileComponent implements OnInit {
     this.router.navigate(['/edit',this.email])
   }
 
+  changePassword()
+  {
+    this.router.navigate(['/changepassword']) 
+  }
+
 
 }

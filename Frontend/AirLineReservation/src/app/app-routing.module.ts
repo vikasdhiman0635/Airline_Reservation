@@ -9,6 +9,7 @@ import { AllflightsComponent } from './Component/allflights/allflights.component
 import { BookTocketComponent } from './Component/book-tocket/book-tocket.component';
 import { BookingDetailsComponent } from './Component/booking-details/booking-details.component';
 import { CardCodeComponent } from './Component/card-code/card-code.component';
+import { ChangePasswordComponent } from './Component/change-password/change-password.component';
 import { ContactComponent } from './Component/contact/contact.component';
 import { EditprofileComponent } from './Component/editprofile/editprofile.component';
 import { HomeComponent } from './Component/home/home.component';
@@ -116,6 +117,9 @@ const routes: Routes = [
   },
   {
     path: 'cantact', component: ContactComponent
+  },
+  {
+    path: 'changepassword', component: ChangePasswordComponent
   },
   {
     path: '**', component: NotfoundComponent

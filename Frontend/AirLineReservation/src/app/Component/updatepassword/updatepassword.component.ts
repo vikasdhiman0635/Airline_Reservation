@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -43,9 +44,8 @@ export class UpdatepasswordComponent implements OnInit {
 
   verifyemail() {
     this.pService.verifyemail(this.emailForm.value.email).subscribe((response) => {
-      console.log(response);
+      
       if (response == true) {
-        console.log(this.user.email);
         // localStorage.setItem("email", this.user.email);
         this.router.navigate(['/verifyphoneno',this.emailForm.value.email]);
       }

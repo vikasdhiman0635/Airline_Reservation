@@ -45,7 +45,7 @@ export class AllNavComponent implements OnInit {
     localStorage.removeItem("user");
     localStorage.removeItem("email");
     localStorage.clear();
-    window.location.reload();
+    // window.location.reload();
     this.router.navigate(['/']);
   }
 

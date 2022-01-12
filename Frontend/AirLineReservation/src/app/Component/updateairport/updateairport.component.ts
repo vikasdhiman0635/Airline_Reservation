@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Airport } from 'src/app/Class/airport';
 import { first } from 'rxjs/operators';
 import { AdminService } from 'src/app/Service/admin.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-updateairport',
@@ -21,7 +22,8 @@ export class UpdateairportComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private aService: AdminService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loc:Location
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +33,7 @@ export class UpdateairportComponent implements OnInit {
     this.getdatainForm();
     this.updateAirportForm = this.formBuilder.group({
       airportid: ['', [Validators.required]],
-      airportname: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
+      airportname: ['', [Validators.required]],
       airportcountry: ['', [Validators.required]],
       airportcity: ['', [Validators.required]],
       airportpincode: ['', [Validators.required, Validators.minLength(6)]],
@@ -53,13 +55,12 @@ export class UpdateairportComponent implements OnInit {
   }
 
   update() {
-    //console.log(this.airport);
     console.log(this.airportid);
     this.aService.updateAirport(this.airport, this.airportid).subscribe((response) => {
       console.log(response);
       this.airport = new Airport();
 
-      this.router.navigate(['/admin']);
+      this.loc.back();
     }, (error) => { this.getdatainForm(); });
   }
 

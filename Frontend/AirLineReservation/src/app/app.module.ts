@@ -41,6 +41,7 @@ import { VerifyphonenoComponent } from './Component/verifyphoneno/verifyphoneno.
 import { UserProfileComponent } from './Component/user-profile/user-profile.component';
 import { AllNavComponent } from './Component/all-nav/all-nav.component';
 import { ContactComponent } from './Component/contact/contact.component';
+import { ChangePasswordComponent } from './Component/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { ContactComponent } from './Component/contact/contact.component';
     UserProfileComponent,
     AllNavComponent,
     ContactComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -31,7 +32,8 @@ export class UpdateflightComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private aService: AdminService,
-    private stService: SeatTypeService
+    private stService: SeatTypeService,
+    private loc:Location
   ) { }
 
   ngOnInit(): void {
@@ -145,7 +147,7 @@ export class UpdateflightComponent implements OnInit {
     this.aService.updateFlight(this.flight,this.flightid).subscribe((response) => {
       // console.log(response);
       this.flight = new Flight();
-      this.router.navigate(['/admin']);
+      this.loc.back();
     })
   }
 

@@ -95,7 +95,6 @@ public class UpdateUserServiceImpl implements UpdateUserService{
 		{
 			String password=user.getPassword();
 			String encpass=encryptedPassword(password);
-//			registerUser.setPassword(encpass);
 			if(newUser.getPassword()==encpass)
 			{
 				res.setMessage("Do not enter your last ");
