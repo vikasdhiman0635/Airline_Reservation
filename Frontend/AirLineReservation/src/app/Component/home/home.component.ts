@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
 
   checkflights()
   {
-    // console.log(this.searchForm.value);
+    // console.log(this.searchForm);
     localStorage.setItem("flight",JSON.stringify(this.searchForm.value));
     this.router.navigate(['/searchflight']);
   }

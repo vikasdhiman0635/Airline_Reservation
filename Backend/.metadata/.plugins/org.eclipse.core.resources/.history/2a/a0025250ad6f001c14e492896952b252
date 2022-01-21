@@ -1,8 +1,0 @@
-package com.coforge.training.airline.enums;
-
-public class Snippet {
-	Resource	Date	Description
-	AdminContentController.java	null	Replace this persistent entity with a simple POJO or DTO object.
-	
-}
-

@@ -1,11 +1,11 @@
 
-…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìH‰2RMINORZ
-CODE_SMELL
 z
-java:S1128"GRemove this unused import 'com.coforge.training.airline.model.Address'.(ïØèÝ8Ç´¢ïã/H–2RMINORZ
+java:S1128"GRemove this unused import 'com.coforge.training.airline.model.Address'.(ïØèÝ8Ç´¢ïã/HÙ>RMINORZ
 CODE_SMELL
 
-java:S1488{"eImmediately return this expression instead of assigning it to the temporary variable "encodedString".(öåŠ¹úÿÿÿÿ8­Î£ïã/Hš2RMINORZ
+java:S1488{"eImmediately return this expression instead of assigning it to the temporary variable "encodedString".(öåŠ¹úÿÿÿÿ8­Î£ïã/HÜ>RMINORZ
+CODE_SMELL
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìHÛ>RMINORZ
 CODE_SMELL
 v
-java:S3655´"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ìÎÚðHŠ2RMAJORZBUG
+java:S3655´"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ìÎÚðHØ>RMAJORZBUG

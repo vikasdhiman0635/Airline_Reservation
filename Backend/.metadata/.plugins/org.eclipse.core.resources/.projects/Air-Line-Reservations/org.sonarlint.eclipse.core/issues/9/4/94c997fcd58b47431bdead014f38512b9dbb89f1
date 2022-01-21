@@ -1,6 +1,6 @@
 
-r
-java:S5845m"JChange the assertion arguments to not compare a primitive value with null.(æÏ“Hä5RCRITICALZBUG
 ‚
 java:S3415~"VSwap these 2 arguments so they are in the correct order: expected value, actual value.(ç™•øHà5RMAJORZ
 CODE_SMELL
+r
+java:S5845m"JChange the assertion arguments to not compare a primitive value with null.(æÏ“Hä5RCRITICALZBUG

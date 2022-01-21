@@ -1,22 +1,22 @@
 
-b
-java:S1135R"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿH5RINFOZ
-CODE_SMELL
-b
-java:S1135}"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿHŠ5RINFOZ
+c
+java:S1135‘"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿHü>RINFOZ
 CODE_SMELL
 c
-java:S1135‘"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿH†5RINFOZ
+java:S1135 "2Complete the task associated to this TODO comment.(¾¯‚âüÿÿÿÿHı>RINFOZ
 CODE_SMELL
 b
-java:S1135,"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿH‰5RINFOZ
+java:S1135}"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿHş>RINFOZ
 CODE_SMELL
-c
-java:S1135 "2Complete the task associated to this TODO comment.(¾¯‚âüÿÿÿÿH5RINFOZ
+b
+java:S1135,"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿHÿ>RINFOZ
 CODE_SMELL
-…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ğ°ìH‹5RMINORZ
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ğ°ìH€?RMINORZ
+CODE_SMELL
+z
+java:S3655X"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Úòˆ€üÿÿÿÿH?RMAJORZBUG
+b
+java:S1135R"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿH‚?RINFOZ
 CODE_SMELL
 {
-java:S3655¦"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(½ßÌõıÿÿÿÿHŒ5RMAJORZBUG
-z
-java:S3655X"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Úòˆ€üÿÿÿÿH5RMAJORZBUG
+java:S3655¦"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(½ßÌõıÿÿÿÿHƒ?RMAJORZBUG

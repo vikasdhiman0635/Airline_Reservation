@@ -2,9 +2,9 @@
 c
 java:S1128"7Remove this unused import 'javax.persistence.OneToOne'.(Ø½ïâHÿ0RMINORZ
 CODE_SMELL
-e
-java:S1128"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼áHı0RMINORZ
-CODE_SMELL
 H
 java:S1700$"Rename field "paymentstatus"(ÅŒ‘ÚH1RMAJORZ
+CODE_SMELL
+e
+java:S1128"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼áHı0RMINORZ
 CODE_SMELL

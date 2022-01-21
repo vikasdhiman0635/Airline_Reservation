@@ -34,7 +34,7 @@ describe('CardCodeComponent', () => {
   });
 
   it('should check Heading in HTML ', () => {
-    expect(fixture.debugElement.nativeElement.querySelector('h3').textContent).toContain('Enter OTP');
+    expect(fixture.debugElement.nativeElement.querySelector('h3').textContent).toContain('Enter 4 digit OTP');
   })
 
   it('sholud check input field in html', () =>

@@ -1,9 +1,9 @@
 
-g	java:S125`"<This block of commented-out lines of code should be removed.(Ú°à¬H¥2RMAJORZ
+r
+java:S4684B"@Replace this persistent entity with a simple POJO or DTO object.(„éªˆHï>RCRITICALZVULNERABILITY
+g	java:S125`"<This block of commented-out lines of code should be removed.(Ú°à¬Hð>RMAJORZ
 CODE_SMELL
-g	java:S125""<This block of commented-out lines of code should be removed.(Ú°à¬H2RMAJORZ
+g	java:S125""<This block of commented-out lines of code should be removed.(Ú°à¬Hõ>RMAJORZ
 CODE_SMELL
 s
-java:S4684€"@Replace this persistent entity with a simple POJO or DTO object.(†ìH£2RCRITICALZVULNERABILITY
-r
-java:S4684B"@Replace this persistent entity with a simple POJO or DTO object.(„éªˆH¤2RCRITICALZVULNERABILITY
+java:S4684€"@Replace this persistent entity with a simple POJO or DTO object.(†ìHû>RCRITICALZVULNERABILITY

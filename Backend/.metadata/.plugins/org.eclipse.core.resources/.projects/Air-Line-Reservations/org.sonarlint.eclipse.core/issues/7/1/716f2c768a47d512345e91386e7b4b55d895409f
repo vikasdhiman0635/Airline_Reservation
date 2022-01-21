@@ -1,14 +1,12 @@
 
-z
-java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ô£¸ÄüÿÿÿÿH‘7RMAJORZBUG
-g	java:S125b"<This block of commented-out lines of code should be removed.(Ýµì§H7RMAJORZ
-CODE_SMELL
-…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìH‰7RMINORZ
-CODE_SMELL
-u
-java:S3655]"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—”¶ØH7RMAJORZBUG
 f
-java:S4973c"<Strings and Boxed types should be compared using "equals()".(âÿí§ûÿÿÿÿHŠ7RMAJORZBUG
+java:S4973b"<Strings and Boxed types should be compared using "equals()".(âÿí§ûÿÿÿÿHÖ;RMAJORZBUG
+z
+java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ô£¸ÄüÿÿÿÿHÐ;RMAJORZBUG
+u
+java:S3655]"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—”¶ØHÑ;RMAJORZBUG
 ž
-java:S1488ƒ"eImmediately return this expression instead of assigning it to the temporary variable "encodedString".(öåŠ¹úÿÿÿÿ8¡ŠÖÿã/H¡9RMINORZ
+java:S1488‚"eImmediately return this expression instead of assigning it to the temporary variable "encodedString".(öåŠ¹úÿÿÿÿ8¡ŠÖÿã/HÓ;RMINORZ
+CODE_SMELL
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Ð°ìHÏ;RMINORZ
 CODE_SMELL

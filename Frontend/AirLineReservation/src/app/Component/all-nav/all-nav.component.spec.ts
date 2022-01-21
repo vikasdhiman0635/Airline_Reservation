@@ -37,12 +37,12 @@ describe('AllNavComponent', () => {
   });
 
   it('should check there is 3 nav items without login',() =>{
-    expect(fixture.debugElement.nativeElement.querySelectorAll('li').length).toEqual(3);
+    expect(fixture.debugElement.nativeElement.querySelectorAll('li').length).toEqual(4);
   });
 
 
   it('should check there is 5 nav items with login',() =>{
-    expect(fixture.debugElement.nativeElement.querySelectorAll('li').length).toEqual(3);
+    expect(fixture.debugElement.nativeElement.querySelectorAll('li').length).toEqual(4);
   });
 
   it('should check all veriables', () => {
