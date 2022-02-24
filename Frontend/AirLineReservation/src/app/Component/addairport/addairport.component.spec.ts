@@ -5,9 +5,10 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 
 import { AddairportComponent } from './addairport.component';
 
-describe('AddairportComponent', () => {
+fdescribe('AddairportComponent', () => {
   let component: AddairportComponent;
   let fixture: ComponentFixture<AddairportComponent>;
+  let loc: Location;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -31,4 +32,23 @@ describe('AddairportComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should check f is exist', () => {
+    expect(component.f).toEqual(component.addAirportForm.controls);
+  });
+
+  
+  it('should check onSubmit function is exist', () => {
+    expect(component.onSubmit()).toBeUndefined();
+  });
+
+
+  it('should check save function is exist', () => {
+    expect(component.save()).toBeUndefined();
+
+    
+  })
+
+
 });

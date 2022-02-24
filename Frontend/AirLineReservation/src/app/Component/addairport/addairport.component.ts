@@ -61,7 +61,6 @@ export class AddairportComponent implements OnInit {
 
   save() {
     this.aService.addAirport(this.airport).subscribe((response) => {
-      console.log(response);
       // this.router.navigate(['/admin']);
       this.loc.back();
     })
