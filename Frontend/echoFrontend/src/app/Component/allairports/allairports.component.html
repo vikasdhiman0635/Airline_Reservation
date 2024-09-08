@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="mx-auto" style="width:300px">
+        <a href="addairport" class="btn" style="background: #CECBD8;">Add New Airport</a>
+    </div>
+<br>
+    <h1 class="display-4" style="font-size: 40px;" align="center">Partner Airports:</h1>
+    <table class="table table-hover" style="padding-right: 150px; padding-left: 150px;">
+        <thead class="thead" style="background: #CECBD8;" >
+          <tr>
+            <th>S.no.</th>
+            <th> Id</th>
+            <th> Name</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Pincode</th>
+            <th>Added By</th>
+            <th>Update/Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of airport; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{a.airportid}}</td>
+            <td>{{a.airportname}}</td>
+            <td>{{a.airportcountry}}</td>
+            <td>{{a.airportcity}}</td>
+            <td>{{a.airportpincode}}</td>
+            <td>{{a.adminemail}}</td>
+            <td>
+                
+                <a (click)="updateAirport(a.airportid)">
+                    <i class="fa fa-edit" style="font-size:30px;padding-right: 10px;"></i>
+                  </a>
+                  <a (click)="delete(a.airportid)">
+                    <i class="fa fa-trash" style="font-size:25px;color:red"></i>
+                  </a>
+                </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+</div>

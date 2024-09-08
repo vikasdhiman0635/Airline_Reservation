@@ -1,0 +1,70 @@
+<app-all-nav></app-all-nav>
+<br>
+<div class="container" *ngIf="checkdata">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Flight Details</h2>
+            <br>
+            <h4>Flight Name: {{flightDetails.flightname | uppercase}}</h4>
+            <h6>Flight No. : <i>{{flightDetails.flightid}}</i></h6>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>From: <i>{{flightDetails.flightfrom}}</i></h4>
+                    <h6>Arrival Date: <i>{{flightDetails.flightfromdate}}</i></h6>
+                    <h6>Arrival Time: <i>{{flightDetails.flightfromtime}}</i></h6>
+                </div>
+                <div class="col-md-6">
+                    <h4>To: <i>{{flightDetails.flightto}}</i></h4>
+                    <h6>Departure Date: <i>{{flightDetails.flighttodate}}</i></h6>
+                    <h6>Departure Time: <i>{{flightDetails.flighttotime}}</i></h6>
+                </div>
+                <br>
+                <h4>
+                    Gate No. {{flightDetails.flightgateno}}
+                </h4>
+
+            </div>
+            <hr>
+           
+
+        </div>
+        <div class="col-md-6 text-center">
+            <h2 class="text-center">Airport Details</h2>
+            <br>
+            <h4>Airport Name: {{airPortDetails.airportname}}</h4>
+            <h6>
+                Address: {{airPortDetails.airportcity}}, {{airPortDetails.airportcountry}} -
+                {{airPortDetails.airportpincode}}
+            </h6>
+            <h6>
+                Phone No. : {{airPortDetails.airportphoneno}}
+            </h6>
+            <br>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Flight Seats</h2>
+
+            <div class="row">
+                <div class="col-md-6 boxx" *ngFor="let seat of flightDetails.flightseats">
+                    <h6>Seat Type: <i>{{seat.seattype | uppercase}}</i></h6>
+                    <h6>Total Seats: <i>{{seat.totalseats}}</i></h6>
+                    <h6>Seat Price: &nbsp; <i class="fa fa-inr"></i>&nbsp;<i>{{seat.seatprize}}</i></h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <br>
+            <br>
+            <br>
+            <input type="button" (click)="addpassenger()" value="Add Passenger" class="btn btn-success">
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<app-footer></app-footer>
+

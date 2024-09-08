@@ -1,0 +1,99 @@
+<app-all-nav></app-all-nav>
+<div class="page-content page-container" id="page-content" *ngIf="checkdata">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-10 col-md-12">
+                <div class="container user-card-full">
+                    <div class="row m-30-0 m-r-0">
+                        <div class="col bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white" >
+                                <div class="m-b-25"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                <h6 class="f-w-600">{{profile.firstname}} {{profile.lastname}}</h6>
+                                <p></p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                <br>
+                                <br>
+                                <input type="button" (click)="editprofile()" value="Edit Profile" class="btn btn-primary">
+                                <br>
+                                <br>
+                                <input type="button" (click)="changePassword()" value="Change Password" class="btn btn-danger">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-block">
+                                <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Genral Information</h5>
+                                
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Email</p>
+                                        <h6 class="text-muted f-w-400">{{profile.email}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Phone</p>
+                                        <h6 class="text-muted f-w-500">{{profile.mobileno}}</h6>
+                                    </div>
+                                
+                                
+                                    <div class="col">
+                                        <p class="m-b-10 f-w-600">Date of Birth</p>
+                                        <h6 class="text-muted f-w-400">{{profile.dob}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Gender</p>
+                                        <h6 class="text-muted f-w-400">{{profile.gender}}</h6>
+                                    </div>
+                                
+                                <br>
+                                <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Address</h5>
+                                
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Houseno</p>
+                                        <h6 class="text-muted f-w-400">{{profile.address.userhouseno}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Street</p>
+                                        <h6 class="text-muted f-w-400">{{profile.address.userStreet}}</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">City</p>
+                                        <h6 class="text-muted f-w-400">{{profile.address.usercity}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Country</p>
+                                        <h6 class="text-muted f-w-400">{{profile.address.usercountry}}</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Pincode</p>
+                                        <h6 class="text-muted f-w-400">{{profile.address.userpincode}}</h6>
+                                    </div>
+                                   
+                                </div>
+                                <br>
+                                <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Passport-Information</h5>
+                                
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">PassportNo</p>
+                                        <h6 class="text-muted f-w-400">{{profile.passport.passportno}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Date of Issue</p>
+                                        <h6 class="text-muted f-w-400">{{profile.passport.issuedate}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Date of Expire</p>
+                                        <h6 class="text-muted f-w-400">{{profile.passport.expiredate}}</h6>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

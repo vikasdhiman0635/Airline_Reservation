@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4" style="font-size: 40px;">All Available Flights:</h1>
+    </div>
+    <br>
+    <div class="container" *ngFor="let f of flight;">
+        <div class="mt-4 pt-2 text-black rounded"
+            style="background: #9ebbc6; padding-left:50px;padding-right: 50px;padding-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-11"></div>
+                <div class="col-md-1">
+                    <span class="float-right"><a (click)="updateFlight(f.flightid)">
+                            <i class="fa fa-edit" style="font-size:30px;padding-right: 10px;"></i>
+                        </a>
+                        <a (click)="deleteFlight(f.flightid)">
+                            <i class="fa fa-trash" style="font-size:25px;color:red"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4 class="display-4" style="font-size: 20px;">Flight id:</h4>
+                    <h2>{{f.flightid}}</h2>
+                </div>
+                <br>
+                <div class="col">
+                    <h4 class="display-4" style="font-size: 20px;">Flight Name:</h4>
+                    <h2>{{f.flightname}}</h2>
+                </div>
+                <br>
+                <div class="col">
+                    <h4 class="display-4" style="font-size: 20px;">Airport Id:</h4>
+                    <h2>{{f.airportid}}</h2>
+                </div>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="table table-striped responsive">
+                    <thead class="bg-white">
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Arrival</th>
+                            <th>Departure</th>
+                            <th>Status</th>
+                            <th>Gate No.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{f.flightfrom |uppercase}}({{f.flightfromdate}})</td>
+                            <td>{{f.flightto|uppercase}}({{f.flighttodate}})</td>
+                            <td>{{f.flightfromtime}}</td>
+                            <td>{{f.flighttotime}}</td>
+                            <td>{{f.flightstatus |uppercase}}</td>
+                            <td>{{f.flightgateno}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4 class="display-4" style="font-size: 20px;">Service By:</h4>
+                    <h4>{{f.flightcompanyname}}</h4>
+                </div>
+                <div class="col">
+                    <h4 class="display-4" style="font-size: 20px;">Added/Updated By:</h4>
+                    <h4>{{f.adminemail}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>

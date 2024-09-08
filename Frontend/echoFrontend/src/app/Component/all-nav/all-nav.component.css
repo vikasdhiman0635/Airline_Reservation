@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
+
+#logofont{
+  font-family: 'Licorice', cursive;
+  font-weight: bold;
+  color: white;
+}
+.navbar
+{
+    /* background-color: rgb(97, 90, 73); */
+    background-color: rgb(97, 169, 179);
+    color: white;
+}
+nav button {
+  /* color: white; */
+  background-color: white;
+  margin-right: 2%;
+}
+
+nav ul li {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 160px;
+  height: auto;
+  background-color: transparent;
+  color: transparent;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  margin-left: 2%;
+  text-align: center;
+  align-items: center;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+nav ul li ::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background: #123C69;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+nav ul li:hover ::after {
+  width: 100%;
+
+}

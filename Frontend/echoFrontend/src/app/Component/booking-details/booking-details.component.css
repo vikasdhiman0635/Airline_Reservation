@@ -1,0 +1,18 @@
+@media print {
+    app-all-nav {
+    display: none;
+  }
+  .print
+  {
+      display: none;
+  }
+  app-footer
+  {
+      display: none;
+  }
+  .setup
+  {
+      margin-left: 250px;
+      margin-top: -95px;
+  }
+}

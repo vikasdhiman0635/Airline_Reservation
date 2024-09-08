@@ -1,0 +1,99 @@
+<div id="div1">
+    <div class="container">
+        <app-nav></app-nav>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="container-fluid" id="ticketdiv">
+                    <!-- Form for searching flights-->
+                    <h2 class="heading">Search Flights</h2>
+                    <form [formGroup]="searchForm" (ngSubmit)="checkflights()">
+                        <br>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col">
+                                        <!-- <label for="From"><strong>From:</strong></label> -->
+                                        <input type="text" formControlName="from" class="form-control txt" placeholder="From" list="from">
+                                        <datalist id="from">
+                                            <option *ngFor="let air of allAirport" [value]="air.airportcity">
+                                                {{air.airportcity}}</option>
+                                        </datalist>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- <label for="destination"><strong>Destination:</strong></label> -->
+                                    <input type="text" formControlName="to" class="form-control txt" placeholder="To" list="to">
+                                    <datalist id="to">
+                                        <option *ngFor="let air of allAirport" [value]="air.airportcity">
+                                            {{air.airportcity}}</option>
+                                    </datalist>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <label for="From"><strong>Departure:</strong> </label>
+                                    <input type="date" formControlName="fromtime" class="form-control txt" placeholder="Flying From">
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="text-center">
+                                <button type="submit" [disabled]="searchForm.invalid" class="btn btn-info">Search
+                                    Flights</button>
+                            </div><br>
+                            <!-- end of form-->
+                        </div>
+                        <div class="col-4"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5 pb-5">
+    <div class="text-center">
+        <h2 class="display-4">Don't Know where to go? </h2>
+        <br>
+        <h2 class="display-6">Check these Trending Hotspots</h2>
+    </div>
+    <div class="row">
+        <div class="col text-center pt-2">
+            <div class="card" style="width:auto">
+                <img class="card-img-top" src="/assets/images/srinagar.jpg" style="height: 280px;" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Srinagar,Jammu & Kashmir</h4>
+                    <p class="card-text">Best time to visit: October- April</p>
+                    <a href="#" class="btn" style="background-color: #123C69; color: white;">Check Route</a>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center pt-2">
+            <div class="card" style="width:auto">
+                <img class="card-img-top" src="/assets/images/jaipur.jpg" style="height: 280px;" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Jaipur,Rajasthan</h4>
+                    <p class="card-text">Best time to visit: October and March</p>
+                    <a href="#" class="btn" style="background-color: #123C69; color: white;">Check Route</a>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center pt-2">
+            <div class="card" style="width:auto">
+                <img class="card-img-top" src="/assets/images/amritsar.jpg" style="height: 280px;" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Amritsar,Punjab</h4>
+                    <p class="card-text">Best time to visit: November to March</p>
+                    <a href="#" class="btn" style="background-color: #123C69; color: white;">Check Route</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -17,5 +17,5 @@ public class AdminContent {
 
 	@Id
 	private String adminemail;
-	
+
 }

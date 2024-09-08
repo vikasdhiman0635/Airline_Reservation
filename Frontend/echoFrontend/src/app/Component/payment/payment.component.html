@@ -1,0 +1,84 @@
+<app-all-nav></app-all-nav>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-9">
+                    <h1 class="text-center">Payment</h1>
+                </div>
+                <div class="col-md-3 text-success">
+                    <p style="font-size: 20px;">
+                        <strong>Total Price: </strong><i class="fa fa-inr">&nbsp;{{billForm.totalamount}}</i>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <br>
+                    <h3 class="text-center">UPI</h3>
+                    <br>
+                    <img src="../../../assets/images/bhim.jpg" width="70%" alt="">
+                    <br>
+                    <form [formGroup]="upiForm" (ngSubmit)="submitform()">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" formControlName="upiid" placeholder="Enter your UPI">
+                                <div *ngIf="upi.upiid.invalid && upi.upiid.touched">
+                                    <div *ngIf="upi.upiid.errors.required" class="text-danger">UPI Id is required</div>
+                                    <div *ngIf="upi.upiid.errors.pattern" class="text-danger">Invalid UPI ID</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <br>
+                        <input type="submit" [disabled]="upiForm.invalid" value="Pay" class="btn btn-success">
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <br>
+                    <h3 class="text-center">Payment By Card</h3>
+                    <br>
+                    <form [formGroup]="cardForm" (ngSubmit)="cardSubmit()">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Enter Card No.</label>
+                                    <input type="number" formControlName="cardno" class="form-control" placeholder="Enter Card No.">
+                                    <div *ngIf="cardForm.get('cardno').invalid && cardForm.get('cardno').touched">
+                                        <small class="text-danger" *ngIf="cardForm.get('cardno').errors?.required">Card no. is required</small>
+                                        <small class="text-danger" *ngIf="cardForm.get('cardno').errors?.minlength">Card no. must be 10 digits</small>
+                                        <small class="text-danger" *ngIf="cardForm.get('cardno').errors?.maxlength">Card no. maximum 12 digits</small>
+                                    </div>
+                                    <br>
+                                    <label>Re Enter Card No.</label>
+                                    <input type="number" formControlName="recardno" class="form-control" placeholder="Re Enter Card No.">
+                                    <small class="text-danger" *ngIf="cardForm.errors?.mismatch">Card No is not match</small>
+                                    <br>
+                                    <label>Enter CVV</label>
+                                    <input type="number" formControlName="cvv" class="form-control" placeholder="CVV">
+                                    <div *ngIf="cardForm.get('cvv').invalid && cardForm.get('cvv').touched">
+                                        <small class="text-danger" *ngIf="cardForm.get('cvv').errors?.required">CVV is required</small>
+                                        <small class="text-danger" *ngIf="cardForm.get('cvv').errors?.minlength">CVV must be 3 digits</small>
+                                    </div>
+                                    <br>
+                                    <label>Enter Card Holder Name</label>
+                                    <input type="text" formControlName="cardhldername" class="form-control" placeholder="Enter Card Holder Name">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <input type="submit" value="Pay" [disabled]="cardForm.invalid" class="btn btn-success">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

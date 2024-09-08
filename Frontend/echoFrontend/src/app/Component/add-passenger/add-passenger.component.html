@@ -1,0 +1,194 @@
+<app-all-nav></app-all-nav>
+<br>
+<div class="container" *ngIf="checkgetdata">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Flight Details</h2>
+            <br>
+            <h4>Flight Name: {{flightDetails.flightname | uppercase}}</h4>
+            <h6>Flight No. : <i>{{flightDetails.flightid}}</i></h6>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>From: <i>{{flightDetails.flightfrom}}</i></h4>
+                    <h6>Arrival Date: <i>{{flightDetails.flightfromdate}}</i></h6>
+                    <h6>Arrival Time: <i>{{flightDetails.flightfromtime}}</i></h6>
+                </div>
+                <div class="col-md-6">
+                    <h4>To: <i>{{flightDetails.flightto}}</i></h4>
+                    <h6>Departure Date: <i>{{flightDetails.flighttodate}}</i></h6>
+                    <h6>Departure Time: <i>{{flightDetails.flighttotime}}</i></h6>
+                </div>
+                <br>
+                <h4>
+                    Gate No. {{flightDetails.flightgateno}}
+                </h4>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <h2 class="text-center">User Details</h2>
+            <br>
+            <h5>User Email: {{user.email}}</h5>
+            <h5>Name: {{user.firstname}} {{user.lastname}}</h5>
+            <h5>Phone No. : {{user.mobileno}}</h5>
+            <h5>Gender : {{user.gender}}</h5>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="bookForm" (ngSubmit)="submitform()">
+                <div class="row" formArrayName="bookseats">
+                    <div class="col-md-6 col-sm-12 col-lg-6 col-xs-12"
+                        *ngFor="let group of f.bookseats.controls; let i = index;" [formGroupName]="i">
+                        <br>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h4>Add Passenger {{i+1}}</h4>
+                                    </div>
+                                    <div class="col-4 control-buttons">
+                                        <img src="/assets/icons/add.svg" alt="" (click)="addPassenger()">
+                                        <img src="/assets/icons/remove.svg" alt="" width="24" height="24"
+                                            (click)="removePassenger(i)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="addText">Enter Name </label>
+                                            <input type="text" formControlName="name" class="form-control"
+                                                placeholder="Passenger Name">
+                                            <div *ngIf="group.get('name').invalid && group.get('name').touched">
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('name').errors?.required">Name is
+                                                    requried</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="addText">Enter Email </label>
+                                            <input type="email" formControlName="email" class="form-control"
+                                                placeholder="Passenger Eamil">
+                                            <div *ngIf="group.get('email').invalid && group.get('email').touched">
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('email').errors?.required">Email is
+                                                    requried</small>
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('email').errors?.email">Email is
+                                                    not valid</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="addText">Enter Phone No. </label>
+                                            <input type="number" formControlName="phoneno" class="form-control"
+                                                placeholder="Passenger Phone No.">
+                                            <div *ngIf="group.get('phoneno').invalid && group.get('phoneno').touched">
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('phoneno').errors?.required">Phone No. is
+                                                    requried</small>
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('phoneno').errors?.minlength">Must be at least 10
+                                                    digits</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="addText">Enter Passport No. </label>
+                                            <input type="text" formControlName="passportno" class="form-control"
+                                                placeholder="Passenger Passport No.">
+                                            <div
+                                                *ngIf="group.get('passportno').invalid && group.get('passportno').touched">
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('passportno').errors?.required">Passport No. is
+                                                    requried</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="addText">Enter Country </label>
+                                            <input type="text" formControlName="country" class="form-control"
+                                                placeholder="Passenger Country">
+                                            <div *ngIf="group.get('country').invalid && group.get('country').touched">
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('country').errors?.required">Country is
+                                                    requried</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="addText">Select Gender </label>
+                                            <select type="text" formControlName="gender" class="form-control">
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <div *ngIf="group.get('gender').invalid && group.get('gender').touched">
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('gender').errors?.required">Gender is
+                                                    requried</small>
+                                            </div>
+                                            <div *ngIf="group.get('gender').value=='Select Gender'">
+                                                <small class="text-danger">Select Gender</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="addText">Select Seat Type </label>
+                                            <select type="text" formControlName="seattype" class="form-control">
+                                                <!-- <option selected value="Select Seat Type">Select Seat Type</option> -->
+                                                <option *ngFor="let seat of allSeatsType" [value]="seat.seattype">
+                                                    {{seat.seattype}}</option>
+                                            </select>
+                                            <div *ngIf="group.get('seattype').invalid && group.get('seattype').touched">
+                                                <small class="text-danger"
+                                                    *ngIf="group.get('seattype').errors?.required">Select Seat Type is
+                                                    requried</small>
+                                            </div>
+                                            <div *ngIf="group.get('seattype').value=='Select Seat Type'">
+                                                <small class="text-danger">Select Seat Type</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <input type="submit" [disabled]="bookForm.invalid" value="Book Now" class="btn btn-success">
+                    </div>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>

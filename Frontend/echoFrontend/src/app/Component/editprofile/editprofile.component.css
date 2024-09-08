@@ -1,0 +1,38 @@
+.body {
+  background: darkblue
+}
+
+.logo {
+  width: 60px;
+
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: blue;
+}
+
+.profile-button {
+  background: blue;
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: blue;
+}
+
+.profile-button:focus {
+  background: blue;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: blue;
+  box-shadow: none
+}
+
+.back:hover {
+  color: blue;
+  cursor: pointer
+}

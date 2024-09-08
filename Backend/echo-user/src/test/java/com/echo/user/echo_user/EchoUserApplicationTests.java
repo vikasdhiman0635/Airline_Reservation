@@ -1,0 +1,13 @@
+package com.echo.user.echo_user;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class EchoUserApplicationTests {
+
+	// @Test
+	// void contextLoads() {
+	// }
+
+}

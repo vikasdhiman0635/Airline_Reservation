@@ -1,0 +1,110 @@
+<app-all-nav></app-all-nav>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Search Flight</h2>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" [(ngModel)]="from" placeholder="From">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" placeholder="To" class="form-control" [(ngModel)]="to">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="date" placeholder="To" class="form-control" [(ngModel)]="date">
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <input type="button" (click)="raset()" value="Clear" class="btn btn-info float-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 box"
+            *ngFor="let flight of allFlights | short : 'flightfrom': from | short : 'flightto' :to | short : 'flightfromdate' : date; let i=index;">
+            <br>
+            <div class="card">
+                <h5 class="card-header"><small><i>{{flight.flightid}}</i></small></h5>
+                <div class="card-body">
+                    <u>
+                        <h3>Flight Name: <i>{{flight.flightname}}</i></h3>
+                    </u>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>From: <i>{{flight.flightfrom}}</i></h4>
+                            <h6>Arrival Date: <i>{{flight.flightfromdate}}</i></h6>
+                            <h6>Arrival Time: <i>{{flight.flightfromtime}}</i></h6>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>To: <i>{{flight.flightto}}</i></h4>
+                            <h6>Departure Date: <i>{{flight.flighttodate}}</i></h6>
+                            <h6>Departure Time: <i>{{flight.flighttotime}}</i></h6>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row text-right">
+                        <div class="col-md-12" *ngIf="checkuser">
+                            <input type="button" (click)="book(flight.flightid)" value="Book" class="btn btn-success">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center text-danger">
+                                <strong>Check Seat Availability</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item" *ngFor="let check of flight?.flightseats">
+                                    <a class="nav-link"
+                                        (click)="getSeatType(flight.flightid,check.seattype,i)">{{check.seattype}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="showcheck && id==i && seatdata!=null">
+                        <div class="col-md-12 text-center">
+                            <br>
+                            <h4 class="text-center">{{seatdata.seattype}}</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Total Seat:</strong> {{seatdata.totalseats}}</p>
+                                    <p><strong>Available Seat:</strong> {{seatdata.availableseat}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Price:</strong> &nbsp; <i class="fa fa-inr"></i>&nbsp;{{seatdata.seatprize}}</p>
+                                    <input type="button" (click)="getSeatType(flight.flightid,seatdata.seattype,i)"
+                                        value="Refresh" class="btn btn-info">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<app-footer></app-footer>

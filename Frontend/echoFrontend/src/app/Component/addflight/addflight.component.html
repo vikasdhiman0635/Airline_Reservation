@@ -1,0 +1,239 @@
+<div class="container-fluid p-5">
+
+
+    <div class="container p-5 my-5 border">
+
+
+        <div class="text-center">
+            <h1 class="display-4">Add Flight</h1>
+        </div>
+
+        <form [formGroup]="addFlightForm" (ngSubmit)="onSubmit()">
+
+            <div class="row">
+
+                <div class="col">
+                    <label class="form-label" for="airportname">Flight(Name) : </label>
+                    <input id="flightname" class="form-control" type="text" formControlName="flightname"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightname.errors }">
+                    <div *ngIf="submitted && f.flightname.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightname.errors.required">required</div>
+
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <label class="form-label" for="flightcompanyname">Company : </label>
+                    <select id="flightcompanyname" class="form-control" type="text" formControlName="flightcompanyname"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightcompanyname.errors }">
+                        <option *ngFor="let c of flightcompany " value={{c.companyname}}>{{c.companyname}}
+                        </option>
+                    </select>
+                    <div *ngIf="submitted && f.flightcompanyname.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightcompanyname.errors.required">required</div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="flightfrom">From : </label>
+                    <input id="flightfrom" class="form-control" type="text" formControlName="flightfrom"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightfrom.errors }">
+                    <div *ngIf="submitted && f.flightfrom.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightfrom.errors.required">required</div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="flightto">To : </label>
+                    <input id="flightto" class="form-control" type="text" formControlName="flightto"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightto.errors }">
+                    <div *ngIf="submitted && f.flightto.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightto.errors.required">required</div>
+
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+
+                    <label class="form-label" for="flightfromtime">Arrival Time: </label>
+                    <input id="flightfromtime" class="form-control" type="time" formControlName="flightfromtime"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightfromtime.errors }">
+                    <div *ngIf="submitted && f.flightfromtime.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightfromtime.errors.required">required</div>
+
+
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label class="form-label" for="flighttotime">Departure Time: </label>
+                    <input id="flighttotime" class="form-control" type="time" formControlName="flighttotime"
+                        [ngClass]="{ 'is-invalid': submitted && f.flighttotime.errors }">
+                    <div *ngIf="submitted && f.flighttotime.errors" class="invalid-feedback">
+                        <div *ngIf="f.flighttotime.errors.required">required</div>
+
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+
+                    <label class="form-label" for="flightfromdate">Arrival Date: </label>
+                    <input id="flightfromdate" class="form-control" type="date" formControlName="flightfromdate"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightfromdate.errors }">
+                    <div *ngIf="submitted && f.flightfromdate.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightfromdate.errors.required">required</div>
+
+
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <label class="form-label" for="flighttodate">Landing Date: </label>
+                    <input id="flighttodate" class="form-control" type="date" formControlName="flighttodate"
+                        [ngClass]="{ 'is-invalid': submitted && f.flighttodate.errors }">
+                    <div *ngIf="submitted && f.flighttodate.errors" class="invalid-feedback">
+                        <div *ngIf="f.flighttodate.errors.required">required</div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+
+                <div class="col">
+                    <label class="form-label" for="flightstatus">Status : </label>
+
+                    <select formControlName="flightstatus" class="form-control" id="select"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightstatus.errors }">
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                    <div *ngIf="submitted && f.flightstatus.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightstatus.errors.required">required</div>
+
+
+                    </div>
+
+                </div>
+                <br>
+                <div class="col">
+                    <label class="form-label" for="flightgateno">Gate no. : </label>
+                    <input id="flightgateno" class="form-control" type="text" formControlName="flightgateno"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightgateno.errors }">
+                    <div *ngIf="submitted && f.flightgateno.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightgateno.errors.required">required</div>
+
+
+                    </div>
+
+                </div>
+                <br>
+                <div class="col">
+                    <label class="form-label" for="airportid">Airport: </label>
+                    <select id="airportid" class="form-control" type="text" formControlName="airportid"
+                        [ngClass]="{ 'is-invalid': submitted && f.airportid.errors }">
+
+                        <option *ngFor="let a of airport" value={{a.airportid}}>{{a.airportname}}</option>
+
+                    </select>
+
+                    <div *ngIf="submitted && f.airportid.errors" class="invalid-feedback">
+                        <div *ngIf="f.airportid.errors.required">required</div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <hr>
+            <br>
+            <br>
+
+            <!-- To be inserted in Array form-->
+
+            <div class="row" formArrayName="flightseats">
+                <div class="col-md-6 col-sm-12 col-lg-4 col-xs-12"
+                    *ngFor="let group of f.flightseats.controls; let i = index;" [formGroupName]="i">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h4>Add Seat Details</h4>
+                                </div>
+                                <div class="col-4 control-buttons">
+                                    <img src="../../assets/icons/add.svg" alt="" (click)="addSeats()">
+                                    <img src="../../assets/icons/remove.svg" alt="" width="24" height="24"
+                                        (click)="removeSeat(i)">
+                                </div>
+                            </div>
+                            <hr>
+
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+
+                                <label for="select">Seat Type :</label>
+                                <select formControlName="seattype" class="form-control" id="select">
+                                    <option *ngFor="let s of type" value={{s.seattypename}}>{{s.seattypename}}</option>
+
+                                </select>
+                                <div *ngIf="group.get('seattype').invalid && group.get('seattype').touched">
+                                    <small class="text-danger" *ngIf="group.get('seattype').errors?.required">Seat is
+                                        required</small>
+                                </div>
+
+                                <br>
+                                <label for="addText">Total Seats :</label>
+                                <input type="number" formControlName="totalseats" class="form-control">
+                                <div *ngIf="group.get('totalseats').invalid && group.get('totalseats').touched">
+                                    <small class="text-danger" *ngIf="group.get('totalseats').errors?.required">Total
+                                        seats required</small>
+                                </div>
+
+
+                            </div>
+                            <br>
+                            <label for="addText">Seat Price :</label>
+                            <input type="number" formControlName="seatprize" class="form-control">
+                            <div *ngIf="group.get('seatprize').invalid && group.get('seatprize').touched">
+                                <small class="text-danger" *ngIf="f.group.get('seatprize').errors?.required">Price
+                                    is
+                                    required</small>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class=" form-group text-center">
+                <button type="submit" class="btn btn-primary">Add Flight</button>
+            </div>
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+</div>

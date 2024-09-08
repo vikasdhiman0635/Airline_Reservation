@@ -1,0 +1,114 @@
+<app-all-nav></app-all-nav>
+<br>
+<div class="container" *ngIf="checkdata">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Verify Details</h2>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Flight Details</h2>
+                <br>
+                <h4>Flight Name: {{flightDetails.flightname | uppercase}}</h4>
+                <h6>Flight No. : <i>{{flightDetails.flightid}}</i></h6>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>From: <i>{{flightDetails.flightfrom}}</i></h4>
+                        <h6>Arrival Date: <i>{{flightDetails.flightfromdate}}</i></h6>
+                        <h6>Arrival Time: <i>{{flightDetails.flightfromtime}}</i></h6>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>To: <i>{{flightDetails.flightto}}</i></h4>
+                        <h6>Departure Date: <i>{{flightDetails.flighttodate}}</i></h6>
+                        <h6>Departure Time: <i>{{flightDetails.flighttotime}}</i></h6>
+                    </div>
+                    <br>
+                    <h4>
+                        Gate No. {{flightDetails.flightgateno}}
+                    </h4>
+
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <h2 class="text-center">User Details</h2>
+                <br>
+                <h5>User Email: {{user.email}}</h5>
+                <h5>Name: {{user.firstname}} {{user.lastname}}</h5>
+                <h5>Phone No. : {{user.mobileno}}</h5>
+                <h5>Gender : {{user.gender}}</h5>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Passenger Details</h2>
+                <br>
+                <table class="table">
+                    <tr class="passenger">
+                        <th>Sr No.</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No.</th>
+                        <th>Passport No.</th>
+                        <th>Gender</th>
+                        <th>Country</th>
+                        <th>Seat Type</th>
+                    </tr>
+                    <tr class="passenger" *ngFor="let seat of bookForm.bookseats; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{seat.name}}</td>
+                        <td>{{seat.email}}</td>
+                        <td>{{seat.phoneno}}</td>
+                        <td>{{seat.passportno}}</td>
+                        <td>{{seat.gender}}</td>
+                        <td>{{seat.country}}</td>
+                        <td>{{seat.seattype}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Bill</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <table style="font-size: 18px;">
+                            <tr>
+                                <th style="width: 200px;">Total No of Tickets: </th>
+                                <td>{{tickets.length}}</td>
+                            </tr>
+                            <tr *ngFor="let seats of tickets">
+                                <th>
+                                    {{seats.seattype}}
+                                </th>
+                                <td>
+                                    <i class="fa fa-inr"></i>&nbsp;{{seats.price}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>GST</th>
+                                <td>+9%</td>
+                            </tr>
+                            <tr class="table table-bordered">
+                                <th>Total Price</th>
+                                <td class="text-success"><i class="fa fa-inr"></i>&nbsp;{{totalBill}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <br><br><br><br>
+                <input type="button" (click)="payment()" value="Payment" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>

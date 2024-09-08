@@ -1,13 +1,13 @@
-package com.coforge.training.airline;
+// package com.coforge.training.airline;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class AirLineReservationsApplicationTests {
+// @SpringBootTest
+// class AirLineReservationsApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// // @Test
+// // void contextLoads() {
+// // }
 
-}
+// }

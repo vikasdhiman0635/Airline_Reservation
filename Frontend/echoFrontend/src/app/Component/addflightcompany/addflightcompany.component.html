@@ -1,0 +1,39 @@
+<div class="all">
+    <div class="container">
+        <br>
+        <div class="card">
+            <div class="text-center">
+                <h1 class="display-4" style="font-size: 45px;">Add Company</h1>
+            </div>
+            <br>
+            <form [formGroup]="addFlightCompanyForm" (ngSubmit)="onSubmit()">
+                <label class="form-label" for="companyname">Comapny Name : </label>
+                <input id="companyname" class="form-control" type="text" formControlName="companyname"
+                    [ngClass]="{ 'is-invalid': submitted && f.companyname.errors }">
+                <div *ngIf="submitted && f.companyname.errors" class="invalid-feedback">
+                    <div *ngIf="f.companyname.errors.required">Company Name is required</div>
+                    <div *ngIf="f.companyname.errors.minlength">Atleast have 3 Characters</div>
+                </div>
+                <br>
+                <label for="last-name">Country:</label>
+                <input id="last-name" class="form-control" type="text" formControlName="country"
+                    [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                    <div *ngIf="f.country.errors.required">Country can't be empty</div>
+                </div>
+                <br>
+                <label for="code">Company Code : </label>
+                <input id="code" class="form-control" type="text" formControlName="code"
+                    [ngClass]="{ 'is-invalid': submitted && f.code.errors }">
+                <div *ngIf="submitted && f.code.errors" class="invalid-feedback">
+                    <div *ngIf="f.code.errors.required">Number is required</div>
+                    <div *ngIf="f.code.errors.minlength">Atleast have 2 Characters</div>
+                </div>
+                <br>
+                <div class=" form-group text-center">
+                    <button type="submit" class="btn btn-primary">Add Flight Company</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <h1 class="diaplay-3" id="logofont" style="font-size: 40px; color: #123c69;">Ech<img
+                    src="../../../assets/images/flightlogo.png" alt="logo" width="35px"> Flights</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item" *ngIf="!checkuser">
+                    <a class="nav-link" routerLink="/searchflight">Book Flight</a>
+                </li>
+                <li class="nav-item" *ngIf="checkuser">
+                    <a class="nav-link" routerLink="/searchflight">Book Flight</a>
+                </li>
+                <li class="nav-item" *ngIf="!checkuser">
+                    <a class="nav-link" routerLink="/login">My Trip</a>
+                </li>
+                <li class="nav-item" *ngIf="checkuser">
+                    <a class="nav-link" routerLink="/transition">My Trip</a>
+                </li>
+                <li class="nav-item" *ngIf="!checkuser">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item" *ngIf="checkuser">
+                    <a class="nav-link" routerLink="/profile">
+                        <img [src]="user.avatar" width="20px" alt="">&nbsp;
+                        Profile</a>
+                </li>
+                <li class="nav-item" *ngIf="user!=null">
+                    <a class="nav-link" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

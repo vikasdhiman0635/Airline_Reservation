@@ -1,0 +1,127 @@
+<app-all-nav></app-all-nav>
+<br>
+
+<div class="container" *ngIf="checkdata">
+    <div class="row">
+        <div class="col-md-10 col-sm-10">
+            <h1 class="text-center text-success">Ticket Book Successfully</h1>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <img src="../../../assets/images/success.gif" width="70%" alt="">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="text-center">User Details</h2>
+                <br>
+                <h5>Name: {{user.firstname}} {{user.lastname}}</h5>
+                <h5>Email: {{user.email}}</h5>
+                <h5>Mobile No.: {{user.mobileno}}</h5>
+                <h5>Data of Birth: {{user.dob}}</h5>
+            </div>
+            <div class="col-md-5">
+                <h2 class="text-center">Flight Details</h2>
+                <br>
+                <h4>Flight Name: {{flightDetails.flightname | uppercase}}</h4>
+                <h6>Flight No. : <i>{{flightDetails.flightid}}</i></h6>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>From: <i>{{flightDetails.flightfrom}}</i></h4>
+                        <h6>Arrival Date: <i>{{flightDetails.flightfromdate}}</i></h6>
+                        <h6>Arrival Time: <i>{{flightDetails.flightfromtime}}</i></h6>
+                    </div>
+                    <div class="col-md-6 setup">
+                        <h4>To: <i>{{flightDetails.flightto}}</i></h4>
+                        <h6>Departure Date: <i>{{flightDetails.flighttodate}}</i></h6>
+                        <h6>Departure Time: <i>{{flightDetails.flighttotime}}</i></h6>
+                    </div>
+                    <br>
+                    <h4>
+                        Gate No. {{flightDetails.flightgateno}}
+                    </h4>
+
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <h2 class="text-center">Airport Details</h2>
+                <br>
+                <h4>Airport Name: {{airPortDetails.airportname}}</h4>
+                <h6>
+                    Address: {{airPortDetails.airportcity}}, {{airPortDetails.airportcountry}} -
+                    {{airPortDetails.airportpincode}}
+                </h6>
+                <h6>
+                    Phone No. : {{airPortDetails.airportphoneno}}
+                </h6>
+                <br>
+            </div>
+            <hr>
+            <div class="col-md-12 passenger">
+                <br>
+                <h2 class="text-center">Passenger Details</h2>
+                <br>
+                <table class="table table-bordered text-center">
+                    <tr style="height: 50px;">
+                        <th>Sr. No</th>
+                        <th>Name</th>
+                        <th>Eamil</th>
+                        <th>Phone No</th>
+                        <th>Passport No</th>
+                        <th>Seat No.</th>
+                        <th>Seat Type</th>
+                        <th>Country</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr style="height: 50px;" *ngFor="let seat of bookTicket?.bookseats; let i=index;">
+                        <td>{{i+1}}</td>
+                        <td>{{seat.name}}</td>
+                        <td>{{seat.email}}</td>
+                        <td>{{seat.phoneno}}</td>
+                        <td>{{seat.passportno}}</td>
+                        <td>{{seat.seatno}}</td>
+                        <td>{{seat.seattype}}</td>
+                        <td>{{seat.country}}</td>
+                        <td><i class="fa fa-inr"></i>{{seat.price}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <br>
+            <h2 class="text-center">Bill Payment</h2>
+            <br>    
+            <p>
+                <strong>Total Amount :</strong> &nbsp;<i class="fa fa-inr"></i>{{bookTicket?.paymentstatus.totalamount}}</p>
+            <p>
+                <strong>Payment Method:</strong> {{bookTicket.ticketpaymentmethod | uppercase}}
+            </p>
+            <p *ngIf="bookTicket.ticketpaymentmethod=='UPI'">
+                <strong>UPI Id:</strong> {{bookTicket?.paymentstatus.upiid}}
+            </p>
+            <p *ngIf="bookTicket.ticketpaymentmethod=='Card'">
+                <strong>Card No.:</strong> {{bookTicket?.paymentstatus.cardno}}
+                <br>
+                <strong>Card Holder Name:</strong> {{bookTicket?.paymentstatus.cardhldername}}
+            </p>
+            <p class="text-success" style="font-weight: bold;">
+                <strong>Paytemt Status:</strong> {{bookTicket?.paymentstatus.paymentstatus}}
+            </p>
+        </div>
+        <div class="col-md-6 text-center">
+            <br>
+            <a class="btn btn-primary" routerLink="/"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-danger" (click)="print()"><i class="fa fa-print"></i>&nbsp;&nbsp;Print</button>
+            <br>
+            <br>
+            <a class="btn btn-success" routerLink="/searchflight">Book More Tickets</a>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>

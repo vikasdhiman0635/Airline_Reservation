@@ -1,0 +1,79 @@
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="text-center">
+            <h1 class="display-4" style="font-size: 45px;">Update/Edit Airport</h1>
+        </div>
+        <br>
+        <form [formGroup]="updateAirportForm" (ngSubmit)="onSubmit()">
+            <div class="container">
+                <label for="airportid">Airport Id:</label>
+                <input id="airportid" class="form-control" type="text" formControlName="airportid"
+                    [ngClass]="{ 'is-invalid': submitted && f.airportid.errors }">
+                <div *ngIf="submitted && f.airportid.errors" class="invalid-feedback">
+                    <div *ngIf="f.airportid.errors.required">Country can't be empty</div>
+                </div>
+                <br>
+                <label class="form-label" for="airportname">Airport(Name) : </label>
+                <input id="airportname" class="form-control" type="text" formControlName="airportname"
+                    [ngClass]="{ 'is-invalid': submitted && f.airportname.errors }">
+                <div *ngIf="submitted && f.airportname.errors" class="invalid-feedback">
+                    <div *ngIf="f.airportname.errors.required">First Name is required</div>
+                    <div *ngIf="f.airportname.errors.pattern">Invalid First Name</div>
+                </div>
+                <br>
+
+                <label for="last-name">Country:</label>
+                <input id="last-name" class="form-control" type="text" formControlName="airportcountry"
+                    [ngClass]="{ 'is-invalid': submitted && f.airportcountry.errors }">
+                <div *ngIf="submitted && f.airportcountry.errors" class="invalid-feedback">
+                    <div *ngIf="f.airportcountry.errors.required">Country can't be empty</div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col"> <label for="airportcity">City: </label>
+                        <input id="airportcity" class="form-control" type="text" formControlName="airportcity"
+                            [ngClass]="{ 'is-invalid': submitted && f.airportcity.errors }">
+                        <div *ngIf="submitted && f.airportcity.errors" class="invalid-feedback">
+                            <div *ngIf="f.airportcity.errors.required">City can't be empty</div>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <label for="airportpincode">Pincode: </label>
+                        <input id="airportpincode" class="form-control" type="text" formControlName="airportpincode"
+                            [ngClass]="{ 'is-invalid': submitted && f.airportpincode.errors }">
+                        <div *ngIf="submitted && f.airportpincode.errors" class="invalid-feedback">
+                            <div *ngIf="f.airportpincode.errors.required">Pincode is required</div>
+                            <div *ngIf="f.airportpincode.errors.minlength">must be at least 6 characters</div>
+                        </div>
+
+                    </div>
+                </div>
+<br>
+                <label for="airportphoneno">Contact no. : </label>
+                <input id="airportphoneno" class="form-control" type="text" formControlName="airportphoneno"
+                    [ngClass]="{ 'is-invalid': submitted && f.airportphoneno.errors }">
+                <div *ngIf="submitted && f.airportphoneno.errors" class="invalid-feedback">
+                    <div *ngIf="f.airportphoneno.errors.required">Number is required</div>
+                    <div *ngIf="f.airportphoneno.errors.minlength">must be at least 10 characters</div>
+                </div>
+<br>
+                <label for="adminemail">Enter Email to continue: </label>
+                <input id="adminemail" class="form-control" type="email" formControlName="adminemail"
+                    [ngClass]="{ 'is-invalid': submitted && f.adminemail.errors }">
+                <div *ngIf="submitted && f.adminemail.errors" class="invalid-feedback">
+                    <div *ngIf="f.adminemail.errors.required">Email is required</div>
+                    <div *ngIf="f.adminemail.errors.email">Email must be a valid email address</div>
+                </div>
+
+                <br>
+                <div class=" form-group text-center">
+                    <button type="submit" class="btn btn-primary">Add Airport</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

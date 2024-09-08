@@ -1,0 +1,20 @@
+@media print {
+
+  app-all-nav {
+    display: none;
+  }
+
+  img {
+    display: none;
+  }
+
+  .setup
+  {
+    margin-left: 300px;
+    margin-top: -95px;
+  }
+
+  app-footer {
+    display: none;
+  }
+}
