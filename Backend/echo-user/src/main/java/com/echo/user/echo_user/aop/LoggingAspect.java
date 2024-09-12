@@ -14,8 +14,9 @@ public class LoggingAspect {
 
     // return type class-name.method-name(args) ---> 'execution(* *.*(..))'
     // @Before anotation is using when method is call before execute this method
-    @Before("ececution(* com.echo.user.echo_user.UserImpl.*(..))")
-    public void loggerMethod() {
+    @Before("execution(* com.echo.user.echo_user.UserImpl.getUserById(..))")
+    public void logMethodCall() {
+        System.out.println("Working Method");
         LOGGER.info("Mothod work");
     }
 

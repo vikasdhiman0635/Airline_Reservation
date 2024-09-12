@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.echo.user.echo_user.Repository.UserRepo;
@@ -33,7 +32,14 @@ public class UserImpl implements UserService {
         RegisterNewUser res = new RegisterNewUser();
 
         if (!repo.existsByEmail(newUser.getEmail())) {
-            boolean response = adminService.existsByEmail(newUser.getEmail()).getBody();
+            boolean response = false;
+            try {
+                response = adminService.existsByEmail(newUser.getEmail()).getBody();
+            } catch (Exception e) {
+                System.out.println(
+                        "User is not found in Admin database so this user is a NORMAL_USER: " + newUser.getEmail());
+                e.printStackTrace();
+            }
             if (response) {
 
                 newUser.setRole(RolesEnums.Admin);
@@ -82,8 +88,7 @@ public class UserImpl implements UserService {
 
     @Override
     public User getUserById(long userid) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUserById'");
+        return repo.findById(userid).get();
     }
 
     @Override

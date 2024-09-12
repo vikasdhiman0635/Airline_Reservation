@@ -34,6 +34,8 @@ public class UserController {
      * "mobileno": "909090909",
      * "password": "vikas"
      * }
+     *  If your want to add some data or delete using POST/PUT/DELETE or any other you need to create 
+     *  a CSRF token and put this token into your headers with field name is X-CSRF-TOEKN
      */
     @PostMapping("/save")
     public ResponseEntity<RegisterNewUser> registerNewUser(@RequestBody User user) {
